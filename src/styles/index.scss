@@ -1,0 +1,39 @@
+
+@import 'https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap';
+
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  
+  font-family: "Roboto";
+} 
+
+body {
+  font-family: "Roboto";
+  font-size: 1.125rem; 
+}
+
+
+
+.MuiTypography-root {
+  font-family: "Roboto";
+  font-size: 'none';
+}
+.styledAppContainer {
+  width: 100vw;
+  min-height: 100vh;
+  
+  position: relative;
+}
+
+@media (max-width: 320px) {
+  .MuiTypography-root {
+     font-size: '0.75rem';
+   }
+}
+
+
+
+

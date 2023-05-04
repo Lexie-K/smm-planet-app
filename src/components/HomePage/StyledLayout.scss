@@ -1,0 +1,84 @@
+@import '../../styles/variables';
+
+.styledHeaderContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.styledName {
+  color: $smmplaneta-text-color;
+  font-size: $smmplaneta-text-size;
+  text-shadow: 4px 1px 6px rgba(13, 13, 13, 0.5);
+  font-weight: $main-text-weight;
+  line-height: 80%;
+  
+}
+.styledMainTitle {
+  color: $main-text-color;
+  font-weight: $theird-text-weight;
+  font-size: $smmplaneta-secondtext-size;
+  text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  
+}
+.styledHeaderTitleSize {
+  font-size: $main-text-size;
+  font-weight: $main-text-weight;
+}
+
+.styledSearchContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.styledFilters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.styledBtn {
+  white-space: nowrap;
+}
+
+.styledEnterBtn {
+  appearance: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  background-color: $btns-font-color;
+  color: $btns-text-color;
+  padding: 0.625rem 2.125rem;
+  border-radius: $border-radius-for-btns-select-input;
+  font-size: $main-text-size;
+  font-family: 'Roboto';
+  
+}
+
+
+
+@media (max-width: $bp-phone) {
+  a p {
+    display: none;
+  }
+  .styledEnterBtn{
+    padding: 0.313rem 1rem;
+    font-size: 0.875rem;
+  }
+  .styledName {
+    padding: 12px 0px 37px 0px;
+    font-size: 1.25rem;
+  }
+  .styledMainTitle {
+    font-size: 0.75rem;
+  }
+}
+
+a {
+  color: $main-text-color;
+}
+
+.styledMainTitle {
+  font-style: normal;
+  white-space: nowrap;
+}

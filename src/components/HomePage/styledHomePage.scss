@@ -1,0 +1,71 @@
+@import '../../styles/variables';
+
+.styledHomeContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  align-items: stretch;
+}
+
+.styledMiddleTitle {
+  font-size: $middle-title-smm-size;
+  color: $smmplaneta-text-color;
+  text-shadow: 4px 1px 6px #d3792b;
+  font-weight: $main-text-weight;
+}
+.styledMiddleTitleSecondary {
+  font-size: $smmplaneta-text-color;
+  color: $smmplaneta-text-color;
+  text-shadow: 4px 1px 6px rgba(13, 13, 13, 0.5);
+  font-weight: $main-text-weight;
+}
+.styledSubMiddleTitle {
+  font-size: $middle-sub-title--size;
+  font-weight: $main-text-weight;
+  text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.styledfooterContainerPoints {
+  display: flex;
+  justify-content: flex-start;
+  column-gap: 20px;
+  white-space: nowrap;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: $bp-phone) {
+  .styledFormSize {
+    max-width: 320px;
+  }
+  .container {
+    margin-right: -200px;
+    padding-top: 76px;
+    max-width: 260px;
+    padding-right: 100px;
+  }
+}
+
+.styledMainPoints {
+  color: $main-text-color;
+  font-size: $main-text-size;
+  font-weight: $main-text-weight;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  background-image: url(../../assets/mainpic.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: contain;
+  margin-top: -60px;
+  padding-top: 174px;
+  align-items: stretch;
+  height: 100vh;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+}

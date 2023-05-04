@@ -1,0 +1,29 @@
+@import '../../styles/variables';
+
+.styledForm {
+  padding: 96px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5rem;
+  
+}
+
+.styledFormSize {
+  max-width: 360px;
+  
+}
+.styledLoginTitle {
+  
+  color: $title-color-login-signup;
+  font-size: $title-size-login-signup;
+  font-weight: $second-text-weight;
+}
+
+@media (max-width: $bp-phone) {
+  .styledFormSize {
+    max-width: 320px;
+  }
+}

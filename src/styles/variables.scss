@@ -1,0 +1,45 @@
+$main-text-color: rgba(13, 13, 13, 1);
+$btns-font-color: rgba(255, 54, 0, 0.8);
+$btns-text-color: rgba(255, 255, 255, 1);
+$borders-inputs-color: rgba(255, 54, 0, 0.7);
+$title-color-login-signup: rgba(255, 54, 0, 1);
+$smmplaneta-text-color: rgba(175, 37, 0, 1);
+$main-table-bk-ground: rgba(255, 118, 0, 0.65);
+$main-table-inputs-borders: rgba(240, 158, 86, 0.58);
+$main-table-title-color: rgba(255, 54, 0, 1);
+$main-table-btn-bk-ground-allow-access: rgba(240, 158, 86, 0.58);
+$main-table-headers-bk-ground: rgba(240, 158, 86, 1);
+$main-table-headers-text: rgba(13, 13, 13, 0.59);
+$main-table-borders: rgba(13, 13, 13, 0.59);
+
+
+$main-text-weight: 400;
+$theird-text-weight: 500;
+$second-text-weight: 700;
+$middle-title-smm-size: 2.5rem;
+$middle-sub-title--size: 1.5rem;
+$main-text-size: 1.125rem;
+$mobile-main-text-size: 0.75rem;
+$title-size-login-signup: 2rem;
+$border-radius-for-btns-select-input: 1.25rem;
+$smmplaneta-text-size: 1.875rem; 
+$smmplaneta-secondtext-size: 1.125rem; 
+$bp-desktop: 1200px;
+$bp-tablet: 768px;
+$bp-phone: 320px;
+
+@mixin for-tablet {
+  @media (min-width: $bp-tablet) {
+    @content;
+  }
+}
+@mixin for-phone {
+  @media (min-width: $bp-phone) {
+    @content;
+  }
+}
+@mixin for-desktop {
+  @media (min-width: $bp-desktop) {
+    @content;
+  }
+}

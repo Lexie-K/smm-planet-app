@@ -1,24 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import LoginPage from './pages/LoginPage';
+import SignUpPage from './pages/SignUpPage';
+import PageNotFound from './pages/PageNotFound';
+import BloggerAccountPage from './pages/BloggerAccountPage';
+import AdAccountPage from './pages/AdAccountPage';
+import ContactsPage from './pages/ContactsPage';
+import AdminPage from './pages/AdminPage';
+import CheckBoxTablePage from './pages/CheckBoxTablePage';
+import AcceptancePage from './pages/AcceptancePage';
+import ChatPage from './pages/ChatPage';
+import Search from './pages/Search';
+import FinanceBloggerAccountPage from './pages/FinanceBloggerAccountPage';
+import OrdersBloggerAccountPage from './pages/OrdersBloggerAccountPage';
+import OrdersAdAccountPage from './pages/OrdersAdAccountPage';
+import CreateOrder from './pages/CreateOrder';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/search" element={<Search />} />
+        <Route path="/loginpage" element={<LoginPage />} />
+        <Route path="/signuppage" element={<SignUpPage />} />
+        <Route path="/account" element={<BloggerAccountPage />} />
+        <Route path="/account/finance" element={<FinanceBloggerAccountPage/>} />
+        <Route path="/account/orders" element={<OrdersBloggerAccountPage/>} />
+        <Route path="/adaccountpage" element={<AdAccountPage />} />
+        <Route path="/adaccountpage/orders" element={<OrdersAdAccountPage />} />
+        <Route path="/adaccountpage/createorder" element={<CreateOrder />} />
+        <Route path="/contactspage" element={<ContactsPage />} />
+        <Route path="/adminpage" element={<AdminPage />} />
+        <Route path="/checkboxtablepage" element={<CheckBoxTablePage />} />
+        <Route path="/acceptancepage" element={<AcceptancePage />} />
+        <Route path="/chatpage" element={<ChatPage />} />
+        <Route path="*" element={<PageNotFound />} />
+      </Routes>
+    </BrowserRouter>
+
   );
 }
 

@@ -1,0 +1,42 @@
+@import '../../styles/variables.scss';
+
+.styledMainContainer {
+  background: rgba(252, 225, 200, 0.65);
+  box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.25);
+  border-radius: 30px;
+  margin: 100px 49px;
+  padding: 40px 279px 40px 38px;
+}
+
+.styledFinanceContainer {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 20px;
+  row-gap: 15px;
+
+  align-items: center;
+}
+
+.styledFinanceForm {
+  border: 1px solid rgba(240, 158, 86, 0.58);
+  border-radius: 10px;
+  padding: 7px;
+  align-items: center;
+}
+
+@media (max-width: $bp-tablet) {
+  .styledLabelFinanceInput {
+    font-size: $mobile-main-text-size;
+  }
+  .styledMainContainer {
+    margin: 70px 0;
+    padding: 27px 10px 20px 10px;
+  }
+  .styledFinanceContainer {
+    grid-template-columns: 93px auto;
+  }
+  .styledFinanceForm {
+    border-radius: 5px;
+    padding: 4px;
+  }
+}
