@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 const AdFinanceTable = () => {
   return (
     <div className="styledMainContainer">
+      
       <Grid
         container
         spacing={1}
@@ -25,7 +26,7 @@ const AdFinanceTable = () => {
             {' '}
             Блогер
           </Link>
-          <Link style={{ textDecoration: 'none', cursor: 'pointer' }}>
+          <Link style={{ textDecoration: 'none', cursor: 'pointer' }} className='styledAdTitle'>
             Рекламодатель
           </Link>
         </Grid>
@@ -41,7 +42,7 @@ const AdFinanceTable = () => {
           <Link style={{ textDecoration: 'none', cursor: 'pointer' }}>
             Профиль
           </Link>
-          <Link style={{ textDecoration: 'none', cursor: 'pointer' }}>
+          <Link style={{ textDecoration: 'none', cursor: 'pointer', color: '#FF3600'}}>
             Финансы
           </Link>
           <Link style={{ textDecoration: 'none', cursor: 'pointer' }}>

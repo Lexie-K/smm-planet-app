@@ -1,39 +1,42 @@
 @import '../../styles/variables';
 
-.styledForm {
-  // padding: 96px;
+.styledSignupForm {
   background-color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   border-radius: 0.5rem;
+  
 }
 
-.styledLoginFormSize {
+.styledSignupFormSize {
   display: flex;
   flex-direction: column;
-  // justify-content: center;
   align-items: center;
+  padding: 20px;
 }
-.styledLoginTitle {
+.styledSignupTitle {
   color: $title-color-login-signup;
   font-size: $title-size-login-signup;
   font-weight: $second-text-weight;
   font-family: 'Roboto';
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  margin: 18px;
-  margin-bottom: 28px;
+  margin: 10px;
+
 }
 
-.styledLogininput {
-  margin: 9px;
+.styledSignupinput {
+  margin: 10px;
   background: #ffffff;
   border: 1px solid rgba(255, 54, 0, 0.7);
   box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
-  width: 320px;
+  width: 360px;
+  height: 33px;
   padding: 6px 30px;
+  font-weight: 400;
+  font-size: 18px;
 }
 
 .styledSignupBtn {
@@ -43,38 +46,48 @@
   cursor: pointer;
   background-color: $btns-font-color;
   color: $btns-text-color;
-  padding: 8px 55px;
+  padding: 8px 0px;
   margin-left: 9px;
   border-radius: $border-radius-for-btns-select-input;
-  font-size: $main-text-size;
+  font-weight: 700;
+  font-size: 18px;
   font-family: 'Roboto';
   align-self: flex-start;
-  margin-top: 25px;
+  margin-top: 18px;
   margin-bottom: 25px;
+  height: 40px;
+  width: 243px;
 }
-.styledLogininput:focus {
+.styledSigninput:focus {
   outline-color: rgba(255, 54, 0, 0.7);
 }
 
 @media (max-width: $bp-phone) {
-  .styledLogininput {
-    max-width: 221px;
+  .styledSignupinput {
+    width: 221px;
+    height: 30px;
+    margin: 5px;
+    font-weight: 400;
+    font-size: 12px;
   }
-  .styledLoginTitle {
+  .styledSignupTitle {
     font-weight: 700;
     font-size: 18px;
     margin: 70px;
     margin-bottom: 20px;
   }
-  .styledLogininput {
-    margin: 5px;
-  }
+  
   .styledSignupBtn {
     padding: 10px 12px 9px 12px;
     font-weight: 700;
     font-size: 14px;
     margin-left: 5px;
-    margin-top: 6px;
+    margin-top: 12px;
     margin-bottom: 25px;
+    width: 166px;
+    height: 35px;
+  } 
+  .styledSignupFormSize {
+    padding: 0px;
   }
 }

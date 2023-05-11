@@ -10,7 +10,9 @@ const FinanceAdAccountPage = () => {
       <SearchBar />
       <Filters />
       <AdFinanceTable />
-      <LowSection />
+      <div className="styledAccountfooter">
+        <LowSection />
+      </div>
     </>
   );
 };

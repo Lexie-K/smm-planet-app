@@ -164,10 +164,10 @@ const OrdersBloggerTable = () => {
             sx={{
               display: 'flex',
               flexDirection: 'row',
-              gap: { xs: 9, md: 10, lg: 17.5 },
+              gap: { xs: 9, md: 10, lg: 14.5 },
             }}
           >
-            <Link style={{ textDecoration: 'none', cursor: 'pointer' }}>
+            <Link style={{ textDecoration: 'none', cursor: 'pointer' }} className='styledAdTitle'>
               {' '}
               Блогер
             </Link>
@@ -190,12 +190,9 @@ const OrdersBloggerTable = () => {
             <Link style={{ textDecoration: 'none', cursor: 'pointer' }}>
               Финансы
             </Link>
-            <Link style={{ textDecoration: 'none', cursor: 'pointer' }}>
+            <Link style={{ textDecoration: 'none', cursor: 'pointer', color: '#FF3600' }}>
               Заказы
             </Link>
-          </Grid>
-          <Grid item xs={12} sx={{ display: 'flex', flexDirection: 'row' }}>
-            <Link>Изменить профиль</Link>
           </Grid>
         </Grid>
         <br />
@@ -203,7 +200,7 @@ const OrdersBloggerTable = () => {
           <thead className="styledOrderTable">
             <tr>
               {thTitle.map((title, index) => (
-                <th scope="col" value={title} key={index} rowSpan={8}>
+                <th scope="col" value={title} key={index} rowSpan={8} className='styledHeaderOrderTable'>
                   {title}
                 </th>
               ))}
@@ -212,7 +209,7 @@ const OrdersBloggerTable = () => {
           <tbody>
             {rows.map((row, index) => (
               <>
-                <tr colSpan={8}>
+                <tr colSpan={8} >
                   <td key={index}>{row.company}</td>
                   <td key={index}>{row.task}</td>
                   <td key={index}>{row.socialNetwork}</td>

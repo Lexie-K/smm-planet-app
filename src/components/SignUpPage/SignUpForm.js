@@ -51,15 +51,15 @@ const SignUpForm = ({ handleSignUp }) => {
 
   return (
     <>
-      <Box className="styledForm">
-        <p className="styledLoginTitle">Регистрация</p>
-        <form className="styledLoginFormSize">
+      <Box className="styledSignupForm">
+        <p className="styledSignupTitle">Регистрация</p>
+        <form className="styledSignupFormSize">
           <input
             id="email"
             placeholder="E-mail"
             name="email"
             value={email}
-            className="styledLogininput"
+            className="styledSignupinput"
             ref={emailRef}
             autoComplete="off"
             autoFocus
@@ -69,19 +69,19 @@ const SignUpForm = ({ handleSignUp }) => {
 
           <input
             name="password"
-            placeholder="пароль"
+            placeholder="пароль 1"
             type="password"
             id="password"
             value={password}
-            className="styledLogininput"
+            className="styledSignupinput"
             autoComplete="current-password"
             onChange={e => setPassword(e.target.value)}
           />
 
           <input
-            className="styledLogininput"
+            className="styledSignupinput"
             name="password"
-            placeholder="пароль"
+            placeholder="пароль 2"
             type="password"
             id="password"
             autoComplete="current-password"

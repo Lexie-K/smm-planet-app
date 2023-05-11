@@ -17,13 +17,11 @@ const HomePage = () => {
         <div className="container">
           <Box
             sx={{
-              marginLeft: { xs: '0px', md: '5rem' },
-              marginTop: { xs: '0px', md: '-1.875rem', lg: '-1.875rem' },
-              marginBottom: { xs: '0px' },
+              marginLeft: { md: '5rem', xs: '0px' },
+              marginTop: { md: '-1.875rem', lg: '-1.875rem' },
             }}
           >
             <MiddleInfo />
-
             <div className="footer">
               <LowSection />
             </div>

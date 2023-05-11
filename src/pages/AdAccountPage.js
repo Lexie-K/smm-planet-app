@@ -9,7 +9,9 @@ const AdAccountPage = () => {
       <SearchBar />
       <Filters />
       <AdMainTable />
+      <div className="styledAccountfooter">
       <LowSection />
+      </div>
     </>
   );
 };

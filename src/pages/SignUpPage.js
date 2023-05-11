@@ -3,7 +3,6 @@ import SignUpForm from '../components/SignUpPage/SignUpForm';
 import { setUser } from '../store/slices/formUserSlice';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import Header from '../components/HomePage/Header';
 import SearchBar from '../components/HomePage/SearchBar';
 import Filters from '../components/HomePage/Filters';
 import LowSection from '../components/HomePage/LowSection';

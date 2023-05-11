@@ -10,7 +10,9 @@ const AcceptancePage = () => {
       <SearchBar />
       <Filters />
       <AcceptanceTable />
-      <LowSection />
+      <div className="styledAccountfooter">
+        <LowSection />
+      </div>
     </>
   );
 };

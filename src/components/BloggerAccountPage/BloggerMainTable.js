@@ -10,7 +10,7 @@ const BloggerMainTable = () => {
         container
         spacing={1}
         sx={{
-          fontSize: { xs: '0.75rem', md: '1.125rem', lg: '1.125rem' },
+          fontSize: { xs: '0.75rem', md: '20px', lg: '20px' },
         }}
       >
         <Grid
@@ -19,14 +19,14 @@ const BloggerMainTable = () => {
           sx={{
             display: 'flex',
             flexDirection: 'row',
-            gap: { xs: 9, md: 10, lg: 17.5 },
+            gap: { xs: 9, md: 10, lg: 12.5 },
           }}
         >
-          <Link style={{ textDecoration: 'none', cursor: 'pointer' }}>
+          <Link style={{ textDecoration: 'none', cursor: 'pointer'}} className='styledSizeContainer styledAdTitle'>
             {' '}
             Блогер
           </Link>
-          <Link style={{ textDecoration: 'none', cursor: 'pointer' }}>
+          <Link style={{ textDecoration: 'none', cursor: 'pointer' }} className='styledSizeContainer'>
             Рекламодатель
           </Link>
         </Grid>
@@ -36,21 +36,21 @@ const BloggerMainTable = () => {
           sx={{
             display: 'flex',
             flexDirection: 'row',
-            gap: { xs: 7.5, lg: 15 },
+            gap: { xs: 7.5, lg: 10 },
           }}
         >
-          <Link style={{ textDecoration: 'none', cursor: 'pointer' }}>
+          <Link style={{ textDecoration: 'none', cursor: 'pointer', color: '#FF3600' }} className='styledSizeContainer'>
             Профиль
           </Link>
-          <Link style={{ textDecoration: 'none', cursor: 'pointer' }}>
+          <Link style={{ textDecoration: 'none', cursor: 'pointer' }} className='styledSizeContainer'>
             Финансы
           </Link>
-          <Link style={{ textDecoration: 'none', cursor: 'pointer' }}>
+          <Link style={{ textDecoration: 'none', cursor: 'pointer' }} className='styledSizeContainer'>
             Заказы
           </Link>
         </Grid>
         <Grid item xs={12} sx={{ display: 'flex', flexDirection: 'row' }}>
-          <Link>Изменить профиль</Link>
+          <Link className='styledSizeContainer' style={{color: '#FF3600'}}>Изменить профиль</Link>
         </Grid>
       </Grid>
 

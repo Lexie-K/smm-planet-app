@@ -1,6 +1,6 @@
 import React from 'react';
-import TaskAltIcon from '@mui/icons-material/TaskAlt';
 import { Box } from '@mui/material';
+
 const MiddleInfo = () => {
   return (
     <section className="styledFirstContainer">
@@ -19,7 +19,12 @@ const MiddleInfo = () => {
             alignItems: 'center',
           }}
         >
-          <TaskAltIcon sx={{ fontSize: { xs: 'small', md: 'large' } }} />{' '}
+          {' '}
+          <img
+            className="styledImg"
+            src={require('./checkmark.png')}
+            alt="checkmark"
+          />
           <p>Поиск автора</p>
         </Box>
         <br></br>
@@ -31,7 +36,11 @@ const MiddleInfo = () => {
             alignItems: 'center',
           }}
         >
-          <TaskAltIcon sx={{ fontSize: { xs: 'small', md: 'large' } }} />{' '}
+          <img
+            className="styledImg"
+            src={require('./checkmark.png')}
+            alt="checkmark"
+          />{' '}
           <p>Открытие сообщества</p>
         </Box>
         <br></br>
@@ -43,7 +52,11 @@ const MiddleInfo = () => {
             alignItems: 'center',
           }}
         >
-          <TaskAltIcon sx={{ fontSize: { xs: 'small', md: 'large' } }} />{' '}
+          <img
+            className="styledImg"
+            src={require('./checkmark.png')}
+            alt="checkmark"
+          />{' '}
           <p>Захват контента</p>
         </Box>
         <br></br>
@@ -55,7 +68,11 @@ const MiddleInfo = () => {
             alignItems: 'center',
           }}
         >
-          <TaskAltIcon sx={{ fontSize: { xs: 'small', md: 'large' } }} />{' '}
+          <img
+            className="styledImg"
+            src={require('./checkmark.png')}
+            alt="checkmark"
+          />{' '}
           <p>Адаптация и подбор персонала</p>
         </Box>
         <br></br>
@@ -67,7 +84,11 @@ const MiddleInfo = () => {
             alignItems: 'center',
           }}
         >
-          <TaskAltIcon sx={{ fontSize: { xs: 'small', md: 'large' } }} />{' '}
+          <img
+            className="styledImg"
+            src={require('./checkmark.png')}
+            alt="checkmark"
+          />{' '}
           <p>Управляй этим</p>
         </Box>
       </section>

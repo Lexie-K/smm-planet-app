@@ -1,10 +1,10 @@
 import React from 'react';
 import { Grid } from '@mui/material';
 import { Link } from 'react-router-dom';
-
+import './StyledAdTable.scss';
 const AdMainTable = () => {
   return (
-    <div className="styledMainContainer">
+    <div className="styledAdMainContainer">
       <Grid
         container
         spacing={1}
@@ -18,14 +18,14 @@ const AdMainTable = () => {
           sx={{
             display: 'flex',
             flexDirection: 'row',
-            gap: { xs: 9, md: 10, lg: 17.5 },
+            gap: { xs: 9, md: 13.5, lg: 13.5 },
           }}
         >
           <Link style={{ textDecoration: 'none', cursor: 'pointer' }}>
             {' '}
             Блогер
           </Link>
-          <Link style={{ textDecoration: 'none', cursor: 'pointer' }}>
+          <Link style={{ textDecoration: 'none', cursor: 'pointer' }} className='styledAdTitle'>
             Рекламодатель
           </Link>
         </Grid>
@@ -35,10 +35,10 @@ const AdMainTable = () => {
           sx={{
             display: 'flex',
             flexDirection: 'row',
-            gap: { xs: 7.5, lg: 15 },
+            gap: { xs: 7.5, lg: 11.2 },
           }}
         >
-          <Link style={{ textDecoration: 'none', cursor: 'pointer' }}>
+          <Link style={{ textDecoration: 'none', cursor: 'pointer', color: '#FF3600'}}>
             Профиль
           </Link>
           <Link style={{ textDecoration: 'none', cursor: 'pointer' }}>
@@ -49,11 +49,11 @@ const AdMainTable = () => {
           </Link>
         </Grid>
         <Grid item xs={12} sx={{ display: 'flex', flexDirection: 'row' }}>
-          <Link>Изменить профиль</Link>
+          <Link style={{color: '#FF3600'}}>Изменить профиль</Link>
         </Grid>
       </Grid>
 
-      <div class="styledFinanceContainer">
+      <div class="styledAdAccountContainer">
         <p className="styledLabelFinanceInput">Рекламодатель</p>
         <div class="cell">
           <input type="text" className="styledFinanceForm" placeholder="" />

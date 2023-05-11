@@ -2,21 +2,21 @@
   width: 100%;
 }
 
-table tr td:first-child {
-  border: none;
-}
-table th:first-child {
-  border: none;
-  background-color: transparent;
-}
+// table tr td:first-child {
+//   border: none;
+// }
+// table th:first-child {
+//   border: none;
+//   background-color: transparent;
+// }
 
-table {
-  border: none;
-}
+// table {
+//   border: none;
+// }
 
-td {
-  padding: 5px 30px;
-}
+// td {
+//   padding: 5px 30px;
+// }
 
 .styledBottomCheckContainer {
   margin-left: 85px;
@@ -49,11 +49,11 @@ td {
   margin-top: 19px;
 }
 @media (max-width: 320px) {
-  th {
-    padding: 4px 7px;
-    font-weight: 700;
-    font-size: 12px;
-  }
+  // th {
+  //   padding: 4px 7px;
+  //   font-weight: 700;
+  //   font-size: 12px;
+  // }
   .styledBottomCheckContainer {
     display: none;
   }

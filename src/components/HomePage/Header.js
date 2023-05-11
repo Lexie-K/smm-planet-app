@@ -13,21 +13,21 @@ const Header = () => {
           display="flex"
           direction="row"
           gap={3.5}
-          alignItems="center"
-          sx={{ padding: { md: '9px 20px', xs: '22px 0px' } }}
+          alignItems="baseline"
+          sx={{ padding: { md: '9px 22px', xs: '14px 0px' } }}
         >
           {' '}
           <Link
             to="/afterauth/contactspage"
             style={{ textDecoration: 'none', cursor: 'pointer' }}
           >
-            <p className=".styledHiddenNavigation">Контакты</p>
+            <p className="styledHiddenNavigation">Контакты</p>
           </Link>
           <Link
             to="/afterauth/signuppage"
             style={{ textDecoration: 'none', cursor: 'pointer' }}
           >
-            <p className=".styledHiddenNavigation">Зарегистрироваться</p>
+            <p className="styledHiddenNavigation">Зарегистрироваться</p>
           </Link>
           <Link to="afterauth/loginpage">
             <button className="styledEnterBtn">Войти</button>

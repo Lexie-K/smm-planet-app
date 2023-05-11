@@ -12,7 +12,8 @@ const style = {
   height: { xs: '1.875rem', md: '2.875rem', lg: '2.875rem' },
   borderRadius: '20px',
   boxShadow: '2px 2px 10px 2px rgba(255, 54, 0, 0.25)',
-  margin: { xs: '1.438rem', md: '3.5rem 5rem' },
+  margin: { xs: '0px', md: '3.5rem 5rem' },
+  marginTop: {xs: '24px'},
   '@media(max-width:768px)': {
     minWidth: '100%',
   },
@@ -59,12 +60,11 @@ const SearchBar = () => {
         <Button
           type="button"
           sx={{
-            padding: { xs: '7px 18px', md: '16px 82px 12px 82px' },
-            textAlign: 'end',
+            padding: { xs: '7px 13px', md: '16px 80px 16px 78px' },
             color: 'white',
             backgroundColor: 'rgba(255, 54, 0, 0.8)',
             borderRadius: '20px',
-            fontSize: { xs: '14px', md: '18x', lg: '18px' },
+            fontSize: { xs: '14px', md: '14x', lg: '14px' },
             fontFamily: 'Roboto',
             fontWeight: 700,
           }}

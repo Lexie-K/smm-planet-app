@@ -9,7 +9,9 @@ const CheckBoxTablePage = () => {
       <SearchBar />
       <Filters />
       <CheckBoxTable />
-      <LowSection />
+      <div className="styledAccountfooter">
+        <LowSection />
+      </div>
     </>
   );
 };

@@ -10,7 +10,9 @@ const ChatPage = () => {
       <SearchBar />
       <Filters />
       <ChatTable />
-      <LowSection />
+      <div className="styledAccountfooter">
+        <LowSection />
+      </div>
     </>
   );
 };

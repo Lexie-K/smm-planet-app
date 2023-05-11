@@ -28,7 +28,7 @@ const LoginForm = ({ handleLogin }) => {
 
           <input
             name="password"
-            placeholder="пароль"
+            placeholder="Пароль"
             type="password"
             id="password"
             value={password}
@@ -37,20 +37,20 @@ const LoginForm = ({ handleLogin }) => {
           />
 
           <button className="styledLoginBtn">Войти</button>
-        </form>
-        <Box
+          <Box
           sx={{
             display: 'flex',
-            gap: { xs: 6, md: 8 },
+            gap: { xs: 6, md: 13 },
             alignItems: 'baseline',
-            justifyContent: 'space-around',
+            justifyContent: 'space-evenly',
+            
           }}
         >
           <Typography
             component="p"
             sx={{
               whiteSpace: 'nowrap',
-              fontSize: { md: '1.125rem', xs: '12px' },
+              fontSize: {lg: '18px', md: '18px', xs: '12px' },
               fontFamily: 'Roboto',
               color: '#0D0D0D',
             }}
@@ -59,6 +59,8 @@ const LoginForm = ({ handleLogin }) => {
           </Typography>
           <Link href="/*">{`Восстановить`}</Link>
         </Box>
+        </form>
+       
       </Box>
     </div>
   );

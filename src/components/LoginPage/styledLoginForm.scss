@@ -1,20 +1,20 @@
 @import '../../styles/variables';
 
 .styledForm {
-  // padding: 96px;
   background-color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   border-radius: 0.5rem;
+  padding: 88px;
 }
 
 .styledLoginFormSize {
   display: flex;
   flex-direction: column;
-  // justify-content: center;
   align-items: center;
+  padding: 41px;
 }
 .styledLoginTitle {
   color: $title-color-login-signup;
@@ -22,18 +22,24 @@
   font-weight: $second-text-weight;
   font-family: 'Roboto';
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  margin: 18px;
-  margin-bottom: 28px;
+}
+
+a {
+  font-weight: 400;
+  font-size: 18px;
 }
 
 .styledLogininput {
-  margin: 9px;
   background: #ffffff;
   border: 1px solid rgba(255, 54, 0, 0.7);
   box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
-  width: 320px;
+  width: 360px;
+  height: 33px;
+  margin-bottom: 32px;
   padding: 6px 30px;
+  font-weight: 400;
+  font-size: 18px;
 }
 
 .styledLoginBtn {
@@ -43,23 +49,19 @@
   cursor: pointer;
   background-color: $btns-font-color;
   color: $btns-text-color;
-  padding: 8px 55px;
-  margin-left: 9px;
+  padding: 9px 55px;
+
   border-radius: $border-radius-for-btns-select-input;
   font-size: $main-text-size;
   font-family: 'Roboto';
   align-self: flex-start;
-  margin-top: 25px;
-  margin-bottom: 25px;
+  margin-bottom: 30px;
 }
 .styledLogininput:focus {
   outline-color: rgba(255, 54, 0, 0.7);
 }
 
 @media (max-width: $bp-phone) {
-  .styledLogininput {
-    max-width: 221px;
-  }
   .styledLoginTitle {
     font-weight: 700;
     font-size: 18px;
@@ -68,17 +70,27 @@
   }
   .styledLogininput {
     margin: 5px;
+    font-weight: 400;
+    font-size: 12px;
+    width: 221px;
+    height: 30px;
   }
   .styledLoginBtn {
     padding: 9px 23px;
     font-weight: 700;
     font-size: 14px;
-    margin-top: 6px;
+    margin-top: 5.5px;
     margin-left: 5px;
-    margin-bottom: 25px;
+    margin-bottom: 26px;
   }
   a {
     font-weight: 400;
     font-size: 12px;
+  }
+  .styledForm {
+    padding: 1px;
+  }
+  .styledLoginFormSize {
+    padding: 0px;
   }
 }

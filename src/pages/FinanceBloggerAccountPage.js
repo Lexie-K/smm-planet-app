@@ -11,7 +11,10 @@ const FinanceBloggerAccountPage = () => {
       <SearchBar />
       <Filters />
       <FinanceTable />
-      <LowSection/>
+      <div className="styledAccountfooter">
+        {' '}
+        <LowSection />
+      </div>
     </>
   );
 };

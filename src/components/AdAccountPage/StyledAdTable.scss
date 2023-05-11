@@ -1,8 +1,20 @@
+@import '../../styles/variables.scss';
+
 .styledTableContainer {
-  background-color: aquamarine;
+  
   margin: 3rem;
   display: flex;
 }
+
+.styledAdMainContainer {
+  background: rgba(252, 225, 200, 0.65);
+  box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.25);
+  border-radius: 30px;
+  margin: 99px 49px;
+  padding: 20px 279px 30px 38px;
+}
+
+
 .styledAccountTitle {
   display: flex;
   gap: 10rem;
@@ -16,4 +28,38 @@
 .styledTable {
   margin: 1rem;
   padding: 1rem;
+}
+
+.styledAdAccountContainer {
+  display: grid;
+  grid-template-columns: 166px auto;
+  row-gap: 19px;
+  align-items: baseline;
+  margin-top: 38px;
+  font-weight: 400;
+  font-size: 18px;  
+}
+
+.styledAdTitle {
+  font-weight: 400;
+  font-size: 20px;  
+  color: #FF3600;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: $bp-tablet) {
+  
+  .styledAdMainContainer {
+    margin: 70px 0;
+    padding: 27px 10px 20px 10px;
+  }
+  .styledAdAccountContainer {
+    grid-template-columns: 110px auto;
+    margin-top: 10px;
+    row-gap: 10px;
+  }
+  .styledAdTitle {
+    font-weight: 400;
+    font-size: 12px;
+  }
 }

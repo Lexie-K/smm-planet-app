@@ -10,7 +10,9 @@ const OrdersAdAccountPage = () => {
       <SearchBar />
       <Filters />
       <AdOrderTable />
-      <LowSection />
+      <div className="styledAccountfooter">
+        <LowSection />
+      </div>
     </>
   );
 };
