@@ -56,7 +56,7 @@ const Filters = () => {
         sx={{
           display: 'flex',
           flexWrap: 'wrap',
-          margin: { xs: '0', md: '0 5rem' },
+          margin: { xs: '0', md: '0px 5rem' },
         }}
       >
         <Grid
@@ -64,9 +64,10 @@ const Filters = () => {
           xs={12}
           md={12}
           spacing={1}
+          columnSpacing={0.5}
           sx={{ justifyContent: 'space-around' }}
         >
-          <Grid item xs={5} md={2}>
+          <Grid item xs={5} md={2.1}>
             <Select
               fullWidth
               labelId="select-category"
@@ -81,6 +82,7 @@ const Filters = () => {
                 height: { xs: '1.625rem', md: '2.5rem', lg: '2.5rem' },
                 overflow: 'visible',
                 minWidth: '140px',
+                paddingLeft: '15px',
                 fontFamily: 'Roboto',
                 fontSize: { xs: '0.75rem', md: '1.125rem', lg: '1.125rem' },
               }}
@@ -93,7 +95,7 @@ const Filters = () => {
               ))}
             </Select>
           </Grid>
-          <Grid item xs={6} md={3}>
+          <Grid item xs={5} md={3.4}>
             <Select
               fullWidth
               labelId="select-brand"
@@ -107,7 +109,7 @@ const Filters = () => {
                 borderRadius: '20px',
                 minWidth: '140px',
                 height: { xs: '1.625rem', md: '2.5rem', lg: '2.5rem' },
-
+                paddingLeft: '15px',
                 fontSize: { xs: '0.75rem', md: '1.125rem', lg: '1.125rem' },
                 fontFamily: 'Roboto',
               }}
@@ -120,7 +122,7 @@ const Filters = () => {
               ))}
             </Select>
           </Grid>
-          <Grid item xs={4} md={1.5}>
+          <Grid item xs={4.4} md={1.9}>
             <Select
               fullWidth
               labelId="select-age"
@@ -137,6 +139,7 @@ const Filters = () => {
                 minWidth: '102px',
                 fontSize: { xs: '0.75rem', md: '1.125rem', lg: '1.125rem' },
                 fontFamily: 'Roboto',
+                paddingLeft: '15px',
               }}
             >
               <MenuItem value="" inputProps={{ shrink: false }}>
@@ -165,6 +168,7 @@ const Filters = () => {
                 fontSize: { xs: '0.75rem', md: '1.125rem', lg: '1.125rem' },
                 height: { xs: '1.625rem', md: '2.5rem', lg: '2.5rem' },
                 fontFamily: 'Roboto',
+                paddingLeft: '15px',
               }}
             >
               <MenuItem value="">Пол</MenuItem>
@@ -175,7 +179,7 @@ const Filters = () => {
               ))}
             </Select>
           </Grid>
-          <Grid item sx={4} md={2}>
+          <Grid item sx={3} md={2.2}>
             <Select
               fullWidth
               labelId="select-region"
@@ -191,6 +195,7 @@ const Filters = () => {
                 height: { xs: '1.625rem', md: '2.5rem', lg: '2.5rem' },
                 fontSize: { xs: '0.75rem', md: '1.125rem', lg: '1.125rem' },
                 fontFamily: 'Roboto',
+                paddingLeft: '15px',
               }}
               className="StyledSelectSize"
             >

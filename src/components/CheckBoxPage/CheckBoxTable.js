@@ -1,106 +1,250 @@
-import React from "react";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableHead,
-  TableRow,
-  Paper,
-  Checkbox
-} from '@mui/material';
+import React from 'react';
+import { Grid, Box } from '@mui/material';
+import { Link } from 'react-router-dom';
+import './StyledCheckBoxTable.scss';
 
-const styles = {
-  minWidth: 650,
-  "& .MuiTableCell-root": {
-    border: '1px solid black'
-  },
-  "& .MuiTableCell-root:first-child" : {
-    border: 'none'
-},
-
-};
-
-function createData(socialNetwork, blogger, topic, followers,posts,likes,emotion,postprice, followerprice) {
-  return { socialNetwork, blogger, topic, followers,posts,likes,emotion,postprice, followerprice};
+function createData(
+  socialNetwork,
+  blogger,
+  topic,
+  followers,
+  posts,
+  likes,
+  emotion,
+  postprice,
+  followerprice
+) {
+  return {
+    socialNetwork,
+    blogger,
+    topic,
+    followers,
+    posts,
+    likes,
+    emotion,
+    postprice,
+    followerprice,
+  };
 }
 
 const rows = [
-  createData('TikTok', 'A','food', '100', '200','200', "happiness (30%)", '100', '1'),
-  createData('TikTok', 'B','food', '100', '200','200', "happiness (30%)", '100', '1'),
-  createData('TikTok', 'C','food', '100', '200','200', "happiness (30%)", '100', '1'),
-  createData('TikTok', 'D','food', '100', '200','200', "happiness (30%)", '100', '1'),
-  createData('TikTok', 'E','food', '100', '200','200', "happiness (30%)", '100', '1'),
-  createData('TikTok', 'F','food', '100', '200','200', "happiness (30%)", '100', '1'),
-  createData('TikTok', 'G','food', '100', '200','200', "happiness (30%)", '100', '1'),
-  createData('TikTok', 'H','food', '100', '200','200', "happiness (30%)", '100', '1'),
-  createData('TikTok', 'I','food', '100', '200','200', "happiness (30%)", '100', '1'),
+  createData(
+    'TikTok',
+    'A',
+    'food',
+    '100',
+    '200',
+    '200',
+    'happiness (30%)',
+    '100',
+    '1'
+  ),
+  createData(
+    'TikTok',
+    'B',
+    'food',
+    '100',
+    '200',
+    '200',
+    'happiness (30%)',
+    '100',
+    '1'
+  ),
+  createData(
+    'TikTok',
+    'C',
+    'food',
+    '100',
+    '200',
+    '200',
+    'happiness (30%)',
+    '100',
+    '1'
+  ),
+  createData(
+    'TikTok',
+    'D',
+    'food',
+    '100',
+    '200',
+    '200',
+    'happiness (30%)',
+    '100',
+    '1'
+  ),
+  createData(
+    'TikTok',
+    'E',
+    'food',
+    '100',
+    '200',
+    '200',
+    'happiness (30%)',
+    '100',
+    '1'
+  ),
+  createData(
+    'TikTok',
+    'F',
+    'food',
+    '100',
+    '200',
+    '200',
+    'happiness (30%)',
+    '100',
+    '1'
+  ),
+  createData(
+    'TikTok',
+    'G',
+    'food',
+    '100',
+    '200',
+    '200',
+    'happiness (30%)',
+    '100',
+    '1'
+  ),
+  createData(
+    'TikTok',
+    'H',
+    'food',
+    '100',
+    '200',
+    '200',
+    'happiness (30%)',
+    '100',
+    '1'
+  ),
+  createData(
+    'TikTok',
+    'I',
+    'food',
+    '100',
+    '200',
+    '200',
+    'happiness (30%)',
+    '100',
+    '1'
+  ),
+];
+
+const thTitle = [
+  'выбрать всех',
+  'Соцсеть',
+  'Блогер',
+  'Тематика',
+  'Подписчики',
+  'Кол-во постов',
+  'Кол-во лайков',
+  'Преобладающая эмоция',
+  'Цена за пост, руб',
+  'Цена за подписчика, руб',
 ];
 
 const CheckBoxTable = () => {
   return (
     <>
-    <TableContainer component={Paper} elevation={0}>
-      <Table sx={styles} aria-label="simple table">
-        <TableHead>
-          <TableRow>
-          <TableCell align="center" colSpan={1}>
-              выбрать всех
-            </TableCell>
-            <TableCell align="center" colSpan={1}>
-              Соцсеть
-            </TableCell>
-            <TableCell align="center" colSpan={1}>
-             Блогер
-            </TableCell>
-            <TableCell align="center" colSpan={1}>
-              Тематика
-            </TableCell>
-            <TableCell align="center" colSpan={1}>
-              Подписчики
-            </TableCell>
-            <TableCell align="center" colSpan={1}>
-              Кол-во постов
-            </TableCell>
-            <TableCell align="center" colSpan={1}>
-              Кол-во лайков
-            </TableCell>
-            <TableCell align="center" colSpan={1}>
-              Преобладающая эмоция
-            </TableCell>
-            <TableCell align="center" colSpan={1}>
-              Цена за пост, руб
-            </TableCell>
-            <TableCell align="center" colSpan={1}>
-              Цена за подписчика, руб
-            </TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {rows.map(row => (
-            <TableRow key={row.name}>
-              {/* <TableCell component="th" scope="row">
-                {row.name}
-              </TableCell> */}
-              <Checkbox/>
-              <TableCell align="center">{row.socialNetwork}</TableCell>
-              <TableCell align="center">{row.blogger}</TableCell>
-              <TableCell align="center">{row.topic}</TableCell>
-              <TableCell align="center">{row.followers}</TableCell>
-              <TableCell align="center">{row.posts}</TableCell>
-              <TableCell align="center">{row.likes}</TableCell>
-              <TableCell align="center">{row.emotion}</TableCell>
-              <TableCell align="center">{row.postprice}</TableCell>
-              <TableCell align="center">{row.followerprice}</TableCell>
-              
-
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
-    <div style={{display:"inline", padding:"1rem"}}>Сумма заказа</div><div style={{display:"inline"}}>30 000 руб.</div>
-    <button style={{display:"block", padding:"1rem"}}>Заказать</button>
+      <Box
+        component="form"
+        autoComplete="off"
+        sx={{
+          padding: {
+            xs: '1.688rem 0.625rem',
+            md: '2.5rem 2.375rem',
+            lg: '2.5rem 2.375rem',
+          },
+          margin: {
+            lg: '6.25rem 3.063rem',
+            md: '6.25rem 3.063rem',
+            xs: '4.375rem 0 3.125rem 0',
+          },
+          background: 'rgba(252, 225, 200, 0.65)',
+          boxShadow: '5px 5px 7px rgb(0 0 0 / 25%)',
+          borderRadius: '30px',
+          overflow: 'scroll',
+        }}
+      >
+        <Grid
+          container
+          spacing={1}
+          sx={{ fontSize: { xs: '0.75rem', md: '1.125rem', lg: '1.125rem' } }}
+        >
+          <Grid
+            item
+            xs={12}
+            sx={{
+              display: 'flex',
+              flexDirection: 'row',
+              gap: { xs: 9, md: 10, lg: 17.5 },
+            }}
+          >
+            <Link style={{ textDecoration: 'none', cursor: 'pointer' }}>
+              {' '}
+              Блогер
+            </Link>
+            <Link style={{ textDecoration: 'none', cursor: 'pointer' }}>
+              Рекламодатель
+            </Link>
+          </Grid>
+          <Grid
+            item
+            xs={12}
+            sx={{
+              display: 'flex',
+              flexDirection: 'row',
+              gap: { xs: 7.5, lg: 15 },
+            }}
+          >
+            <Link style={{ textDecoration: 'none', cursor: 'pointer' }}>
+              Профиль
+            </Link>
+            <Link style={{ textDecoration: 'none', cursor: 'pointer' }}>
+              Финансы
+            </Link>
+            <Link style={{ textDecoration: 'none', cursor: 'pointer' }}>
+              Заказы
+            </Link>
+          </Grid>
+        </Grid>
+        <br />
+        <table className="styledCheckBoxTable">
+          <thead className="styledOrderTable">
+            <tr>
+              {thTitle.map((title, index) => (
+                <th scope="col" value={title} key={index}>
+                  {title}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((row, index) => (
+              <>
+                <tr>
+                  <td key={index}>
+                    <input type="checkbox" className="styledCheckbox" />
+                  </td>
+                  <td key={index}>{row.socialNetwork}</td>
+                  <td key={index}>{row.blogger}</td>
+                  <td key={index}>{row.topic}</td>
+                  <td key={index}>{row.followers}</td>
+                  <td key={index}>{row.posts}</td>
+                  <td key={index}>{row.likes}</td>
+                  <td key={index}>{row.emotion}</td>
+                  <td key={index}>{row.postprice}</td>
+                  <td key={index}>{row.followerprice}</td>
+                </tr>
+              </>
+            ))}
+          </tbody>
+        </table>
+        <section className="styledBottomCheckContainer">
+          <div className="styledAmountTitle">Сумма заказа</div>
+          <div className="styledTotalTitle">40 000 руб.</div>
+          <button className="styledOrderBtn">Заказать</button>
+        </section>
+      </Box>
     </>
   );
 };

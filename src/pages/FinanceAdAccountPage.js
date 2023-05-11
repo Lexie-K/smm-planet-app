@@ -2,17 +2,17 @@ import React from 'react';
 import SearchBar from '../components/HomePage/SearchBar';
 import Filters from '../components/HomePage/Filters';
 import LowSection from '../components/HomePage/LowSection';
-import AcceptanceTable from '../components/AcceptanceTable';
+import AdFinanceTable from '../components/AdAccountPage/AdFinanceTable';
 
-const AcceptancePage = () => {
+const FinanceAdAccountPage = () => {
   return (
     <>
       <SearchBar />
       <Filters />
-      <AcceptanceTable />
+      <AdFinanceTable />
       <LowSection />
     </>
   );
 };
 
-export default AcceptancePage;
+export default FinanceAdAccountPage;

@@ -1,34 +1,22 @@
-import React from "react";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableHead,
-  TableRow,
-  Paper,
-  Box
-} from '@mui/material';
+import React from 'react';
+import { Box } from '@mui/material';
+import './StyledAdminTable.scss';
 
-const style = {
-  "& .MuiTableCell-root": {
-    border: '1px solid black'
-  }
-};
 function createData(company, blogger, finance, chat) {
   return { company, blogger, finance, chat };
 }
 
 const rows = [
-  createData('Компания 1', 'A','100', 'chat'),
-  createData('Компания 2', 'B','200', 'chat'),
-  createData('Компания 3', 'C','300', 'chat'),
+  createData('Компания 1', 'A', '100', 'chat'),
+  createData('Компания 2', 'B', '200', 'chat'),
+  createData('Компания 3', 'C', '300', 'chat'),
 ];
+const thTitle = ['Рекламодатели', 'Блогеры', 'Финансы', 'Чат'];
 
 const AdminPage = () => {
   return (
-  <div>
-    <Box
+    <>
+      <Box
         component="form"
         autoComplete="off"
         sx={{
@@ -42,58 +30,38 @@ const AdminPage = () => {
             md: '6.25rem 3.063rem',
             xs: '4.375rem 0 3.125rem 0',
           },
-          background: 'rgba(255, 118, 0, 0.2)',
-          borderRadius: '1.875rem',
+          background: 'rgba(252, 225, 200, 0.65)',
+          boxShadow: '5px 5px 7px rgb(0 0 0 / 25%)',
+          borderRadius: '30px',
         }}
       >
-        <p>Статистика</p>
-    <TableContainer >
-      <Table sx={style} size="small"  padding="none" aria-label="simple table">
-        <TableHead>
-          <TableRow sx={{
-                  backgroundColor: '#F09E56',
-                  borderBottom: '2px solid black',
-                  borderColumn: 'grey',
-                  '& th': {
-                    fontSize: { md: '1.125rem', lg: '1.125rem', xs: '0.75rem' },
-                    color: '#0D0D0D',
-                    fontFamily: 'Roboto',
-                    fontWeight: { xs: '700', md: '400', lg: '400' },
-                  },
-                }}>
-            <TableCell align="center" colSpan={1} >
-              Рекламодатели
-            </TableCell>
-            <TableCell align="center" colSpan={1}>
-              Блогеры
-            </TableCell>
-            <TableCell align="center" colSpan={1}>
-              Финансы
-            </TableCell>
-            <TableCell align="center" colSpan={1}>
-              Чат
-            </TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {rows.map(row => (
-            <TableRow key={row.name}>
-              <TableCell align="center">{row.company}</TableCell>
-              <TableCell align="center">{row.blogger}</TableCell>
-              <TableCell align="center">{row.finance}</TableCell>
-              <TableCell align="center">{row.chat}</TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
-
+        <h4 className="styledTitle">Статистика</h4>
+        <table className="styledAdminTable">
+          <thead>
+            {thTitle.map((title, index) => (
+              <tr>
+                <th value={title} key={index} rowSpan={4}>
+                  {title}
+                </th>
+              </tr>
+            ))}
+          </thead>
+          <tbody>
+            {rows.map((row, index) => (
+              <>
+                <tr colSpan={4}>
+                  <td key={index}>{row.company}</td>
+                  <td key={index}>{row.blogger}</td>
+                  <td key={index}>{row.finance}</td>
+                  <td key={index}>{row.chat}</td>
+                </tr>
+              </>
+            ))}
+          </tbody>
+        </table>
       </Box>
-
-    
-  </div>
-  
-  )
+    </>
+  );
 };
 
 export default AdminPage;

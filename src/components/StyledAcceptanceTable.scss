@@ -1,0 +1,53 @@
+.styledOrderTable {
+  width: 100%;
+}
+
+.styledBottomContainer {
+  margin-top: 11px;
+}
+.styledAllTitle {
+  display: inline;
+  margin-right: 27rem;
+  font-weight: 700;
+  font-size: 18px;
+}
+.styledTotalSumTitle {
+  display: inline;
+  border: 1px solid rgba(240, 158, 86, 0.58);
+  border-radius: 10px;
+  padding: 4px 11px 5px 9px;
+  font-weight: 700;
+  font-size: 18px;
+}
+.styledAcceptBtn {
+  display: block;
+  appearance: none;
+  background: #f09e56;
+  border: 1px solid rgba(240, 158, 86, 0.58);
+  border-radius: 10px;
+  padding: 4px 12px 5px 12px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 29px;
+}
+
+th {
+  padding: 5px 6px;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+@media (max-width: 320px) {
+  th {
+    padding: 4px 7px;
+    font-weight: 700;
+    font-size: 12px;
+  }
+  .styledBottomContainer {
+    display: none;
+  }
+  .styledAcceptBtn {
+    display: none;
+  }
+}

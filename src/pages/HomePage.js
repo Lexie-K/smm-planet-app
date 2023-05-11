@@ -15,16 +15,20 @@ const HomePage = () => {
         <SearchBar />
         <Filters />
         <div className="container">
-          <Box sx={{ marginLeft:{xs:'0px', md:'5rem'}, marginTop:{xs:'-1.25rem', md:'-1.875rem', lg:'-1.875rem'}}}>
-            <div>
+          <Box
+            sx={{
+              marginLeft: { xs: '0px', md: '5rem' },
+              marginTop: { xs: '0px', md: '-1.875rem', lg: '-1.875rem' },
+              marginBottom: { xs: '0px' },
+            }}
+          >
             <MiddleInfo />
+
+            <div className="footer">
+              <LowSection />
             </div>
-            <div className='footer'><LowSection /></div>
-            
           </Box>
-         
         </div>
-        
       </main>
     </>
   );

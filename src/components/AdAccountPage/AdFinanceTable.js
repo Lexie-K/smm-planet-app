@@ -2,7 +2,7 @@ import React from 'react';
 import { Grid } from '@mui/material';
 import { Link } from 'react-router-dom';
 
-const AdMainTable = () => {
+const AdFinanceTable = () => {
   return (
     <div className="styledMainContainer">
       <Grid
@@ -48,37 +48,42 @@ const AdMainTable = () => {
             Заказы
           </Link>
         </Grid>
-        <Grid item xs={12} sx={{ display: 'flex', flexDirection: 'row' }}>
-          <Link>Изменить профиль</Link>
-        </Grid>
       </Grid>
 
       <div class="styledFinanceContainer">
-        <p className="styledLabelFinanceInput">Рекламодатель</p>
+        <p className="styledLabelFinanceInput">Период</p>
         <div class="cell">
-          <input type="text" className="styledFinanceForm" placeholder="" />
+          <input
+            type="text"
+            className="styledFinanceForm"
+            placeholder="с начала года"
+          />
         </div>
-        <p className="styledLabelFinanceInput">ИНН</p>
+        <p className="styledLabelFinanceInput">Приход</p>
         <div class="cell">
-          <input type="text" className="styledFinanceForm" placeholder="" />
+          <input
+            type="text"
+            className="styledFinanceForm"
+            placeholder="6 600 руб"
+          />
         </div>
-        <p className="styledLabelFinanceInput">Адрес</p>
+        <p className="styledLabelFinanceInput">Расход</p>
         <div class="cell">
-          <input type="text" className="styledFinanceForm" placeholder="" />
+          <input
+            type="text"
+            className="styledFinanceForm"
+            placeholder="5 450 руб"
+          />
         </div>
-        <p className="styledLabelFinanceInput">Телефон</p>
+        <p className="styledLabelFinanceInput">Баланс</p>
         <div class="cell">
-          <input type="text" className="styledFinanceForm" placeholder="" />
+          <input
+            type="text"
+            className="styledFinanceForm"
+            placeholder="1 150 руб"
+          />
         </div>
-        <p className="styledLabelFinanceInput">E-mail</p>
-        <div class="cell">
-          <input type="text" className="styledFinanceForm" />
-        </div>
-        <p className="styledLabelFinanceInput">Website</p>
-        <div class="cell">
-          <input type="text" className="styledFinanceForm" />
-        </div>
-        <p className="styledLabelFinanceInput">Сменить пароль</p>
+        <p className="styledLabelFinanceInput">Оплатить</p>
         <div class="cell">
           <input type="text" className="styledFinanceForm" />
         </div>
@@ -87,4 +92,4 @@ const AdMainTable = () => {
   );
 };
 
-export default AdMainTable;
+export default AdFinanceTable;

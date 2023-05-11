@@ -1,23 +1,7 @@
 import React from 'react';
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableHead,
-  TableRow,
-  Paper,
-  Box,
-  Grid,
-} from '@mui/material';
+import { Box, Grid } from '@mui/material';
 import { Link } from 'react-router-dom';
-
-const style = {
-  minWidth: 650,
-  '& .MuiTableCell-root': {
-    border: '1px solid black',
-  },
-};
+import './StyledAdOrders.scss';
 
 function createData(company, budget, date, socialNetwork, status) {
   return { company, budget, date, socialNetwork, status };
@@ -34,6 +18,13 @@ const rows = [
   createData('Заказ 2', '200', '03.01.2022', 'TikTok', '100%'),
   createData('Заказ 3', '500', '02.01.2022', 'TikTok', '100%'),
   createData('Заказ 3', '500', '02.01.2022', 'TikTok', '100%'),
+];
+const thTitle = [
+  'Название компании',
+  'Бюджет',
+  'Дата',
+  'Соцсеть',
+  'Статус исполнения',
 ];
 
 const AdOrderTable = () => {
@@ -53,8 +44,10 @@ const AdOrderTable = () => {
             md: '6.25rem 3.063rem',
             xs: '4.375rem 0 3.125rem 0',
           },
-          background: 'rgba(255, 118, 0, 0.2)',
-          borderRadius: '1.875rem',
+          background: 'rgba(252, 225, 200, 0.65)',
+          boxShadow: '5px 5px 7px rgb(0 0 0 / 25%)',
+          borderRadius: '30px',
+          overflow: 'scroll',
         }}
       >
         <Grid
@@ -98,47 +91,39 @@ const AdOrderTable = () => {
               Заказы
             </Link>
           </Grid>
-          <Grid item xs={12} sx={{ display: 'flex', flexDirection: 'row' }}>
-            <Link>Изменить профиль</Link>
+          <Grid
+            item
+            xs={1.5}
+            sx={{ display: 'flex', flexDirection: 'row', whiteSpace: 'wrap' }}
+          >
+            <Link>Разместить новый заказ</Link>
           </Grid>
         </Grid>
-        <TableContainer component={Paper}>
-          <Table sx={style} aria-label="simple table">
-            <TableHead>
-              <TableRow>
-                <TableCell align="center" colSpan={1}>
-                  Название компании
-                </TableCell>
-                <TableCell align="center" colSpan={1}>
-                  Бюджет
-                </TableCell>
-                <TableCell align="center" colSpan={1}>
-                  Дата
-                </TableCell>
-                <TableCell align="center" colSpan={1}>
-                  Соцсеть
-                </TableCell>
-                <TableCell align="center" colSpan={1}>
-                  Статус исполнения
-                </TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {rows.map(row => (
-                <TableRow key={row.name}>
-                  {/* <TableCell component="th" scope="row">
-                {row.name}
-              </TableCell> */}
-                  <TableCell align="center">{row.company}</TableCell>
-                  <TableCell align="center">{row.budget}</TableCell>
-                  <TableCell align="center">{row.date}</TableCell>
-                  <TableCell align="center">{row.socialNetwork}</TableCell>
-                  <TableCell align="center">{row.status}</TableCell>
-                </TableRow>
+        <br />
+        <table className="styledAdOrderTable">
+          <thead className="styledOrderTable">
+            <tr>
+              {thTitle.map((title, index) => (
+                <th scope="col" value={title} key={index}>
+                  {title}
+                </th>
               ))}
-            </TableBody>
-          </Table>
-        </TableContainer>
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((row, index) => (
+              <>
+                <tr>
+                  <td key={index}>{row.company}</td>
+                  <td key={index}>{row.budget}</td>
+                  <td key={index}>{row.date}</td>
+                  <td key={index}>{row.socialNetwork}</td>
+                  <td key={index}>{row.status}</td>
+                </tr>
+              </>
+            ))}
+          </tbody>
+        </table>
       </Box>
     </>
   );

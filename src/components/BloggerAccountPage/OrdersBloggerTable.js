@@ -1,21 +1,7 @@
 import React from 'react';
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableHead,
-  TableRow,
-  Box,
-  Grid,
-} from '@mui/material';
+import { Box, Grid } from '@mui/material';
+import './StyledOrderTable.scss';
 import { Link } from 'react-router-dom';
-
-const style = {
-  '& .MuiTableCell-root': {
-    border: '1px solid black',
-  },
-};
 
 function createData(
   company,
@@ -133,6 +119,17 @@ const rows = [
   ),
 ];
 
+const thTitle = [
+  'Заказчик',
+  'Задание',
+  'Соцсеть',
+  'Регион',
+  'Сумма',
+  'Срок',
+  'Статус',
+  'Чат',
+];
+
 const OrdersBloggerTable = () => {
   return (
     <>
@@ -150,8 +147,10 @@ const OrdersBloggerTable = () => {
             md: '6.25rem 3.063rem',
             xs: '4.375rem 0 3.125rem 0',
           },
-          background: 'rgba(255, 118, 0, 0.2)',
-          borderRadius: '1.875rem',
+          background: 'rgba(252, 225, 200, 0.65)',
+          boxShadow: '5px 5px 7px rgb(0 0 0 / 25%)',
+          borderRadius: '30px',
+          overflow: 'scroll',
         }}
       >
         <Grid
@@ -200,74 +199,33 @@ const OrdersBloggerTable = () => {
           </Grid>
         </Grid>
         <br />
-       
-        <TableContainer>
-          <Table sx={style} size="small" padding="none" aria-label="simple table">
-            <TableHead>
-              <TableRow
-                sx={{
-                  backgroundColor: '#F09E56',
-                  borderBottom: '2px solid black',
-                  borderColumn: 'grey',
-                  '& th': {
-                    fontSize: { md: '1.125rem', lg: '1.125rem', xs: '0.75rem' },
-                    color: '#0D0D0D',
-                    fontFamily: 'Roboto',
-                    fontWeight: { xs: '700', md: '400', lg: '400' },
-                  },
-                }}
-              >
-                <TableCell
-                  sx={{
-                    border: '2px solid black',
-                  }}
-                  align="center"
-                  colSpan={1}
-                >
-                  Заказчик
-                </TableCell>
-                <TableCell align="center" colSpan={1}>
-                  Задание
-                </TableCell>
-                <TableCell align="center" colSpan={1}>
-                  Соцсеть
-                </TableCell>
-                <TableCell align="center" colSpan={1}>
-                  Регион
-                </TableCell>
-                <TableCell align="center" colSpan={1}>
-                  Сумма
-                </TableCell>
-                <TableCell align="center" colSpan={1}>
-                  Срок
-                </TableCell>
-                <TableCell align="center" colSpan={1}>
-                  Статус
-                </TableCell>
-                <TableCell align="center" colSpan={1}>
-                  Чат
-                </TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {rows.map(row => (
-                <TableRow key={row.name}>
-                  {/* <TableCell component="th" scope="row">
-                {row.name}
-              </TableCell> */}
-                  <TableCell align="center">{row.company}</TableCell>
-                  <TableCell align="center">{row.task}</TableCell>
-                  <TableCell align="center">{row.socialNetwork}</TableCell>
-                  <TableCell align="center">{row.region}</TableCell>
-                  <TableCell align="center">{row.money}</TableCell>
-                  <TableCell align="center">{row.date}</TableCell>
-                  <TableCell align="center">{row.status}</TableCell>
-                  <TableCell align="center">{row.chat}</TableCell>
-                </TableRow>
+        <table className="styledOrderTable">
+          <thead className="styledOrderTable">
+            <tr>
+              {thTitle.map((title, index) => (
+                <th scope="col" value={title} key={index} rowSpan={8}>
+                  {title}
+                </th>
               ))}
-            </TableBody>
-          </Table>
-        </TableContainer>
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((row, index) => (
+              <>
+                <tr colSpan={8}>
+                  <td key={index}>{row.company}</td>
+                  <td key={index}>{row.task}</td>
+                  <td key={index}>{row.socialNetwork}</td>
+                  <td key={index}>{row.region}</td>
+                  <td key={index}>{row.money}</td>
+                  <td key={index}>{row.date}</td>
+                  <td key={index}>{row.status}</td>
+                  <td key={index}>{row.chat}</td>
+                </tr>
+              </>
+            ))}
+          </tbody>
+        </table>
       </Box>
     </>
   );

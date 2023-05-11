@@ -23,25 +23,17 @@
   font-size: $middle-sub-title--size;
   font-weight: $main-text-weight;
   text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  padding-bottom: 77px;
 }
 .styledfooterContainerPoints {
   display: flex;
   justify-content: flex-start;
-  column-gap: 20px;
+  column-gap: 70px;
   white-space: nowrap;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
 
-@media (max-width: $bp-phone) {
-  .styledFormSize {
-    max-width: 320px;
-  }
-  .container {
-    margin-right: -200px;
-    padding-top: 76px;
-    max-width: 260px;
-    padding-right: 100px;
-  }
+  margin-top: 120px;
+  margin-bottom: 30px;
 }
 
 .styledMainPoints {
@@ -59,13 +51,94 @@
   background-repeat: no-repeat;
   background-position: right;
   background-size: contain;
-  margin-top: -60px;
-  padding-top: 174px;
+  margin-top: -54px;
+  padding-top: 280px;
   align-items: stretch;
-  height: 100vh;
+  height: 100%;
+  padding-bottom: 30px;
 }
 
+.styledShowAccountsContainer {
+  margin: 92px 80px;
+}
+
+.styledCardText {
+  font-size: 18px;
+  line-height: 1.7;
+}
 .footer {
-  position: absolute;
-  bottom: 0;
+  position: fixed;
+  bottom: 0px;
+  // margin-left: 0px;
+}
+
+
+
+@media (max-width: $bp-phone) {
+  .styledCardText {
+    font-size: 12px;
+  }
+  .styledShowAccountsContainer {
+    margin: 0px;
+    margin-top: 52px;
+  }
+}
+
+@media (max-width: $bp-tablet) {
+  .styledCardText {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: $bp-phone) {
+  .styledFormSize {
+    max-width: 320px;
+  }
+  .container {
+    margin-right: -200px;
+    padding-top: 122px;
+    padding-right: 100px;
+  }
+  .styledfooterContainerPoints {
+    margin-left: 0px;
+    margin-top: 60px;
+    column-gap: 20px;
+    margin-bottom: 20px;
+  }
+  .styledMiddleTitle {
+    font-size: 20px;
+    font-weight: 400;
+  }
+  .styledSubMiddleTitle {
+    font-weight: 400;
+    font-size: 14px;
+    white-space: nowrap;
+  }
+  .styledMainPoints {
+    font-weight: 400;
+    font-size: 12px;
+    white-space: wrap;
+    width: 200px;
+    line-height: 1;
+  }
+  .container {
+    margin-top: -24px;
+    padding-top: 95px;
+    align-items: stretch;
+    height: 100vh;
+    flex-direction: column;
+    background-size: contain;
+    // background-position:
+    max-width: 100%;
+    padding-bottom: 20px;
+    background-image: url(../../assets/mainpicmobile.png);
+  }
+  .footer {
+    position: fixed;
+    bottom: 0px;
+    margin-left: 0px;
+  }
+  .styledSubMiddleTitle {
+    padding-bottom: 22px;
+  }
 }

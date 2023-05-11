@@ -15,6 +15,8 @@ import FinanceBloggerAccountPage from './pages/FinanceBloggerAccountPage';
 import OrdersBloggerAccountPage from './pages/OrdersBloggerAccountPage';
 import OrdersAdAccountPage from './pages/OrdersAdAccountPage';
 import CreateOrder from './pages/CreateOrder';
+import FinanceAdAccountPage from './pages/FinanceAdAccountPage';
+
 
 function App() {
   return (
@@ -29,11 +31,12 @@ function App() {
         <Route path="/account/finance" element={<FinanceBloggerAccountPage/>} />
         <Route path="/account/orders" element={<OrdersBloggerAccountPage/>} />
         <Route path="/adaccountpage" element={<AdAccountPage />} />
+        <Route path="/adaccountpage/finance" element={<FinanceAdAccountPage />} />
         <Route path="/adaccountpage/orders" element={<OrdersAdAccountPage />} />
         <Route path="/adaccountpage/createorder" element={<CreateOrder />} />
         <Route path="/contactspage" element={<ContactsPage />} />
         <Route path="/adminpage" element={<AdminPage />} />
-        <Route path="/checkboxtablepage" element={<CheckBoxTablePage />} />
+        <Route path="/checkboxpage" element={<CheckBoxTablePage />} />
         <Route path="/acceptancepage" element={<AcceptancePage />} />
         <Route path="/chatpage" element={<ChatPage />} />
         <Route path="*" element={<PageNotFound />} />

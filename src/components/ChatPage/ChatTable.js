@@ -1,24 +1,14 @@
 import React from 'react';
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableHead,
-  TableRow,
-  Paper,
-  Checkbox,
-} from '@mui/material';
-import { TextareaAutosize } from '@mui/base';
+import { Box, Grid, TextareaAutosize } from '@mui/material';
+import { Link } from 'react-router-dom';
+import './StyledChatTable.scss';
 
 const styles = {
-  minWidth: 650,
-  '& .MuiTableCell-root': {
-    border: '1px solid black',
+  '@media(max-width:320px)': {
+    height: '50px',
+    maxColumns: 100,
   },
-
 };
-
 
 function createData(
   socialNetwork,
@@ -61,81 +51,148 @@ const rows = [
   ),
 ];
 
+const thTitle = [
+  'Соцсеть',
+  'Блогер',
+  'Тематика',
+  'Подписчики',
+  'Кол-во постов',
+  'Кол-во лайков',
+  'Преобладающая эмоция',
+  'Цена за подписчика, руб',
+  'Ссылка на пост',
+  'Принять все',
+];
+
 const ChatTable = () => {
   return (
     <>
-      <TableContainer component={Paper} elevation={0}>
-        <Table sx={styles} aria-label="simple table">
-          <TableHead>
-            <TableRow>
-              <TableCell align="center" colSpan={1}>
-                Соцсеть
-              </TableCell>
-              <TableCell align="center" colSpan={1}>
-                Блогер
-              </TableCell>
-              <TableCell align="center" colSpan={1}>
-                Тематика
-              </TableCell>
-              <TableCell align="center" colSpan={1}>
-                Подписчики
-              </TableCell>
-              <TableCell align="center" colSpan={1}>
-                Кол-во постов
-              </TableCell>
-              <TableCell align="center" colSpan={1}>
-                Кол-во лайков
-              </TableCell>
-              <TableCell align="center" colSpan={1}>
-                Преобладающая эмоция
-              </TableCell>
-              <TableCell align="center" colSpan={1}>
-                Цена за подписчика, руб
-              </TableCell>
-              <TableCell align="center" colSpan={1}>
-                Ссылка на пост
-              </TableCell>
-
-              <TableCell align="center" colSpan={1}>
-                Принять все
-              </TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {rows.map(row => (
-              <TableRow key={row.name}>
-                {/* <TableCell component="th" scope="row">
-                {row.name}
-              </TableCell> */}
-
-                <TableCell align="center">{row.socialNetwork}</TableCell>
-                <TableCell align="center">{row.blogger}</TableCell>
-                <TableCell align="center">{row.topic}</TableCell>
-                <TableCell align="center">{row.followers}</TableCell>
-                <TableCell align="center">{row.posts}</TableCell>
-                <TableCell align="center">{row.likes}</TableCell>
-                <TableCell align="center">{row.emotion}</TableCell>
-                <TableCell align="center">{row.followerprice}</TableCell>
-                <TableCell align="center">{row.link}</TableCell>
-                <TableCell align="center">
-                  <Checkbox />
-                </TableCell>
-              </TableRow>
+      <Box
+        component="form"
+        autoComplete="off"
+        sx={{
+          padding: {
+            xs: '1.688rem 0.625rem',
+            md: '2.5rem 2.375rem',
+            lg: '2.5rem 2.375rem',
+          },
+          margin: {
+            lg: '6.25rem 3.063rem',
+            md: '6.25rem 3.063rem',
+            xs: '4.375rem 0 3.125rem 0',
+          },
+          background: 'rgba(252, 225, 200, 0.65)',
+          boxShadow: '5px 5px 7px rgb(0 0 0 / 25%)',
+          borderRadius: '30px',
+          overflow: 'scroll',
+        }}
+      >
+        <Grid
+          container
+          spacing={1}
+          sx={{ fontSize: { xs: '0.75rem', md: '1.125rem', lg: '1.125rem' } }}
+        >
+          <Grid
+            item
+            xs={12}
+            sx={{
+              display: 'flex',
+              flexDirection: 'row',
+              gap: { xs: 9, md: 10, lg: 17.5 },
+            }}
+          >
+            <Link style={{ textDecoration: 'none', cursor: 'pointer' }}>
+              {' '}
+              Блогер
+            </Link>
+            <Link style={{ textDecoration: 'none', cursor: 'pointer' }}>
+              Рекламодатель
+            </Link>
+          </Grid>
+          <Grid
+            item
+            xs={12}
+            sx={{
+              display: 'flex',
+              flexDirection: 'row',
+              gap: { xs: 7.5, lg: 15 },
+            }}
+          >
+            <Link style={{ textDecoration: 'none', cursor: 'pointer' }}>
+              Профиль
+            </Link>
+            <Link style={{ textDecoration: 'none', cursor: 'pointer' }}>
+              Финансы
+            </Link>
+            <Link style={{ textDecoration: 'none', cursor: 'pointer' }}>
+              Заказы
+            </Link>
+          </Grid>
+        </Grid>
+        <br />
+        <table className="styledOrderTable">
+          <thead className="styledOrderTable">
+            <tr>
+              {thTitle.map((title, index) => (
+                <th
+                  scope="col"
+                  key={index}
+                  rowSpan={10}
+                  className="styledTableHead"
+                >
+                  {title}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((row, index) => (
+              <>
+                <tr colSpan={10}>
+                  <td key={index}>{row.socialNetwork}</td>
+                  <td key={index}>{row.blogger}</td>
+                  <td key={index}>{row.topic}</td>
+                  <td key={index}>{row.followers}</td>
+                  <td key={index}>{row.posts}</td>
+                  <td key={index}>{row.likes}</td>
+                  <td key={index}>{row.emotion}</td>
+                  <td key={index}>{row.followerprice}</td>
+                  <td key={index}>{row.link}</td>
+                  <td key={index}>
+                    <input type="checkbox" className="styledCheckbox" />
+                  </td>
+                </tr>
+              </>
             ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
-      <div>Чат</div>
+          </tbody>
+        </table>
+        <form>
+          <div className="styledformContainer">
+            <label>
+              <h4 className="styledChatTitle">Чат</h4>
 
-      <TextareaAutosize
-        placeholder="блогер-клиент"
-        minRows={10}
-        style={{ width: 300, resize: 'none' }}
-      />
-      <div>
-        <button>Прикрепить файл</button>
-        <button>Отправить</button>
-      </div>
+              <textarea
+                name="postContent"
+                // sx={{rows:{md:14, xs:10}, cols:{md:56}}}
+                // // cols={56}
+                // minRows={50}
+                className="styledTextArea"
+                placeholder="блогер-клиент"
+              />
+            </label>
+            <div className="styledButtonContainer">
+              <p>
+                <label for="chooseFile" className="styledAttachinput">
+                  Прикрепить файл{' '}
+                </label>
+              </p>
+              <input type="file" name="attachfile" id="chooseFile" />
+
+              <button className="styledSendBtn">Отправить</button>
+            </div>
+          </div>
+        </form>
+      </Box>
     </>
   );
 };

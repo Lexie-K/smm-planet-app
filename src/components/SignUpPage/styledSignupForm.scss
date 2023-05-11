@@ -36,7 +36,7 @@
   padding: 6px 30px;
 }
 
-.styledLoginBtn {
+.styledSignupBtn {
   appearance: none;
   background: none;
   border: none;
@@ -69,16 +69,12 @@
   .styledLogininput {
     margin: 5px;
   }
-  .styledLoginBtn {
-    padding: 9px 23px;
+  .styledSignupBtn {
+    padding: 10px 12px 9px 12px;
     font-weight: 700;
     font-size: 14px;
-    margin-top: 6px;
     margin-left: 5px;
+    margin-top: 6px;
     margin-bottom: 25px;
-  }
-  a {
-    font-weight: 400;
-    font-size: 12px;
   }
 }

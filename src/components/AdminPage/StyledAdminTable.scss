@@ -1,0 +1,37 @@
+@import '../../styles/variables.scss';
+
+.styledAdminTable {
+  width: 60%;
+}
+td {
+  padding: 5px;
+}
+
+th {
+  font-size: 18px;
+  font-weight: 500;
+}
+.styledTitle {
+  padding-bottom: 33px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: $bp-tablet) {
+  .styledTitle {
+    font-size: $mobile-main-text-size;
+  }
+}
+@media (max-width: $bp-phone) {
+  .styledTitle {
+    font-size: $mobile-main-text-size;
+    padding-bottom: 21px;
+  }
+  th {
+    font-size: 12px;
+    font-weight: 700;
+    padding: 3px;
+  }
+  .styledAdminTable {
+    width: 100%;
+  }
+}

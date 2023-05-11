@@ -4,6 +4,7 @@
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+  padding-left: 20px;
 }
 
 .styledName {
@@ -37,9 +38,7 @@
   justify-content: space-between;
 }
 
-.styledBtn {
-  white-space: nowrap;
-}
+
 
 .styledEnterBtn {
   appearance: none;
@@ -71,6 +70,9 @@
   }
   .styledMainTitle {
     font-size: 0.75rem;
+  }
+  .styledHeaderContainer {
+    padding-left: 0px;
   }
 }
 

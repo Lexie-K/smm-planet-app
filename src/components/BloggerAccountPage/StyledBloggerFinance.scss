@@ -10,11 +10,17 @@
 
 .styledFinanceContainer {
   display: grid;
-  grid-template-columns: auto 1fr;
-  column-gap: 20px;
+  grid-template-columns: 166px auto;
+  // column-gap: 2px;
   row-gap: 15px;
-
-  align-items: center;
+  // justify-content: flex-start;
+  align-items: baseline;
+  margin-top: 36px;
+}
+.styledAccountfooter {
+  position: relative;
+  bottom: 30px;
+  margin-left: 80px;
 }
 
 .styledFinanceForm {
@@ -22,6 +28,34 @@
   border-radius: 10px;
   padding: 7px;
   align-items: center;
+}
+
+.styledBtn {
+  background: #f09e56;
+  border: 1px solid rgba(240, 158, 86, 0.58);
+  border-radius: 10px;
+  padding: 7px 9px 7px 6px;
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.cell {
+  display: flex;
+  column-gap: 14px;
+  flex-wrap: wrap;
+
+  // align-items: center;
+}
+
+.styledFinanceForm {
+  width: 177px;
+  border: 1px solid rgba(240, 158, 86, 0.58);
+  border-radius: 10px;
+  padding: 7px;
+  align-items: center;
+  padding: 5px 11px;
+  background-color: transparent;
 }
 
 @media (max-width: $bp-tablet) {
@@ -33,10 +67,25 @@
     padding: 27px 10px 20px 10px;
   }
   .styledFinanceContainer {
-    grid-template-columns: 93px auto;
+    grid-template-columns: 110px auto;
+    margin-top: 10px;
   }
+
   .styledFinanceForm {
+    width: 88px;
+    padding: 3px 1px;
     border-radius: 5px;
-    padding: 4px;
+    background-color: transparent;
+  }
+  .styledBtn {
+    margin-top: 10px;
+    padding: 5px 0px;
+    width: 140px;
+    border-radius: 5px;
+  }
+  .styledAccountfooter {
+    position: relative;
+    bottom: 20px;
+    margin-left: 0px;
   }
 }

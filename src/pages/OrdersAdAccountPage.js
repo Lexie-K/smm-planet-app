@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 import SearchBar from '../components/HomePage/SearchBar';
 import Filters from '../components/HomePage/Filters';
 import LowSection from '../components/HomePage/LowSection';
-import AdOrderTable from "../components/AdAccountPage/AdOrderTable";
+import AdOrderTable from '../components/AdAccountPage/AdOrderTable';
 
 const OrdersAdAccountPage = () => {
   return (
@@ -10,9 +10,9 @@ const OrdersAdAccountPage = () => {
       <SearchBar />
       <Filters />
       <AdOrderTable />
-      <LowSection/>
+      <LowSection />
     </>
-  )
+  );
 };
 
 export default OrdersAdAccountPage;

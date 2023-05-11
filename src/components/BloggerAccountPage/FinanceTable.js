@@ -1,7 +1,7 @@
 import React from 'react';
 import { Grid } from '@mui/material';
 import { Link } from 'react-router-dom';
-import './StyledBloggerFinance.scss'
+import './StyledBloggerFinance.scss';
 const FinanceTable = () => {
   return (
     <div className="styledMainContainer">
@@ -68,11 +68,7 @@ const FinanceTable = () => {
         </div>
         <p className="styledLabelFinanceInput">Выписка</p>
         <div class="cell">
-          <input
-            type="text"
-            placeholder=""
-            className="styledInputForm"
-          />
+          <input type="text" placeholder="" className="styledFinanceForm" />
         </div>
       </div>
     </div>

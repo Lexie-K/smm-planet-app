@@ -8,7 +8,7 @@
   padding: 40px 279px 40px 38px;
 }
 
-.styledBloggerContainer {
+.styledCreateOrderContainer {
   display: grid;
   grid-template-columns: 166px auto;
   // column-gap: 2px;
@@ -23,21 +23,47 @@
   margin-left: 80px;
 }
 
-.styledInputForm {
+.styledNewOrderBtnsContainer {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-left: 166px;
+  align-items: baseline;
+}
+
+.styledCreateOrderForm {
   border: 1px solid rgba(240, 158, 86, 0.58);
   border-radius: 10px;
   padding: 7px;
   align-items: center;
 }
 
-.styledBtn {
+.styledBtnOrder {
   background: #f09e56;
   border: 1px solid rgba(240, 158, 86, 0.58);
   border-radius: 10px;
-  padding: 7px 9px 7px 6px;
+  padding: 5px 90px;
   font-family: 'Roboto';
   font-weight: 400;
   font-size: 12px;
+  width: 258px;
+  white-space: nowrap;
+  display: inline-flex;
+  justify-content: center;
+}
+
+.styledChooseBloggerBtn {
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  white-space: nowrap;
+  text-decoration: underline;
+  color: rgba(255, 54, 0, 1);
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 18px;
 }
 
 .cell {
@@ -47,19 +73,19 @@
 
   // align-items: center;
 }
-
-.styledInputCost {
-  width: 125px;
+.styledCreateTask {
+  width: 258px;
+  height: 146px;
   border: 1px solid rgba(240, 158, 86, 0.58);
   border-radius: 10px;
   padding: 7px;
   align-items: center;
-  padding: 5px 15px;
+  padding: 5px 11px;
   background-color: transparent;
 }
 
-.styledInputForm {
-  width: 177px;
+.styledCreateOrderForm {
+  width: 258px;
   border: 1px solid rgba(240, 158, 86, 0.58);
   border-radius: 10px;
   padding: 7px;
@@ -69,39 +95,48 @@
 }
 
 @media (max-width: $bp-tablet) {
-  .styledLabelInput {
+  .styledLabelCreateOrderInput {
     font-size: $mobile-main-text-size;
   }
   .styledMainContainer {
     margin: 70px 0;
     padding: 27px 10px 20px 10px;
   }
-  .styledBloggerContainer {
+  .styledCreateOrderContainer {
     grid-template-columns: 110px auto;
     margin-top: 10px;
   }
 
-  .styledInputCost {
+  .styledCreateOrderForm {
     width: 88px;
-    padding: 3px 4px;
+    padding: 3px 1px;
     border-radius: 5px;
     background-color: transparent;
   }
-  .styledInputForm {
-    width: 88px;
-    padding: 3px 8px;
-    border-radius: 5px;
-    background-color: transparent;
-  }
-  .styledBtn {
-    margin-top: 10px;
-    padding: 5px 0px;
-    width: 140px;
-    border-radius: 5px;
+  .styledBtnOrder {
+    margin-top: 0px;
+    padding: 3px 25px;
+    max-width: 138px;
+    background: rgba(255, 54, 0, 0.8);
+    border-radius: 20px;
+    font-weight: 500;
+    font-size: 18px;
   }
   .styledAccountfooter {
     position: relative;
     bottom: 20px;
     margin-left: 0px;
+  }
+  .styledNewOrderBtnsContainer {
+    margin-left: 0px;
+    gap: 26px;
+  }
+  .styledChooseBloggerBtn {
+    font-weight: 400;
+    font-size: 12px;
+  }
+  .styledCreateTask {
+    width: 88px;
+    height: 90px;
   }
 }

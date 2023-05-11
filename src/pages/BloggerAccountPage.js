@@ -3,37 +3,32 @@ import BloggerMainTable from '../components/BloggerAccountPage/BloggerMainTable'
 import SearchBar from '../components/HomePage/SearchBar';
 import Filters from '../components/HomePage/Filters';
 import LowSection from '../components/HomePage/LowSection';
-// import { useLocation } from 'react-router-dom';
+import { Box } from '@mui/material';
+import '.././styles/index.scss';
 
 const BloggerAccountPage = () => {
   return (
     <>
-      <SearchBar />
-      <Filters />
-      <BloggerMainTable />
-      <LowSection/>
+      <main className="styledHomeContainer">
+        <SearchBar />
+        <Filters />
+        <Box
+          sx={
+            {
+              // margin: { xs: '0px', md: '5rem' },
+              // marginTop: { xs: '50px', md: '-1.875rem', lg: '-1.875rem' },
+              // marginBottom: { xs: '20px' },
+            }
+          }
+        >
+          <BloggerMainTable />
+          <div className="styledAccountfooter">
+            <LowSection />
+          </div>
+        </Box>
+      </main>
     </>
   );
 };
 
 export default BloggerAccountPage;
-
-// const location = useLocation();
-
-// let content;
-
-// switch (location.pathname) {
-//   case '/account/finance':
-//     content = <p>Finance</p>;
-//     break;
-//   case '/account':
-//     content = <BloggerMainTable />;
-//     break;
-//   default:
-//     content = null;
-//     break;
-// }
-// console.log({location})
-//   <div>
-//   {content}
-// </div>

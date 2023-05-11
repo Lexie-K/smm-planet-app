@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 import SearchBar from '../components/HomePage/SearchBar';
 import Filters from '../components/HomePage/Filters';
 import LowSection from '../components/HomePage/LowSection';
-import AdminTable from '../components/AdminPage/AdminTable'
+import AdminTable from '../components/AdminPage/AdminTable';
 
 const AdminPage = () => {
   return (
@@ -10,10 +10,11 @@ const AdminPage = () => {
       <SearchBar />
       <Filters />
       <AdminTable />
-      <LowSection/>
+      <div className="footer">
+        <LowSection />
+      </div>
     </>
-  )
+  );
 };
 
 export default AdminPage;
-

@@ -1,6 +1,8 @@
 import React, { useEffect, useRef } from 'react';
-import { Box, TextField, Button, Typography } from '@mui/material';
+import { Box } from '@mui/material';
 import { useState } from 'react';
+import './styledSignupForm.scss';
+
 const EMAIL_REGEX = /^[a-z0-9]+@[a-z]+\.[a-z]{2,3}$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 
@@ -48,41 +50,36 @@ const SignUpForm = ({ handleSignUp }) => {
   }, [email, password, matchPassword]);
 
   return (
-    <section>
+    <>
       <Box className="styledForm">
-        <Typography component="h1" variant="h5">
-          Регистрация
-        </Typography>
-        <form className="styledFormSize">
-          <TextField
-            variant="outlined"
-            margin="normal"
-            fullWidth
+        <p className="styledLoginTitle">Регистрация</p>
+        <form className="styledLoginFormSize">
+          <input
             id="email"
             placeholder="E-mail"
             name="email"
+            value={email}
+            className="styledLogininput"
             ref={emailRef}
             autoComplete="off"
             autoFocus
             required
             onChange={e => setEmail(e.target.value)}
           />
-          <TextField
-            variant="outlined"
-            margin="normal"
-            fullWidth
+
+          <input
             name="password"
             placeholder="пароль"
             type="password"
             id="password"
-            autoComplete="current-password"
             value={password}
+            className="styledLogininput"
+            autoComplete="current-password"
             onChange={e => setPassword(e.target.value)}
           />
-          <TextField
-            variant="outlined"
-            margin="normal"
-            fullWidth
+
+          <input
+            className="styledLogininput"
             name="password"
             placeholder="пароль"
             type="password"
@@ -91,21 +88,20 @@ const SignUpForm = ({ handleSignUp }) => {
             value={matchPassword}
             onChange={e => setMatchPassword(e.target.value)}
           />
-          <Button
+
+          <button
+            className="styledSignupBtn"
             type="submit"
-            fullWidth
-            variant="contained"
-            color="primary"
             onClick={handleSign}
             disabled={
               !validEmail || !validPassword || !validMatch ? true : false
             }
           >
             Зарегистрироватья
-          </Button>
+          </button>
         </form>
       </Box>
-    </section>
+    </>
   );
 };
 

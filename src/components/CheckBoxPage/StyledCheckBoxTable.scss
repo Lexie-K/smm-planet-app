@@ -1,0 +1,63 @@
+.styledCheckBoxTable {
+  width: 100%;
+}
+
+table tr td:first-child {
+  border: none;
+}
+table th:first-child {
+  border: none;
+  background-color: transparent;
+}
+
+table {
+  border: none;
+}
+
+td {
+  padding: 5px 30px;
+}
+
+.styledBottomCheckContainer {
+  margin-left: 85px;
+  margin-top: 19px;
+}
+.styledAmountTitle {
+  display: inline;
+  margin-right: 15px;
+  font-weight: 400;
+  font-size: 16px;
+}
+.styledTotalTitle {
+  display: inline;
+  border: 1px solid rgba(240, 158, 86, 0.58);
+  border-radius: 10px;
+  padding: 5px 37px;
+  font-weight: 700;
+  font-size: 18px;
+}
+.styledOrderBtn {
+  display: block;
+  appearance: none;
+  background: #f09e56;
+  border: 1px solid rgba(240, 158, 86, 0.58);
+  border-radius: 10px;
+  padding: 4px 12px 5px 12px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 19px;
+}
+@media (max-width: 320px) {
+  th {
+    padding: 4px 7px;
+    font-weight: 700;
+    font-size: 12px;
+  }
+  .styledBottomCheckContainer {
+    display: none;
+  }
+  .styledOrderBtn {
+    display: none;
+  }
+}

@@ -1,5 +1,5 @@
 import React from 'react';
-import {  Grid } from '@mui/material';
+import { Grid } from '@mui/material';
 import './StyledBloggerTable.scss';
 import { Link } from 'react-router-dom';
 
@@ -76,8 +76,8 @@ const BloggerMainTable = () => {
           />
           <input
             type="text"
-            placeholder="nickname"
-            className="styledInputForm"
+            placeholder="цена за пост"
+            className="styledInputCost"
           />
           <button className="styledBtn">
             Разрешить доступ к статистике аккаунта
@@ -92,8 +92,8 @@ const BloggerMainTable = () => {
           />
           <input
             type="text"
-            placeholder="nickname"
-            className="styledInputForm"
+            placeholder="цена за пост"
+            className="styledInputCost"
           />
           <button className="styledBtn">
             Разрешить доступ к статистике аккаунта

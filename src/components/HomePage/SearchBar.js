@@ -11,7 +11,7 @@ const style = {
   width: '100%',
   height: { xs: '1.875rem', md: '2.875rem', lg: '2.875rem' },
   borderRadius: '20px',
-  boxShadow: '2px 2px 10px 2px rgba(0, 0, 0, 0.25);',
+  boxShadow: '2px 2px 10px 2px rgba(255, 54, 0, 0.25)',
   margin: { xs: '1.438rem', md: '3.5rem 5rem' },
   '@media(max-width:768px)': {
     minWidth: '100%',
@@ -59,18 +59,19 @@ const SearchBar = () => {
         <Button
           type="button"
           sx={{
-            padding: { xs: '7px 18px', md: '16px 80px 12px 77px' },
+            padding: { xs: '7px 18px', md: '16px 82px 12px 82px' },
             textAlign: 'end',
             color: 'white',
             backgroundColor: 'rgba(255, 54, 0, 0.8)',
             borderRadius: '20px',
-            fontSize: { xs: '0.875rem', md: '1.125rem', lg: '1.125rem' },
+            fontSize: { xs: '14px', md: '18x', lg: '18px' },
             fontFamily: 'Roboto',
+            fontWeight: 700,
           }}
           aria-label="search"
           onClick={clickHandler}
         >
-          Поиск
+          поиск
         </Button>
       </Box>
     </div>
