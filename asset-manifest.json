@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.8b933fb2.css",
-    "main.js": "/static/js/main.d6df724b.js",
-    "static/media/mainpic.png": "/static/media/mainpic.876b7522d0023cebbd1c.png",
-    "static/media/mainpicmobile.png": "/static/media/mainpicmobile.a65380bddeba0f257ed1.png",
-    "static/media/error.png": "/static/media/error.7fe579e0b7c2805dbc5a.png",
-    "index.html": "/index.html",
-    "main.8b933fb2.css.map": "/static/css/main.8b933fb2.css.map",
-    "main.d6df724b.js.map": "/static/js/main.d6df724b.js.map"
+    "main.css": "/smm-planet-app/static/css/main.f5f97716.css",
+    "main.js": "/smm-planet-app/static/js/main.567f08dc.js",
+    "static/media/mainpic.png": "/smm-planet-app/static/media/mainpic.876b7522d0023cebbd1c.png",
+    "static/media/mainpicmobile.png": "/smm-planet-app/static/media/mainpicmobile.a65380bddeba0f257ed1.png",
+    "static/media/error.png": "/smm-planet-app/static/media/error.7fe579e0b7c2805dbc5a.png",
+    "index.html": "/smm-planet-app/index.html",
+    "main.f5f97716.css.map": "/smm-planet-app/static/css/main.f5f97716.css.map",
+    "main.567f08dc.js.map": "/smm-planet-app/static/js/main.567f08dc.js.map"
   },
   "entrypoints": [
-    "static/css/main.8b933fb2.css",
-    "static/js/main.d6df724b.js"
+    "static/css/main.f5f97716.css",
+    "static/js/main.567f08dc.js"
   ]
 }
