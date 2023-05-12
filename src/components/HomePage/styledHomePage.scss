@@ -5,7 +5,6 @@
   flex-direction: column;
   height: 100vh;
   align-items: stretch;
-  
 }
 
 .styledMiddleTitle {
@@ -32,7 +31,6 @@
   column-gap: 70px;
   white-space: nowrap;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  
 }
 
 .styledMainPoints {
@@ -59,13 +57,8 @@
   position: relative;
   padding-left: 80px;
 }
-.footer {
+.footerHome {
   margin-top: 86px;
-  
-}
-
-.styledShowAccountsContainer {
-  margin: 92px 80px;
 }
 
 .styledCardText {
@@ -77,8 +70,6 @@
   width: 30px;
   height: 28.72px;
 }
-
-
 
 @media (max-width: $bp-phone) {
   .styledCardText {
@@ -106,12 +97,9 @@
     padding-right: 100px;
     min-width: 320px;
     padding-left: 0px;
-    
   }
   .styledfooterContainerPoints {
-    // margin-left: 0px;
     column-gap: 20px;
-    
   }
   .styledMiddleTitle {
     font-size: 20px;
@@ -136,11 +124,10 @@
     height: 100vh;
     flex-direction: column;
     background-size: contain;
-    // background-position:
     max-width: 100%;
     background-image: url(../../assets/mainpicmobile.png);
   }
-  
+
   .styledSubMiddleTitle {
     padding-bottom: 22px;
   }
@@ -148,7 +135,7 @@
     width: 15px;
     height: 14.36px;
   }
-  .footer {
+  .footerHome {
     margin-top: 86px;
   }
 }

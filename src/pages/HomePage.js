@@ -16,7 +16,7 @@ const HomePage = () => {
         <div className="container">
          
             <MiddleInfo />
-            <footer className="footer">
+            <footer className="footerHome">
               <LowSection />
             </footer>
         

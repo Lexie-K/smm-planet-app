@@ -1,5 +1,5 @@
 import React from 'react';
-import moment from 'moment/moment';
+// import moment from 'moment/moment';
 import { Grid, CardMedia, Card, CardContent } from '@mui/material';
 import './styledHomePage.scss';
 import { useSelector } from 'react-redux';
@@ -78,7 +78,12 @@ const ShowResult = () => {
   return (
     <div className="styledShowAccountsContainer">
       {isShowResult ? (
-        <Grid container rowSpacing={4} columnSpacing={{ xs: 6, sm: 1, md: 10 }}>
+        
+        <Grid container  justify = "center" rowSpacing={4} columnSpacing={{ xs: 6, sm: 10, md: 14 }} sx={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}>
           {filterResult.map(item => (
             <Grid
               item
@@ -87,11 +92,7 @@ const ShowResult = () => {
               md={4}
               lg={3}
               key={item.id}
-              sx={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}
+              
             >
               <Card
                 sx={{
