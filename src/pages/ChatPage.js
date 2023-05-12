@@ -9,9 +9,11 @@ const ChatPage = () => {
     <>
       <SearchBar />
       <Filters />
-      <ChatTable />
-      <div className="styledAccountfooter">
-        <LowSection />
+      <div className='styledAllContainer'>
+        <ChatTable />
+        <div className="footer">
+          <LowSection />
+        </div>
       </div>
     </>
   );

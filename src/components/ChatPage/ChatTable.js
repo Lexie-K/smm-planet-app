@@ -3,13 +3,6 @@ import { Box, Grid, TextareaAutosize } from '@mui/material';
 import { Link } from 'react-router-dom';
 import './StyledChatTable.scss';
 
-const styles = {
-  '@media(max-width:320px)': {
-    height: '50px',
-    maxColumns: 100,
-  },
-};
-
 function createData(
   socialNetwork,
   blogger,
@@ -76,15 +69,10 @@ const ChatTable = () => {
             md: '2.5rem 2.375rem',
             lg: '2.5rem 2.375rem',
           },
-          margin: {
-            lg: '6.25rem 3.063rem',
-            md: '6.25rem 3.063rem',
-            xs: '4.375rem 0 3.125rem 0',
-          },
           background: 'rgba(252, 225, 200, 0.65)',
           boxShadow: '5px 5px 7px rgb(0 0 0 / 25%)',
           borderRadius: '30px',
-          overflow: 'scroll',
+          overflow: 'auto',
         }}
       >
         <Grid
@@ -171,13 +159,18 @@ const ChatTable = () => {
             <label>
               <h4 className="styledChatTitle">Чат</h4>
 
-              <textarea
+              {/* <textarea
                 name="postContent"
                 // sx={{rows:{md:14, xs:10}, cols:{md:56}}}
                 // // cols={56}
                 // minRows={50}
+              /> */}
+
+              <TextareaAutosize
+                maxRows={50}
                 className="styledTextArea"
                 placeholder="блогер-клиент"
+                style={{ width: { xs: '279px', md: '392px', lg: '392px' } }}
               />
             </label>
             <div className="styledButtonContainer">

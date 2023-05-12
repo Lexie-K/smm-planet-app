@@ -79,7 +79,7 @@ const ShowResult = () => {
     <div className="styledShowAccountsContainer">
       {isShowResult ? (
         
-        <Grid container  justify = "center" rowSpacing={4} columnSpacing={{ xs: 6, sm: 10, md: 14 }} sx={{
+        <Grid container  justify = "center" rowSpacing={4} columnSpacing={{ xs: 6 }} sx={{
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
