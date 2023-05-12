@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, HashRouter } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
 import SignUpPage from './pages/SignUpPage';
@@ -17,21 +17,25 @@ import OrdersAdAccountPage from './pages/OrdersAdAccountPage';
 import CreateOrder from './pages/CreateOrder';
 import FinanceAdAccountPage from './pages/FinanceAdAccountPage';
 
-
 function App() {
   return (
-   
-    <BrowserRouter>
+    <HashRouter basename="/">
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/search" element={<Search />} />
         <Route path="/loginpage" element={<LoginPage />} />
         <Route path="/signuppage" element={<SignUpPage />} />
         <Route path="/account" element={<BloggerAccountPage />} />
-        <Route path="/account/finance" element={<FinanceBloggerAccountPage/>} />
-        <Route path="/account/orders" element={<OrdersBloggerAccountPage/>} />
+        <Route
+          path="/account/finance"
+          element={<FinanceBloggerAccountPage />}
+        />
+        <Route path="/account/orders" element={<OrdersBloggerAccountPage />} />
         <Route path="/adaccountpage" element={<AdAccountPage />} />
-        <Route path="/adaccountpage/finance" element={<FinanceAdAccountPage />} />
+        <Route
+          path="/adaccountpage/finance"
+          element={<FinanceAdAccountPage />}
+        />
         <Route path="/adaccountpage/orders" element={<OrdersAdAccountPage />} />
         <Route path="/adaccountpage/createorder" element={<CreateOrder />} />
         <Route path="/contactspage" element={<ContactsPage />} />
@@ -41,8 +45,7 @@ function App() {
         <Route path="/chatpage" element={<ChatPage />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
-    </BrowserRouter>
-
+    </HashRouter>
   );
 }
 

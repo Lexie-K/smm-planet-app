@@ -9,9 +9,11 @@ const AdminPage = () => {
     <>
       <SearchBar />
       <Filters />
-      <AdminTable />
-      <div className="footer">
-        <LowSection />
+      <div className="styledContentAdContainer">
+        <AdminTable />
+        <div className="footerAdmin">
+          <LowSection />
+        </div>
       </div>
     </>
   );

@@ -14,6 +14,20 @@
   padding: 20px 279px 30px 38px;
 }
 
+.styledAdContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-width: 1040px;
+  
+}
+
+.styledAdfooter {
+  
+  margin-left: 80px;
+  margin-bottom: 30px;
+}
+
 
 .styledAccountTitle {
   display: flex;
@@ -47,7 +61,7 @@
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-@media (max-width: $bp-tablet) {
+@media (max-width: 360px) {
   
   .styledAdMainContainer {
     margin: 70px 0;
@@ -61,5 +75,12 @@
   .styledAdTitle {
     font-weight: 400;
     font-size: 12px;
+  }
+  .styledAdContainer {
+    min-width: 320px;
+  }
+  .styledAdfooter {
+    margin-bottom: 20px;
+    margin-left: 0px;
   }
 }

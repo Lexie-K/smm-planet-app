@@ -5,6 +5,7 @@
   flex-direction: column;
   height: 100vh;
   align-items: stretch;
+  
 }
 
 .styledMiddleTitle {
@@ -42,23 +43,24 @@
 
 .container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
 
   background-image: url(../../assets/mainpic.png);
   background-repeat: no-repeat;
   background-position: right;
-  // background-size: contain;
+  background-size: contain;
   margin-top: -30px;
   padding-top: 225px;
   align-items: stretch;
   height: 100%;
+  min-width: 1040px;
   padding-bottom: 30px;
   position: relative;
+  padding-left: 80px;
 }
 .footer {
-  position: absolute; 
-  bottom: 30px;
+  margin-top: 86px;
   
 }
 
@@ -96,12 +98,15 @@
 
 @media (max-width: $bp-phone) {
   .styledFormSize {
-    max-width: 320px;
+    min-width: 320px;
   }
   .container {
     margin-right: -200px;
     padding-top: 122px;
     padding-right: 100px;
+    min-width: 320px;
+    padding-left: 0px;
+    
   }
   .styledfooterContainerPoints {
     // margin-left: 0px;
@@ -133,7 +138,6 @@
     background-size: contain;
     // background-position:
     max-width: 100%;
-   
     background-image: url(../../assets/mainpicmobile.png);
   }
   
@@ -145,6 +149,6 @@
     height: 14.36px;
   }
   .footer {
-    bottom: 20px;
+    margin-top: 86px;
   }
 }

@@ -9,9 +9,11 @@ const Search = () => {
     <>
       <SearchBar />
       <Filters />
-      <ShowResult />
-      <div className="footer">
-        <LowSection />
+      <div className="styledAdContainer">
+        <ShowResult />
+        <div className="styledAdfooter">
+          <LowSection />
+        </div>
       </div>
     </>
   );

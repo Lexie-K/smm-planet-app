@@ -8,6 +8,7 @@
   align-items: center;
   border-radius: 0.5rem;
   padding: 88px;
+  margin-bottom: 100px;
 }
 
 .styledLoginFormSize {
@@ -16,6 +17,19 @@
   align-items: center;
   padding: 41px;
 }
+
+.styledLogincontainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-width: 1040px;
+}
+.styledLoginfooter {
+  margin-left: 80px;
+  margin-bottom: 30px;
+  // margin-top: 206px;
+}
+
 .styledLoginTitle {
   color: $title-color-login-signup;
   font-size: $title-size-login-signup;
@@ -93,4 +107,13 @@ a {
   .styledLoginFormSize {
     padding: 0px;
   }
+  .styledLogincontainer {
+    min-width: 320px;
+  }
+  .styledLoginfooter {
+    margin-left: 0px;
+    margin-bottom: 20px;
+    // margin-top: 100px;
+  }
+
 }

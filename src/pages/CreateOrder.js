@@ -9,9 +9,11 @@ const CreateOrder = () => {
     <>
       <SearchBar />
       <Filters />
-      <NewOrderTable />
-      <div className="styledAccountfooter">
-        <LowSection />
+      <div className='styledcreateContainer'>
+        <NewOrderTable />
+        <div className="styledAccountfooter">
+          <LowSection />
+        </div>
       </div>
     </>
   );

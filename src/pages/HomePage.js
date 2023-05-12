@@ -1,6 +1,5 @@
 import React from 'react';
 import '../components/HomePage/styledHomePage.scss';
-import { Box } from '@mui/material';
 import LowSection from '../components/HomePage/LowSection';
 import Header from '../components/HomePage/Header';
 import SearchBar from '../components/HomePage/SearchBar';
@@ -15,17 +14,12 @@ const HomePage = () => {
         <SearchBar />
         <Filters />
         <div className="container">
-          <Box
-            sx={{
-              marginLeft: { md: '5rem', xs: '0px' },
-              marginTop: { md: '-1.875rem', lg: '-1.875rem' },
-            }}
-          >
+         
             <MiddleInfo />
-            <div className="footer">
+            <footer className="footer">
               <LowSection />
-            </div>
-          </Box>
+            </footer>
+        
         </div>
       </main>
     </>

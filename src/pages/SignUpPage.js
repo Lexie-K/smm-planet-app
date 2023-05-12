@@ -26,18 +26,14 @@ const SignUpPage = () => {
       <main className="styledHomeContainer">
         <SearchBar />
         <Filters />
-        <Box
-          sx={{
-            margin: { xs: '0px', md: '5rem' },
-            // marginTop: { xs: '50px', md: '-1.875rem', lg: '-1.875rem' },
-            marginBottom: { xs: '20px' },
-          }}
-        >
+       
+        <div className="styledLogincontainer">
           <SignUpForm handleSignUp={handleSignUp} />
-          <div className="footer">
+          <div className="styledLoginfooter">
             <LowSection />
           </div>
-        </Box>
+
+        </div>
       </main>
     </>
   );

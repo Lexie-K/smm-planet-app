@@ -27,19 +27,13 @@ const LoginPage = () => {
         <SearchBar />
         <Filters />
 
-        <Box
-        // sx={{
-        //   margin: { xs: '0px', md: '75px' },
-        //   // marginTop: { xs: '50px', md: '-1.875rem', lg: '-1.875rem' },
-        //   marginBottom: { xs: '20px' },
-        // }}
-        >
+        <div className="styledLogincontainer">
           <LoginForm handleLogin={handleLogin} />
 
-          <div className="footer">
+          <div className="styledLoginfooter">
             <LowSection />
           </div>
-        </Box>
+        </div>
       </main>
     </>
   );
