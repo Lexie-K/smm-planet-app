@@ -85,7 +85,7 @@ const Filters = () => {
                 height: { xs: '1.625rem', md: '2.5rem', lg: '2.5rem' },
                 overflow: 'visible',
                 minWidth: '140px',
-                paddingLeft: {xs: '0px', md: '20px', lg: '20px'},
+                // paddingLeft: {xs: '0px', md: '20px', lg: '20px'},
                 fontFamily: 'Roboto',
                 fontSize: { xs: '0.75rem', md: '1.125rem', lg: '1.125rem' },
                 background: '#FEFEFE'
@@ -113,7 +113,7 @@ const Filters = () => {
                 borderRadius: '20px',
                 minWidth: '140px',
                 height: { xs: '1.625rem', md: '2.5rem', lg: '2.5rem' },
-                paddingLeft: {xs: '0px', md: '15px', lg: '15px'},
+                // paddingLeft: {xs: '0px', md: '15px', lg: '15px'},
                 fontSize: { xs: '0.75rem', md: '1.125rem', lg: '1.125rem' },
                 fontFamily: 'Roboto',
                 background: '#FEFEFE'
@@ -144,7 +144,7 @@ const Filters = () => {
                 minWidth: '102px',
                 fontSize: { xs: '0.75rem', md: '1.125rem', lg: '1.125rem' },
                 fontFamily: 'Roboto',
-                paddingLeft: {xs: '0px', md: '12px', lg: '12px'},
+                // paddingLeft: {xs: '0px', md: '12px', lg: '12px'},
                 background: '#FEFEFE'
               }}
             >
@@ -174,7 +174,7 @@ const Filters = () => {
                 fontSize: { xs: '0.75rem', md: '1.125rem', lg: '1.125rem' },
                 height: { xs: '1.625rem', md: '2.5rem', lg: '2.5rem' },
                 fontFamily: 'Roboto',
-                paddingLeft: {xs: '0px', md: '14px', lg: '14px'},
+                // paddingLeft: {xs: '0px', md: '14px', lg: '14px'},
                 background: '#FEFEFE'
               }}
             >
@@ -202,7 +202,7 @@ const Filters = () => {
                 height: { xs: '1.625rem', md: '2.5rem', lg: '2.5rem' },
                 fontSize: { xs: '0.75rem', md: '1.125rem', lg: '1.125rem' },
                 fontFamily: 'Roboto',
-                paddingLeft: {xs: '0px', md: '17px', lg: '17px'},
+                // paddingLeft: {xs: '0px', md: '17px', lg: '17px'},
                 background: '#FEFEFE'
               }}
               className="StyledSelectSize"

@@ -11,18 +11,10 @@ th {
 .styledTitle {
   padding-bottom: 33px;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-.footerAdmin {
-  margin-top: 100px;
+  font-size: 18px;
 }
 
 @media (max-width: $bp-tablet) {
-  .styledTitle {
-    font-size: $mobile-main-text-size;
-  }
-}
-@media (max-width: $bp-phone) {
   .styledTitle {
     font-size: $mobile-main-text-size;
     padding-bottom: 21px;
@@ -33,8 +25,5 @@ th {
   }
   .styledAdminTable {
     min-width: 100%;
-  }
-  .footerAdmin {
-    margin-top: 50px;
   }
 }

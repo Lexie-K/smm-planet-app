@@ -36,7 +36,7 @@ th,
 td {
   border: 1px solid;
   border-collapse: collapse;
-  overflow: auto;
+  
 }
 
 th {
@@ -74,7 +74,7 @@ td {
   th,
   td {
     border: 1px solid rgba(13, 13, 13, 0.2);
-    overflow: auto;
+    
   }
 }
 
@@ -111,6 +111,8 @@ input[type='checkbox']:checked:before {
   transform: rotate(45deg);
 }
 
+
+
 .styledAllContainer {
   display: flex;
   flex-direction: column;
@@ -119,10 +121,16 @@ input[type='checkbox']:checked:before {
   margin: 0 auto;
   padding: 108px 80px;  
 }
+.footer {
+  margin-top: 100px;
+}
 
-@media (max-width: $bp-phone) {
+@media (max-width: $bp-tablet) {
   .styledAllContainer {
     min-width: 320px;
     padding: 70px 0px;  
+  }
+  .footer {
+    margin-top: 50px;
   }
 }

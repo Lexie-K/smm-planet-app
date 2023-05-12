@@ -11,9 +11,9 @@ const AdminPage = () => {
       <Filters />
       <div className="styledAllContainer">
         <div>
-        <AdminTable />
+          <AdminTable />
         </div>
-        <footer className="footerAdmin">
+        <footer className="footer">
           <LowSection />
         </footer>
       </div>

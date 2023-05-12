@@ -26,11 +26,7 @@ const AdminPage = () => {
             lg: '2.5rem 2.375rem',
           },
           
-          overflow: {
-            xs: 'scroll',
-            md: 'hiddden',
-            lg: 'hidden'
-          },
+          overflow: 'auto',
           background: 'rgba(252, 225, 200, 0.65)',
           boxShadow: '5px 5px 7px rgb(0 0 0 / 25%)',
           borderRadius: '30px',
