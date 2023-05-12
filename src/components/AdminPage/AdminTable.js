@@ -25,14 +25,7 @@ const AdminPage = () => {
             md: '2.5rem 2.375rem',
             lg: '2.5rem 2.375rem',
           },
-          margin: {
-            lg: '6.25rem 3.063rem',
-            md: '6.25rem 3.063rem',
-            xs: '4.375rem 0 3.125rem 0',
-          },
-          minWidth: {
-            xs: '320px'
-          },
+          
           overflow: {
             xs: 'scroll',
             md: 'hiddden',

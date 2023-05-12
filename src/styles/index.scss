@@ -111,4 +111,18 @@ input[type='checkbox']:checked:before {
   transform: rotate(45deg);
 }
 
+.styledAllContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-width: 1040px;
+  margin: 0 auto;
+  padding: 108px 80px;  
+}
 
+@media (max-width: $bp-phone) {
+  .styledAllContainer {
+    min-width: 320px;
+    padding: 70px 0px;  
+  }
+}

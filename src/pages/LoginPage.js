@@ -26,10 +26,8 @@ const LoginPage = () => {
       <main className="styledHomeContainer">
         <SearchBar />
         <Filters />
-
         <div className="styledLogincontainer">
           <LoginForm handleLogin={handleLogin} />
-
           <div className="styledLoginfooter">
             <LowSection />
           </div>
