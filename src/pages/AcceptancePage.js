@@ -9,12 +9,12 @@ const AcceptancePage = () => {
     <>
       <SearchBar />
       <Filters />
-      <div className='styledContentContainer'>
-      <AcceptanceTable />
-      <footer className="footerAccept">
-        <LowSection />
-      </footer>
-      </div> 
+      <div className="styledAllContainer">
+        <AcceptanceTable />
+        <footer className="footer">
+          <LowSection />
+        </footer>
+      </div>
     </>
   );
 };

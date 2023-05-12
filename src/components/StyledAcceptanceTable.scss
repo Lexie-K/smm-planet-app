@@ -1,10 +1,11 @@
+@import '../styles/variables.scss';
 
 .styledOrderTable {
   width: 100%;
 }
 
 .styledBottomContainer {
- margin-top: 11px; 
+  margin-top: 11px;
 }
 .styledAllTitle {
   display: inline;
@@ -33,49 +34,11 @@
   margin-top: 29px;
 }
 
-th {
- 
-  font-weight: 500;
-  
-}
-
-.footerAccept {
-  
-  margin-left: 80px;
-  // padding-top: 30px;
-  // margin-top: 30px;
-}
-
-.styledContentContainer {
-  display: flex;
- flex-direction: column;
- height: 100%;
- min-width: 1040px; 
- 
-}
-
-@media (max-width: 320px) {
- .styledContentContainer {
-   min-width: 320px;
-   padding-left: 0px;
- }
-}
-
-@media (max-width: 320px) {
-  th {
-    // padding: 4px 7px;
-    font-weight: 700;
-    font-size: 12px;
-  }
+@media (max-width: $bp-tablet) {
   .styledBottomContainer {
     display: none;
   }
   .styledAcceptBtn {
     display: none;
-  }
-  .footerAccept {
-      
-  margin-left: 0px;
-  margin-bottom: 20px;
   }
 }
