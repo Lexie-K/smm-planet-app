@@ -9,12 +9,12 @@ const ChatPage = () => {
     <>
       <SearchBar />
       <Filters />
-      <div className='styledAllContainer'>
+      <section className='styledAllContainer'>
         <ChatTable />
         <footer className="footer">
           <LowSection />
         </footer>
-      </div>
+      </section>
     </>
   );
 };

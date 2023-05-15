@@ -8,10 +8,12 @@ const CheckBoxTablePage = () => {
     <>
       <SearchBar />
       <Filters />
+      <section className='styledAllContainer'>
       <CheckBoxTable />
-      <footer className="styledAccountfooter">
+      <footer className="footer">
         <LowSection />
       </footer>
+      </section>
     </>
   );
 };

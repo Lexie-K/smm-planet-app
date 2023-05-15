@@ -154,15 +154,10 @@ const CheckBoxTable = () => {
             md: '2.5rem 2.375rem',
             lg: '2.5rem 2.375rem',
           },
-          margin: {
-            lg: '6.25rem 3.063rem',
-            md: '6.25rem 3.063rem',
-            xs: '4.375rem 0 3.125rem 0',
-          },
           background: 'rgba(252, 225, 200, 0.65)',
           boxShadow: '5px 5px 7px rgb(0 0 0 / 25%)',
           borderRadius: '30px',
-          overflow: 'scroll',
+          overflow: 'auto',
         }}
       >
         <Grid
@@ -210,9 +205,9 @@ const CheckBoxTable = () => {
         <br />
         <table className="styledCheckBoxTable">
           <thead className="styledOrderTable">
-            <tr>
+            <tr className="styledTr">
               {thTitle.map((title, index) => (
-                <th scope="col" value={title} key={index}>
+                <th scope="col" value={title} key={index} className='styledTh'>
                   {title}
                 </th>
               ))}
@@ -221,8 +216,8 @@ const CheckBoxTable = () => {
           <tbody>
             {rows.map((row, index) => (
               <>
-                <tr>
-                  <td key={index}>
+                <tr className="styledTr">
+                  <td key={index} className="styledTd">
                     <input type="checkbox" className="styledCheckbox" />
                   </td>
                   <td key={index}>{row.socialNetwork}</td>

@@ -2,21 +2,17 @@
   width: 100%;
 }
 
-// table tr td:first-child {
-//   border: none;
-// }
-// table th:first-child {
-//   border: none;
-//   background-color: transparent;
-// }
+.styledCheckBoxTable .styledTr .styledTd:first-child {
+  border: none;
+}
+.styledCheckBoxTable .styledTh:first-child {
+  border: none;
+  background-color: transparent;
+}
 
-// table {
-//   border: none;
-// }
-
-// td {
-//   padding: 5px 30px;
-// }
+.styledCheckBoxTable {
+  border: none;
+}
 
 .styledBottomCheckContainer {
   margin-left: 85px;
