@@ -9,9 +9,9 @@ const OrdersBloggerAccountPage = () => {
       <SearchBar />
       <Filters />
       <OrdersBloggerTable />
-      <div className="styledAccountfooter">
+      <footer className="styledAccountfooter">
         <LowSection />
-      </div>
+      </footer>
     </>
   );
 };

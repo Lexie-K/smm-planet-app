@@ -11,9 +11,9 @@ const CreateOrder = () => {
       <Filters />
       <div className='styledcreateContainer'>
         <NewOrderTable />
-        <div className="styledAccountfooter">
+        <footer className="styledAccountfooter">
           <LowSection />
-        </div>
+        </footer>
       </div>
     </>
   );

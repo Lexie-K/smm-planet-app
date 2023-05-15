@@ -7,8 +7,8 @@
   justify-content: center;
   align-items: center;
   border-radius: 0.5rem;
-  padding: 88px;
-  margin-bottom: 100px;
+  // padding: 88px;
+  // margin-bottom: 100px;
 }
 
 .styledSignupFormSize {
@@ -23,7 +23,8 @@
   font-weight: $second-text-weight;
   font-family: 'Roboto';
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  margin: 10px;
+  margin-top: 100px;
+  padding-top: 20px;
 
 }
 
@@ -74,8 +75,9 @@
   .styledSignupTitle {
     font-weight: 700;
     font-size: 18px;
-    margin: 70px;
+    margin-top: 70px;
     margin-bottom: 20px;
+    padding-top: 0px;
   }
   
   .styledSignupBtn {
@@ -90,5 +92,9 @@
   } 
   .styledSignupFormSize {
     padding: 0px;
+  }
+  
+  .styledSignupForm {
+  margin: 0px;
   }
 }

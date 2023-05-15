@@ -11,9 +11,9 @@ const AdAccountPage = () => {
       <Filters />
       <div className='styledAdContainer'>
         <AdMainTable />
-        <div className="styledAdfooter">
+        <footer className="styledAdfooter">
           <LowSection />
-        </div>
+        </footer>
       </div>
     </>
   );

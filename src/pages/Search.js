@@ -9,12 +9,12 @@ const Search = () => {
     <>
       <SearchBar />
       <Filters />
-      <div className="styledAllContainer">
+      <section className="styledAllContainer">
         <ShowResult />
-        <div className="footer">
+        <footer className="footer">
           <LowSection />
-        </div>
-      </div>
+        </footer>
+      </section>
     </>
   );
 };

@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import SearchBar from '../components/HomePage/SearchBar';
 import Filters from '../components/HomePage/Filters';
 import LowSection from '../components/HomePage/LowSection';
-import { Box } from '@mui/material';
+
 const SignUpPage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -23,18 +23,17 @@ const SignUpPage = () => {
   };
   return (
     <>
-      <main className="styledHomeContainer">
+      <section className="styledHomeContainer">
         <SearchBar />
         <Filters />
-       
-        <div className="styledLogincontainer">
-          <SignUpForm handleSignUp={handleSignUp} />
-          <div className="styledLoginfooter">
-            <LowSection />
-          </div>
 
-        </div>
-      </main>
+        <section>
+          <SignUpForm handleSignUp={handleSignUp} />
+          <footer className="formFooter">
+            <LowSection />
+          </footer>
+        </section>
+      </section>
     </>
   );
 };

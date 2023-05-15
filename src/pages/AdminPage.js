@@ -10,9 +10,7 @@ const AdminPage = () => {
       <SearchBar />
       <Filters />
       <div className="styledAllContainer">
-        <div>
-          <AdminTable />
-        </div>
+        <AdminTable />
         <footer className="footer">
           <LowSection />
         </footer>

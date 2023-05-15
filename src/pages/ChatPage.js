@@ -11,9 +11,9 @@ const ChatPage = () => {
       <Filters />
       <div className='styledAllContainer'>
         <ChatTable />
-        <div className="footer">
+        <footer className="footer">
           <LowSection />
-        </div>
+        </footer>
       </div>
     </>
   );

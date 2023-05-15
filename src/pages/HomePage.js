@@ -9,19 +9,17 @@ import MiddleInfo from '../components/HomePage/MiddleInfo';
 const HomePage = () => {
   return (
     <>
-      <main className="styledHomeContainer">
+      <section className="styledHomeContainer">
         <Header />
         <SearchBar />
         <Filters />
-        <div className="container">
-         
-            <MiddleInfo />
-            <footer className="footerHome">
-              <LowSection />
-            </footer>
-        
-        </div>
-      </main>
+        <section className="container">
+          <MiddleInfo />
+          <footer className="footerHome">
+            <LowSection />
+          </footer>
+        </section>
+      </section>
     </>
   );
 };

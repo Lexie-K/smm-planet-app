@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
-  align-items: stretch;
+   
 }
 
 .styledMiddleTitle {
@@ -85,6 +85,17 @@
   .styledCardText {
     font-size: 12px;
   }
+  .container {
+    padding-left: 0px;
+    background-image: url(../../assets/mainpicmobile.png);
+    min-width: 320px;
+    margin-right: 0px;
+    margin-top: -100px;
+  }
+  .styledFormSize {
+    min-width: 768px;
+  }
+ 
 }
 
 @media (max-width: $bp-phone) {
@@ -126,6 +137,7 @@
     background-size: contain;
     max-width: 100%;
     background-image: url(../../assets/mainpicmobile.png);
+    margin-right: 0px;
   }
 
   .styledSubMiddleTitle {

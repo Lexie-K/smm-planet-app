@@ -36,7 +36,6 @@ th,
 td {
   border: 1px solid;
   border-collapse: collapse;
-  
 }
 
 th {
@@ -74,7 +73,6 @@ td {
   th,
   td {
     border: 1px solid rgba(13, 13, 13, 0.2);
-    
   }
 }
 
@@ -111,30 +109,35 @@ input[type='checkbox']:checked:before {
   transform: rotate(45deg);
 }
 
-
-
 .styledAllContainer {
   display: flex;
   flex-direction: column;
   height: 100%;
   min-width: 1040px;
-  margin: 0 auto;
-  padding-right: 80px; 
+  padding-right: 80px;
   padding-left: 80px;
-  padding-top: 100px; 
+  padding-top: 100px;
 }
 .footer {
   margin-top: 100px;
+}
+
+.formFooter {
+  margin-top: 100px;
+  margin-left: 80px;
 }
 
 @media (max-width: $bp-tablet) {
   .styledAllContainer {
     min-width: 320px;
     padding: 0px;
-    padding-top: 70px;  
-
+    padding-top: 70px;
   }
   .footer {
     margin-top: 50px;
+  }
+  .formFooter {
+    margin-top: 50px;
+    margin-left: 0px;
   }
 }
