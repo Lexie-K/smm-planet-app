@@ -7,12 +7,16 @@ import AdOrderTable from '../components/AdAccountPage/AdOrderTable';
 const OrdersAdAccountPage = () => {
   return (
     <>
-      <SearchBar />
-      <Filters />
-      <AdOrderTable />
-      <footer className="styledAccountfooter">
-        <LowSection />
-      </footer>
+      <section className="styledHomeContainer">
+        <SearchBar />
+        <Filters />
+        <section className="styledAllContainer">
+          <AdOrderTable />
+          <footer className="footer">
+            <LowSection />
+          </footer>
+        </section>
+      </section>
     </>
   );
 };

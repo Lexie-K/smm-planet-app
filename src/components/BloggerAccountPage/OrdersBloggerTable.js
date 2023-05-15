@@ -142,20 +142,10 @@ const OrdersBloggerTable = () => {
             md: '2.5rem 2.375rem',
             lg: '2.5rem 2.375rem',
           },
-          margin: {
-            lg: '6.25rem 3.063rem',
-            md: '6.25rem 3.063rem',
-            xs: '4.375rem 0 3.125rem 0',
-          },
-          overflow: {
-            xs: 'scroll',
-            md: 'hiddden',
-            lg: 'hidden'
-          },
           background: 'rgba(252, 225, 200, 0.65)',
           boxShadow: '5px 5px 7px rgb(0 0 0 / 25%)',
           borderRadius: '30px',
-          overflow: 'scroll',
+          overflow: 'auto',
         }}
       >
         <Grid
@@ -172,7 +162,10 @@ const OrdersBloggerTable = () => {
               gap: { xs: 9, md: 10, lg: 14.5 },
             }}
           >
-            <Link style={{ textDecoration: 'none', cursor: 'pointer' }} className='styledAdTitle'>
+            <Link
+              style={{ textDecoration: 'none', cursor: 'pointer' }}
+              className="styledAdTitle"
+            >
               {' '}
               Блогер
             </Link>
@@ -195,17 +188,29 @@ const OrdersBloggerTable = () => {
             <Link style={{ textDecoration: 'none', cursor: 'pointer' }}>
               Финансы
             </Link>
-            <Link style={{ textDecoration: 'none', cursor: 'pointer', color: '#FF3600' }}>
+            <Link
+              style={{
+                textDecoration: 'none',
+                cursor: 'pointer',
+                color: '#FF3600',
+              }}
+            >
               Заказы
             </Link>
           </Grid>
         </Grid>
         <br />
         <table className="styledOrderTable">
-          <thead className="styledOrderTable">
+          <thead>
             <tr>
               {thTitle.map((title, index) => (
-                <th scope="col" value={title} key={index} rowSpan={8} className='styledHeaderOrderTable'>
+                <th
+                  scope="col"
+                  value={title}
+                  key={index}
+                  rowSpan={8}
+                  className="styledHeaderOrderTable"
+                >
                   {title}
                 </th>
               ))}
@@ -214,7 +219,7 @@ const OrdersBloggerTable = () => {
           <tbody>
             {rows.map((row, index) => (
               <>
-                <tr colSpan={8} >
+                <tr colSpan={8}>
                   <td key={index}>{row.company}</td>
                   <td key={index}>{row.task}</td>
                   <td key={index}>{row.socialNetwork}</td>

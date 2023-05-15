@@ -6,12 +6,16 @@ import OrdersBloggerTable from '../components/BloggerAccountPage/OrdersBloggerTa
 const OrdersBloggerAccountPage = () => {
   return (
     <>
-      <SearchBar />
-      <Filters />
-      <OrdersBloggerTable />
-      <footer className="styledAccountfooter">
-        <LowSection />
-      </footer>
+      <section className="styledHomeContainer">
+        <SearchBar />
+        <Filters />
+        <section className="styledAllContainer">
+          <OrdersBloggerTable />
+          <footer className="footer">
+            <LowSection />
+          </footer>
+        </section>
+      </section>
     </>
   );
 };

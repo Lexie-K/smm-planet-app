@@ -1,11 +1,23 @@
 import React from 'react';
-import { Grid } from '@mui/material';
+import { Grid, Box } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 const AdFinanceTable = () => {
   return (
-    <div className="styledMainContainer">
-      
+    <Box
+      component="form"
+      autoComplete="off"
+      sx={{
+        padding: {
+          xs: '1.688rem 0.625rem',
+          md: '2.5rem 2.375rem',
+          lg: '2.5rem 2.375rem',
+        },
+        background: 'rgba(252, 225, 200, 0.65)',
+        boxShadow: '5px 5px 7px rgb(0 0 0 / 25%)',
+        borderRadius: '30px',
+      }}
+    >
       <Grid
         container
         spacing={1}
@@ -19,14 +31,17 @@ const AdFinanceTable = () => {
           sx={{
             display: 'flex',
             flexDirection: 'row',
-            gap: { xs: 9, md: 10, lg: 17.5 },
+            gap: { xs: 9, md: 10, lg: 12.5 },
           }}
         >
           <Link style={{ textDecoration: 'none', cursor: 'pointer' }}>
             {' '}
             Блогер
           </Link>
-          <Link style={{ textDecoration: 'none', cursor: 'pointer' }} className='styledAdTitle'>
+          <Link
+            style={{ textDecoration: 'none', cursor: 'pointer' }}
+            className="styledAdTitle"
+          >
             Рекламодатель
           </Link>
         </Grid>
@@ -36,13 +51,19 @@ const AdFinanceTable = () => {
           sx={{
             display: 'flex',
             flexDirection: 'row',
-            gap: { xs: 7.5, lg: 15 },
+            gap: { xs: 7.5, lg: 10 },
           }}
         >
           <Link style={{ textDecoration: 'none', cursor: 'pointer' }}>
             Профиль
           </Link>
-          <Link style={{ textDecoration: 'none', cursor: 'pointer', color: '#FF3600'}}>
+          <Link
+            style={{
+              textDecoration: 'none',
+              cursor: 'pointer',
+              color: '#FF3600',
+            }}
+          >
             Финансы
           </Link>
           <Link style={{ textDecoration: 'none', cursor: 'pointer' }}>
@@ -89,7 +110,7 @@ const AdFinanceTable = () => {
           <input type="text" className="styledFinanceForm" />
         </div>
       </div>
-    </div>
+    </Box>
   );
 };
 

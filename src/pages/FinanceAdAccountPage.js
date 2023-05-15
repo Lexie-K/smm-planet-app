@@ -7,12 +7,16 @@ import AdFinanceTable from '../components/AdAccountPage/AdFinanceTable';
 const FinanceAdAccountPage = () => {
   return (
     <>
-      <SearchBar />
-      <Filters />
-      <AdFinanceTable />
-      <footer className="styledAccountfooter">
-        <LowSection />
-      </footer>
+      <section className="styledHomeContainer">
+        <SearchBar />
+        <Filters />
+        <section className="styledAllContainer">
+          <AdFinanceTable />
+          <footer className="footer">
+            <LowSection />
+          </footer>
+        </section>
+      </section>
     </>
   );
 };

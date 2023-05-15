@@ -30,7 +30,7 @@ const thTitle = [
 const AdOrderTable = () => {
   return (
     <>
-      <Box
+       <Box
         component="form"
         autoComplete="off"
         sx={{
@@ -39,20 +39,10 @@ const AdOrderTable = () => {
             md: '2.5rem 2.375rem',
             lg: '2.5rem 2.375rem',
           },
-          margin: {
-            lg: '6.25rem 3.063rem',
-            md: '6.25rem 3.063rem',
-            xs: '4.375rem 0 3.125rem 0',
-          },
-          overflow: {
-            xs: 'scroll',
-            md: 'hiddden',
-            lg: 'hidden'
-          },
           background: 'rgba(252, 225, 200, 0.65)',
           boxShadow: '5px 5px 7px rgb(0 0 0 / 25%)',
           borderRadius: '30px',
-          
+          overflow: 'auto',
         }}
       >
         <Grid
@@ -73,7 +63,7 @@ const AdOrderTable = () => {
               {' '}
               Блогер
             </Link>
-            <Link style={{ textDecoration: 'none', cursor: 'pointer' }}>
+            <Link style={{ textDecoration: 'none', cursor: 'pointer' }} className="styledAdTitle">
               Рекламодатель
             </Link>
           </Grid>
@@ -92,7 +82,7 @@ const AdOrderTable = () => {
             <Link style={{ textDecoration: 'none', cursor: 'pointer' }}>
               Финансы
             </Link>
-            <Link style={{ textDecoration: 'none', cursor: 'pointer' }}>
+            <Link style={{ textDecoration: 'none', cursor: 'pointer', color: '#FF3600',}}>
               Заказы
             </Link>
           </Grid>

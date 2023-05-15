@@ -7,15 +7,16 @@ import FinanceTable from '../components/BloggerAccountPage/FinanceTable';
 
 const FinanceBloggerAccountPage = () => {
   return (
-    <>
+    <section className="styledHomeContainer">
       <SearchBar />
       <Filters />
-      <FinanceTable />
-      <footer className="styledAccountfooter">
-        {' '}
-        <LowSection />
-      </footer>
-    </>
+      <section className="styledAllContainer">
+        <FinanceTable />
+        <footer className="footer">
+          <LowSection />
+        </footer>
+      </section>
+    </section>
   );
 };
 
