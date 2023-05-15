@@ -7,14 +7,16 @@ import NewOrderTable from '../components/AdAccountPage/NewOrderTable';
 const CreateOrder = () => {
   return (
     <>
-      <SearchBar />
-      <Filters />
-      <div className='styledcreateContainer'>
-        <NewOrderTable />
-        <footer className="styledAccountfooter">
-          <LowSection />
-        </footer>
-      </div>
+      <section className="styledHomeContainer">
+        <SearchBar />
+        <Filters />
+        <section className="styledAllContainer">
+          <NewOrderTable />
+          <footer className="footer">
+            <LowSection />
+          </footer>
+        </section>
+      </section>
     </>
   );
 };

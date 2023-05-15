@@ -7,14 +7,16 @@ import LowSection from '../components/HomePage/LowSection';
 const AdAccountPage = () => {
   return (
     <>
-      <SearchBar />
-      <Filters />
-      <div className='styledAdContainer'>
-        <AdMainTable />
-        <footer className="styledAdfooter">
-          <LowSection />
-        </footer>
-      </div>
+      <section className="styledHomeContainer">
+        <SearchBar />
+        <Filters />
+        <section className="styledAllContainer">
+          <AdMainTable />
+          <footer className="footer">
+            <LowSection />
+          </footer>
+        </section>
+      </section>
     </>
   );
 };

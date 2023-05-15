@@ -6,20 +6,19 @@ import { Link } from 'react-router-dom';
 const BloggerMainTable = () => {
   return (
     <Box
-        component="form"
-        autoComplete="off"
-        sx={{
-          padding: {
-            xs: '1.688rem 0.625rem',
-            md: '2.5rem 2.375rem',
-            lg: '2.5rem 2.375rem',
-          },
-          background: 'rgba(252, 225, 200, 0.65)',
-          boxShadow: '5px 5px 7px rgb(0 0 0 / 25%)',
-          borderRadius: '30px',
-        }}
-      >
-    {/* <div className="styledMainContainer"> */}
+      component="form"
+      autoComplete="off"
+      sx={{
+        padding: {
+          xs: '1.688rem 0.625rem',
+          md: '2.5rem 2.375rem',
+          lg: '2.5rem 2.375rem',
+        },
+        background: 'rgba(252, 225, 200, 0.65)',
+        boxShadow: '5px 5px 7px rgb(0 0 0 / 25%)',
+        borderRadius: '30px',
+      }}
+    >
       <Grid
         container
         spacing={1}
@@ -36,11 +35,17 @@ const BloggerMainTable = () => {
             gap: { xs: 9, md: 10, lg: 12.5 },
           }}
         >
-          <Link style={{ textDecoration: 'none', cursor: 'pointer'}} className='styledSizeContainer styledAdTitle'>
+          <Link
+            style={{ textDecoration: 'none', cursor: 'pointer' }}
+            className="styledSizeContainer styledAdTitle"
+          >
             {' '}
             Блогер
           </Link>
-          <Link style={{ textDecoration: 'none', cursor: 'pointer' }} className='styledSizeContainer'>
+          <Link
+            style={{ textDecoration: 'none', cursor: 'pointer' }}
+            className="styledSizeContainer"
+          >
             Рекламодатель
           </Link>
         </Grid>
@@ -53,18 +58,33 @@ const BloggerMainTable = () => {
             gap: { xs: 7.5, lg: 10 },
           }}
         >
-          <Link style={{ textDecoration: 'none', cursor: 'pointer', color: '#FF3600' }} className='styledSizeContainer'>
+          <Link
+            style={{
+              textDecoration: 'none',
+              cursor: 'pointer',
+              color: '#FF3600',
+            }}
+            className="styledSizeContainer"
+          >
             Профиль
           </Link>
-          <Link style={{ textDecoration: 'none', cursor: 'pointer' }} className='styledSizeContainer'>
+          <Link
+            style={{ textDecoration: 'none', cursor: 'pointer' }}
+            className="styledSizeContainer"
+          >
             Финансы
           </Link>
-          <Link style={{ textDecoration: 'none', cursor: 'pointer' }} className='styledSizeContainer'>
+          <Link
+            style={{ textDecoration: 'none', cursor: 'pointer' }}
+            className="styledSizeContainer"
+          >
             Заказы
           </Link>
         </Grid>
         <Grid item xs={12} sx={{ display: 'flex', flexDirection: 'row' }}>
-          <Link className='styledSizeContainer' style={{color: '#FF3600'}}>Изменить профиль</Link>
+          <Link className="styledSizeContainer" style={{ color: '#FF3600' }}>
+            Изменить профиль
+          </Link>
         </Grid>
       </Grid>
 
@@ -118,7 +138,6 @@ const BloggerMainTable = () => {
           <input type="text" className="styledInputForm" />
         </div>
       </div>
-    {/* </div> */}
     </Box>
   );
 };

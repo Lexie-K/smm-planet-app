@@ -11,17 +11,14 @@
 .styledCreateOrderContainer {
   display: grid;
   grid-template-columns: 166px auto;
-  // column-gap: 2px;
   row-gap: 15px;
-  // justify-content: flex-start;
   align-items: baseline;
-  // margin-top: 36px;
+  margin-top: 19px;
 }
 .styledAccountfooter {
   position: relative;
   bottom: 30px;
   margin-left: 80px;
-
 }
 
 .styledNewOrderBtnsContainer {
@@ -110,7 +107,7 @@
   }
   .styledCreateOrderContainer {
     grid-template-columns: 110px auto;
-    margin-top: 10px;
+    margin-top: 21px;
   }
 
   .styledCreateOrderForm {

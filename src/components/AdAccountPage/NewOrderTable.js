@@ -13,25 +13,9 @@ const NewOrderTable = () => {
           md: '2.5rem 2.375rem',
           lg: '2.5rem 2.375rem',
         },
-        margin: {
-          lg: '6.25rem 3.063rem',
-          md: '6.25rem 3.063rem',
-          xs: '4.375rem 0 3.125rem 0',
-        },
-        width:{
-         lg: '1040px',
-         md: '1040px',
-         xs: '320px',
-        },
-        overflow: {
-          xs: 'scroll',
-          md: 'hiddden',
-          lg: 'hidden',
-        },
         background: 'rgba(252, 225, 200, 0.65)',
         boxShadow: '5px 5px 7px rgb(0 0 0 / 25%)',
         borderRadius: '30px',
-        
       }}
     >
       <Grid
@@ -54,7 +38,7 @@ const NewOrderTable = () => {
             {' '}
             Блогер
           </Link>
-          <Link style={{ textDecoration: 'none', cursor: 'pointer' }}>
+          <Link style={{ textDecoration: 'none', cursor: 'pointer' }} className="styledAdTitle">
             Рекламодатель
           </Link>
         </Grid>
@@ -73,7 +57,7 @@ const NewOrderTable = () => {
           <Link style={{ textDecoration: 'none', cursor: 'pointer' }}>
             Финансы
           </Link>
-          <Link style={{ textDecoration: 'none', cursor: 'pointer' }}>
+          <Link style={{ textDecoration: 'none', cursor: 'pointer',  color: '#FF3600' }}>
             Заказы
           </Link>
         </Grid>
@@ -82,7 +66,7 @@ const NewOrderTable = () => {
           xs={2}
           sx={{ display: 'flex', flexDirection: 'row', whiteSpace: 'wrap' }}
         >
-          <Link>Разместить новый заказ</Link>
+          <Link style ={{ color: '#FF3600'}}>Разместить новый заказ</Link>
         </Grid>
       </Grid>
 
