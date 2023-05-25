@@ -24,12 +24,12 @@ const Header = () => {
             <p className="styledHiddenNavigation">Контакты</p>
           </Link>
           <Link
-            to="/#/signuppage"
+            to="/signuppage"
             style={{ textDecoration: 'none', cursor: 'pointer' }}
           >
             <p className="styledHiddenNavigation">Зарегистрироваться</p>
           </Link>
-          <Link to="/#/loginpage">
+          <Link to="/loginpage">
             <button className="styledEnterBtn">Войти</button>
           </Link>
         </Box>

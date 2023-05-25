@@ -20,7 +20,7 @@ const LoginForm = () => {
     dispatch(setData({ username }));
     // dispatch(clearLoginForm());
     dispatch(loginUser({ username, password }));
-    navigate('/#/account_blogger');   
+    navigate('/account_blogger');   
   };
 
   // useEffect(()=> {
