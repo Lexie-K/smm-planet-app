@@ -69,7 +69,7 @@ const NavTable = ({handleDisabled}) => {
           </NavLink>
         </Grid>
         <Grid item xs={12} sx={{ display: 'flex', flexDirection: 'row' }}>
-          <button onClick={() => (handleDisabled())} className="styledSizeContainer" style={{ color: '#FF3600' }}>
+          <button onClick={() => (handleDisabled())} className="styledBtnChangeProfile">
             Изменить профиль
           </button>
         </Grid>

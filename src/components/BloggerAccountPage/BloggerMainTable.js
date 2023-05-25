@@ -97,7 +97,7 @@ const BloggerMainTable = () => {
         }}
       >
         <NavTable handleDisabled={handleDisabled} />
-        <button onClick={handleSendAccountInfo}>CLICK</button>
+        <button className='styledBtn' onClick={handleSendAccountInfo}>Сохранить Изменения</button>
         <div class="styledBloggerContainer">
           <p className="styledLabelInput">Email</p>
           <div class="cell">
