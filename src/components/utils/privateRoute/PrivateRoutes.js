@@ -4,7 +4,7 @@ const PrivateRoutes = ({ children, ...rest }) => {
   const getToken = localStorage.getItem('access');
 
   
-  return getToken ? <Outlet />  : <Navigate to="/signuppage" /> ;
+  return getToken ? <Outlet />  : <Navigate to="/#/signuppage" /> ;
 };
 
 export default PrivateRoutes;
