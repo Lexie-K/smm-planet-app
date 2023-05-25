@@ -16,33 +16,31 @@ import OrdersBloggerAccountPage from './pages/OrdersBloggerAccountPage';
 import OrdersAdAccountPage from './pages/OrdersAdAccountPage';
 import CreateOrder from './pages/CreateOrder';
 import FinanceAdAccountPage from './pages/FinanceAdAccountPage';
+import PrivateRoutes from './components/utils/privateRoute/PrivateRoutes';
 
 function App() {
   return (
+
     <HashRouter basename="/">
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/search" element={<Search />} />
+        <Route element={<PrivateRoutes/>}> 
+          <Route path="/account_blogger" element={<BloggerAccountPage />} />
+          <Route path="/finance_blogger" element={<FinanceBloggerAccountPage />} />
+          <Route path="/orders_blogger" element={<OrdersBloggerAccountPage />} />
+          <Route path="/adaccountpage" element={<AdAccountPage />} />
+          <Route path="/adaccountpage/finance" element={<FinanceAdAccountPage />} />
+          <Route path="/adaccountpage/orders" element={<OrdersAdAccountPage />} />
+          <Route path="/adaccountpage/createorder" element={<CreateOrder />} />
+          <Route path="/adminpage" element={<AdminPage />} />
+          <Route path="/checkboxpage" element={<CheckBoxTablePage />} />
+          <Route path="/acceptancepage" element={<AcceptancePage />} />
+          <Route path="/chatpage" element={<ChatPage />} />
+          <Route path="/search" element={<Search />} />
+        </Route>
+        <Route path="/" element={<HomePage />} /> 
         <Route path="/loginpage" element={<LoginPage />} />
         <Route path="/signuppage" element={<SignUpPage />} />
-        <Route path="/account" element={<BloggerAccountPage />} />
-        <Route
-          path="/account/finance"
-          element={<FinanceBloggerAccountPage />}
-        />
-        <Route path="/account/orders" element={<OrdersBloggerAccountPage />} />
-        <Route path="/adaccountpage" element={<AdAccountPage />} />
-        <Route
-          path="/adaccountpage/finance"
-          element={<FinanceAdAccountPage />}
-        />
-        <Route path="/adaccountpage/orders" element={<OrdersAdAccountPage />} />
-        <Route path="/adaccountpage/createorder" element={<CreateOrder />} />
         <Route path="/contactspage" element={<ContactsPage />} />
-        <Route path="/adminpage" element={<AdminPage />} />
-        <Route path="/checkboxpage" element={<CheckBoxTablePage />} />
-        <Route path="/acceptancepage" element={<AcceptancePage />} />
-        <Route path="/chatpage" element={<ChatPage />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </HashRouter>

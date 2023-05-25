@@ -1,6 +1,6 @@
 import React from 'react';
 import LoginForm from '../components/LoginPage/LoginForm';
-import { setUser } from '../store/slices/formUserSlice';
+import { setUser } from '../store/slices/formSignupSlice';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import LowSection from '../components/HomePage/LowSection';

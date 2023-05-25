@@ -2,6 +2,7 @@ import React from 'react';
 import { Box, Grid } from '@mui/material';
 import './StyledOrderTable.scss';
 import { Link } from 'react-router-dom';
+import NavTable from '../NavTableSection/NavTable';
 
 function createData(
   company,
@@ -148,57 +149,7 @@ const OrdersBloggerTable = () => {
           overflow: 'auto',
         }}
       >
-        <Grid
-          container
-          spacing={1}
-          sx={{ fontSize: { xs: '0.75rem', md: '1.125rem', lg: '1.125rem' } }}
-        >
-          <Grid
-            item
-            xs={12}
-            sx={{
-              display: 'flex',
-              flexDirection: 'row',
-              gap: { xs: 9, md: 10, lg: 14.5 },
-            }}
-          >
-            <Link
-              style={{ textDecoration: 'none', cursor: 'pointer' }}
-              className="styledAdTitle"
-            >
-              {' '}
-              Блогер
-            </Link>
-            <Link style={{ textDecoration: 'none', cursor: 'pointer' }}>
-              Рекламодатель
-            </Link>
-          </Grid>
-          <Grid
-            item
-            xs={12}
-            sx={{
-              display: 'flex',
-              flexDirection: 'row',
-              gap: { xs: 7.5, lg: 15 },
-            }}
-          >
-            <Link style={{ textDecoration: 'none', cursor: 'pointer' }}>
-              Профиль
-            </Link>
-            <Link style={{ textDecoration: 'none', cursor: 'pointer' }}>
-              Финансы
-            </Link>
-            <Link
-              style={{
-                textDecoration: 'none',
-                cursor: 'pointer',
-                color: '#FF3600',
-              }}
-            >
-              Заказы
-            </Link>
-          </Grid>
-        </Grid>
+        <NavTable />
         <br />
         <table className="styledOrderTable">
           <thead>

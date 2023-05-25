@@ -1,6 +1,6 @@
 import React from 'react';
 import SignUpForm from '../components/SignUpPage/SignUpForm';
-import { setUser } from '../store/slices/formUserSlice';
+import { setUser } from '../store/slices/formSignupSlice';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import SearchBar from '../components/HomePage/SearchBar';

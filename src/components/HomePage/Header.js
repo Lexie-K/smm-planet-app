@@ -18,18 +18,18 @@ const Header = () => {
         >
           {' '}
           <Link
-            to="/afterauth/contactspage"
+            to="/contactspage"
             style={{ textDecoration: 'none', cursor: 'pointer' }}
           >
             <p className="styledHiddenNavigation">Контакты</p>
           </Link>
           <Link
-            to="/afterauth/signuppage"
+            to="/signuppage"
             style={{ textDecoration: 'none', cursor: 'pointer' }}
           >
             <p className="styledHiddenNavigation">Зарегистрироваться</p>
           </Link>
-          <Link to="afterauth/loginpage">
+          <Link to="/loginpage">
             <button className="styledEnterBtn">Войти</button>
           </Link>
         </Box>
