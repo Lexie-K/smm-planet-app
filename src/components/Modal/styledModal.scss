@@ -1,9 +1,48 @@
+@import '../../styles/variables';
 .styledChangePassTitle {
   text-align: center;
+  color: $title-color-login-signup;
+  font-size: $title-size-login-signup;
+  font-weight: $second-text-weight;
+  font-family: 'Roboto';
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .closeBtnModal {
-  justify-self: right;
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
   cursor: pointer;
   padding-top: 2.5rem;
   padding-right: 2.5rem;
 }
+
+.styledNewPassBtn {
+  appearance: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  background-color: $btns-font-color;
+  color: $btns-text-color;
+  padding: 9px 55px;
+
+  border-radius: $border-radius-for-btns-select-input;
+  font-size: $main-text-size;
+  font-family: 'Roboto';
+  align-self: center;
+  margin-bottom: 30px;
+}
+
+@media (max-width: $bp-phone) {
+  .styledChangePassTitle {
+    font-weight: 700;
+    font-size: 18px;  
+  }
+  .styledNewPassBtn {
+    padding: 9px 23px;
+    font-weight: 700;
+    font-size: 14px;
+    margin-top: 5.5px;
+    margin-left: 5px;
+    margin-bottom: 26px;
+  }
+}  

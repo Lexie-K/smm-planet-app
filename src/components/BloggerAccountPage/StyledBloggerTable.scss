@@ -9,6 +9,15 @@
   font-weight: 400;
   font-size: 18px;
 }
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgb(111,111,111,0.5); // Here you choose the color and opacity that you want to apply
+    z-index: 9; // You may need to manage t
+}
 
 .styledInputForm {
   border: 1px solid rgba(240, 158, 86, 0.58);

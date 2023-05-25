@@ -182,6 +182,7 @@ const BloggerMainTable = () => {
         </div>
         <div>
           <button className="styledBtn" onClick={handleOpen}>Сменить пароль</button>
+          {isOpen && <div className='overlay'/>}
           {isOpen && <ModalChangePass />}
         </div>
       </Box>

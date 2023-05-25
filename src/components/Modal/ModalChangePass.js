@@ -9,9 +9,10 @@ import { changePass } from '../../store/slices/formChangePassSlice';
 
 const style = {
   position: 'absolute',
+  zIndex: 10,
   display: 'flex',
   justifyContent: 'center',
-  alignItems: 'center',
+  // alignItems: 'right',
   flexDirection: 'column',
   top: '50%',
   left: '50%',
@@ -20,7 +21,7 @@ const style = {
   maxHeight: '100%',
   bgcolor: 'white',
   boxShadow: 100,
-  border: '1px solid rgba(240, 158, 86, 0.58)',
+  border: '1px solid rgb(255, 54, 0);',
   borderRadius: '10px',
   overflow: 'auto',
   '@media(max-width:320px)': {
@@ -97,7 +98,7 @@ const ModalChangePass = () => {
               required
             />
 
-            <button className="styledLoginBtn" onClick={handleSendNewPass}>Сменить</button>
+            <button className="styledNewPassBtn" onClick={handleSendNewPass}>Сменить</button>
   
           </form>
         </Box>
