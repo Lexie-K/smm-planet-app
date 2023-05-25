@@ -87,15 +87,11 @@ const SignUpForm = ({ handleSignUp }) => {
 
   useEffect(() => {
     const resultuser = USER_REGEX.test(username);
-    console.log({ resultuser });
-    console.log({ username });
     setValidName(resultuser);
   }, [username]);
 
   useEffect(() => {
     const resultpwd = PWD_REGEX.test(password);
-    console.log({ password });
-    console.log({ resultpwd });
     setValidPassword(resultpwd);
     const match = password === password2;
     setValidMatch(match);

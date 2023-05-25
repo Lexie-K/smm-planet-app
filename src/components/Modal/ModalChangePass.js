@@ -1,9 +1,10 @@
-import React , {useState} from 'react';
+import React , {useState, useEffect} from 'react';
 import CloseIcon from '@mui/icons-material/Close';
 import Box from '@mui/material/Box';
 import './styledModal.scss'
-import { useSelector, useDispatch } from 'react-redux';
-
+import { useDispatch } from 'react-redux';
+import ClearIcon from '@mui/icons-material/Clear';
+import CheckIcon from '@mui/icons-material/Check';
 import { closeModal } from '../../store/slices/modalSlice';
 import { changePass } from '../../store/slices/formChangePassSlice';
 
@@ -12,7 +13,6 @@ const style = {
   zIndex: 10,
   display: 'flex',
   justifyContent: 'center',
-  // alignItems: 'right',
   flexDirection: 'column',
   top: '50%',
   left: '50%',
@@ -30,15 +30,28 @@ const style = {
   },
 };
 
+const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 const ModalChangePass = () => {
   const [old_password, setOldPassword] = useState('');
   
   const [new_password, setNewPassword] = useState('');
   const [validPassword, setValidPassword] = useState(false);
+  const [passwordFocus, setPasswordFocus] = useState(false);
   
   const [new_password_confirm, setNewPasswordConfirm] = useState('');
-  
+  const [validMatch, setValidMatch] = useState(false);
+  const [matchFocus, setMatchFocus] = useState(false);
 
+  useEffect(() => {
+    const resultpwd = PWD_REGEX.test(new_password);
+    setValidPassword(resultpwd);
+    const match = new_password === new_password_confirm;
+    setValidMatch(match);
+  }, [ new_password, new_password_confirm]);
+
+  
+  
+  
   const dispatch = useDispatch();
 
   const handleClose = () => {
@@ -65,7 +78,8 @@ const ModalChangePass = () => {
             />{' '}
           </div>
           <p className="styledChangePassTitle">Сменить пароль</p>
-          <form className="styledLoginFormSize" >
+          <form className="styledLoginFormSize">
+         
             <input
               id="old_password"
               placeholder="старый пароль"
@@ -76,7 +90,13 @@ const ModalChangePass = () => {
               className="styledLogininput"
               required
             />
-
+            <label>
+            <span className={validPassword ? 'valid' : 'hide'}>
+              <CheckIcon sx={{ fontSize: { md: 20, lg: 20, xs: 10 } }} />
+            </span>
+            <span className={validPassword || !new_password ? 'hide' : 'invalid'}>
+              <ClearIcon sx={{ fontSize: { md: 20, lg: 20, xs: 10 } }} />
+            </span>
             <input
               name="new_password"
               placeholder="новый пароль"
@@ -86,7 +106,30 @@ const ModalChangePass = () => {
               onChange={e => setNewPassword(e.target.value)}
               className="styledLogininput"
               required
+              aria-invalid={validPassword ? 'false' : 'true'}
+              aria-describedby="pwdnote"
+              onFocus={() => setPasswordFocus(true)}
+              onBlur={() => setPasswordFocus(false)}
             />
+            </label>
+            <p
+            id="pwdnote"
+            className={
+              passwordFocus && !validPassword
+                ? 'instructions'
+                : 'offscreen'
+            }
+          >
+            Обязательное поле. От 8 до 24 символов. Пароль должен содержать
+            заглавные и строчные буквы, цифру и специальный символ.
+          </p>
+            <label>
+            <span className={validMatch && new_password_confirm ? 'valid' : 'hide'}>
+              <CheckIcon sx={{ fontSize: { md: 20, lg: 20, xs: 10 } }} />
+            </span>
+            <span className={validPassword || !new_password_confirm ? 'hide' : 'invalid'}>
+              <ClearIcon sx={{ fontSize: { md: 20, lg: 20, xs: 10 } }} />
+            </span>
              <input
               name="new_password"
               placeholder="новый пароль"
@@ -96,9 +139,22 @@ const ModalChangePass = () => {
               onChange={e => setNewPasswordConfirm(e.target.value)}
               className="styledLogininput"
               required
+              aria-invalid={validMatch ? 'false' : 'true'}
+              aria-describedby="confirmnote"
+              onFocus={() => setMatchFocus(true)}
+              onBlur={() => setMatchFocus(false)}
             />
-
-            <button className="styledNewPassBtn" onClick={handleSendNewPass}>Сменить</button>
+            </label>
+            <p
+            id="confirm_password"
+            className={matchFocus && !validMatch ? 'instructions' : 'offscreen'}
+          >
+            Пароль должен совпадать
+          </p>
+            <button className="styledNewPassBtn" onClick={handleSendNewPass}
+            disabled={
+              !old_password || !validPassword || !validMatch ? true : false
+            }>Сменить</button>
   
           </form>
         </Box>
