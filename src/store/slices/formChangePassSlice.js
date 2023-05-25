@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import CustomAxios from '../../components/utils/axios';
-import axios from 'axios';
+
 
 const initialState = {
   old_password: null,
@@ -12,7 +12,7 @@ const initialState = {
   loading: false,
 };
 
-
+  
 
 
 export const changePass = createAsyncThunk(
