@@ -70,52 +70,52 @@ const NewOrderTable = () => {
         </Grid>
       </Grid>
 
-      <div class="styledCreateOrderContainer">
+      <div className="styledCreateOrderContainer">
         <p className="styledLabelCreateOrderInput">№ заказа</p>
-        <div class="cell">
+        <div className="cell">
           <input type="text" className="styledCreateOrderForm" placeholder="" />
         </div>
         <p className="styledLabelCreateOrderInput">Компания</p>
-        <div class="cell">
+        <div className="cell">
           <input type="text" className="styledCreateOrderForm" placeholder="" />
         </div>
         <p className="styledLabelCreateOrderInput">Регион</p>
-        <div class="cell">
+        <div className="cell">
           <input type="text" className="styledCreateOrderForm" placeholder="" />
         </div>
         <p className="styledLabelCreateOrderInput">Срок исполнения</p>
-        <div class="cell">
+        <div className="cell">
           <input type="text" className="styledCreateOrderForm" placeholder="" />
         </div>
         <p className="styledLabelCreateOrderInput">Задание</p>
-        <div class="cell">
+        <div className="cell">
           <textarea type="text" className="styledCreateTask" />
         </div>
         <p className="styledLabelCreateOrderInput">Фото</p>
-        <div class="cell">
+        <div className="cell">
           <input type="text" className="styledCreateOrderForm" />
         </div>
         <p className="styledLabelCreateOrderInput">Видео</p>
-        <div class="cell">
+        <div className="cell">
           <input type="text" className="styledCreateOrderForm" />
         </div>
         <p className="styledLabelCreateOrderInput">Cоцсети</p>
-        <div class="cell">
+        <div className="cell">
           <input type="text" className="styledCreateOrderForm" />
         </div>
         <p className="styledLabelCreateOrderInput">Сумма, руб.</p>
-        <div class="cell">
+        <div className="cell">
           <input type="text" className="styledCreateOrderForm" />
         </div>
         <p className="styledLabelCreateOrderInput">Кол-во блогеров</p>
-        <div class="cell">
+        <div className="cell">
           <input type="text" className="styledCreateOrderForm" />
         </div>
         <p className="styledLabelCreateOrderInput">Охват</p>
-        <div class="cell">
+        <div className="cell">
           <input type="text" className="styledCreateOrderForm" />
         </div>
-        <div class="styledNewOrderBtnsContainer">
+        <div className="styledNewOrderBtnsContainer">
           <button className="styledBtnOrder">Разместь заказ</button>
           <button className="styledChooseBloggerBtn">Выбрать блогеров</button>
         </div>

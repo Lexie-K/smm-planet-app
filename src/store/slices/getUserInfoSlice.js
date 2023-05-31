@@ -5,7 +5,7 @@ import CustomAxios from '../../components/utils/axios/index.js';
 
 const initialState = {
   email: null,
-  username: null,
+  username: '',
   first_name: null,
   last_name: null,
   token: null,

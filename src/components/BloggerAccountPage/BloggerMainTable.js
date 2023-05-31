@@ -69,9 +69,9 @@ const BloggerMainTable = () => {
         <button className="styledBtn" onClick={handleSendAccountInfo}>
           Сохранить Изменения
         </button>
-        <div class="styledBloggerContainer">
+        <div className="styledBloggerContainer">
           <p className="styledLabelInput">Email</p>
-          <div class="cell">
+          <div className="cell">
             <input
               type="text"
               className="styledInputForm"
@@ -81,7 +81,7 @@ const BloggerMainTable = () => {
             />
           </div>
           <p className="styledLabelInput">Username</p>
-          <div class="cell">
+          <div className="cell">
             <input
               type="text"
               className="styledInputForm"
@@ -91,7 +91,7 @@ const BloggerMainTable = () => {
             />
           </div>
           <p className="styledLabelInput">Имя</p>
-          <div class="cell">
+          <div className="cell">
             <input
               type="text"
               className="styledInputForm"
@@ -101,7 +101,7 @@ const BloggerMainTable = () => {
             />
           </div>
           <p className="styledLabelInput">Фамилия</p>
-          <div class="cell">
+          <div className="cell">
             <input
               type="text"
               className="styledInputForm"
@@ -111,7 +111,7 @@ const BloggerMainTable = () => {
             />
           </div>
           <p className="styledLabelInput">Instagram</p>
-          <div class="cell">
+          <div className="cell">
             <input
               type="text"
               placeholder="nickname"
@@ -131,7 +131,7 @@ const BloggerMainTable = () => {
             </button>
           </div>
           <p className="styledLabelInput">Tiktok</p>
-          <div class="cell">
+          <div className="cell">
             <input
               type="text"
               placeholder="nickname"

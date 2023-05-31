@@ -51,16 +51,14 @@ const formSignupSlice = createSlice({
   initialState,
   reducers: {
     setData(state, action) {
-      const { username, access, id } = action.payload;
+      const { username, id } = action.payload;
       state.username = username;
-      state.token = access;
       state.id = id;
     },
-    // clearLoginForm(state) {
-    //   state.username = null;
-    //   state.token = null;
-    //   state.id = null;
-    // },
+    clearLoginForm(state) {
+      state.username = null;
+      state.id = null;
+    },
   },
   extraReducers: builder => {
     builder
@@ -68,9 +66,10 @@ const formSignupSlice = createSlice({
         state.loading = true;
         state.error = null;
       })
-      .addCase(loginUser.fulfilled, state => {
+      .addCase(loginUser.fulfilled, (state, action) => {
         state.loading = false;
         state.success = true;
+        
       })
       .addCase(loginUser.rejected, (state, action) => {
         // state.loading = false;

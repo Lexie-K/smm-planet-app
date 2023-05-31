@@ -67,33 +67,33 @@ const AdMainTable = () => {
         </Grid>
       </Grid>
 
-      <div class="styledAdAccountContainer">
+      <div className="styledAdAccountContainer">
         <p className="styledLabelFinanceInput">Рекламодатель</p>
-        <div class="cell">
+        <div className="cell">
           <input type="text" className="styledFinanceForm" placeholder="" />
         </div>
         <p className="styledLabelFinanceInput">ИНН</p>
-        <div class="cell">
+        <div className="cell">
           <input type="text" className="styledFinanceForm" placeholder="" />
         </div>
         <p className="styledLabelFinanceInput">Адрес</p>
-        <div class="cell">
+        <div className="cell">
           <input type="text" className="styledFinanceForm" placeholder="" />
         </div>
         <p className="styledLabelFinanceInput">Телефон</p>
-        <div class="cell">
+        <div className="cell">
           <input type="text" className="styledFinanceForm" placeholder="" />
         </div>
         <p className="styledLabelFinanceInput">E-mail</p>
-        <div class="cell">
+        <div className="cell">
           <input type="text" className="styledFinanceForm" />
         </div>
         <p className="styledLabelFinanceInput">Website</p>
-        <div class="cell">
+        <div className="cell">
           <input type="text" className="styledFinanceForm" />
         </div>
         <p className="styledLabelFinanceInput">Сменить пароль</p>
-        <div class="cell">
+        <div className="cell">
           <input type="text" className="styledFinanceForm" />
         </div>
       </div>

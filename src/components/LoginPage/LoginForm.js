@@ -4,30 +4,30 @@ import { Box, Typography } from '@mui/material';
 import { Link, useNavigate } from 'react-router-dom';
 import './styledLoginForm.scss';
 import { useDispatch, useSelector } from 'react-redux';
-import {
-  loginUser,
-  setData,
-} from '../../store/slices/formLoginSlice';
+import { loginUser, setData } from '../../store/slices/formLoginSlice';
 const LoginForm = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const error = useSelector(state => state.log.error)
-  const success = useSelector(state => state.log.success)
+  const error = useSelector(state => state.log.error);
+  const success = useSelector(state => state.log.success);
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const handleLog = async e => {
     e.preventDefault();
     dispatch(setData({ username }));
-    dispatch(loginUser({username, password} ));
-     
+    debugger
+    dispatch(loginUser({ username, password }));
+    navigate('/account_blogger');
   };
 
-  useEffect(()=> {
-    if (success && !error) {
-      navigate('/account_blogger');
-    } 
-  },[success, error, navigate])
+  // useEffect(()=> {
+  //   if(success && !error) {
+  //     
+  //   }
+  // },[success, error])
+
 
   return (
     <div>

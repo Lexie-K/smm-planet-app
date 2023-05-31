@@ -74,7 +74,7 @@ const AdFinanceTable = () => {
 
       <div class="styledFinanceContainer">
         <p className="styledLabelFinanceInput">Период</p>
-        <div class="cell">
+        <div className="cell">
           <input
             type="text"
             className="styledFinanceForm"
@@ -82,7 +82,7 @@ const AdFinanceTable = () => {
           />
         </div>
         <p className="styledLabelFinanceInput">Приход</p>
-        <div class="cell">
+        <div className="cell">
           <input
             type="text"
             className="styledFinanceForm"
@@ -90,7 +90,7 @@ const AdFinanceTable = () => {
           />
         </div>
         <p className="styledLabelFinanceInput">Расход</p>
-        <div class="cell">
+        <div className="cell">
           <input
             type="text"
             className="styledFinanceForm"
@@ -98,7 +98,7 @@ const AdFinanceTable = () => {
           />
         </div>
         <p className="styledLabelFinanceInput">Баланс</p>
-        <div class="cell">
+        <div className="cell">
           <input
             type="text"
             className="styledFinanceForm"
@@ -106,7 +106,7 @@ const AdFinanceTable = () => {
           />
         </div>
         <p className="styledLabelFinanceInput">Оплатить</p>
-        <div class="cell">
+        <div className="cell">
           <input type="text" className="styledFinanceForm" />
         </div>
       </div>

@@ -20,21 +20,21 @@ const FinanceTable = () => {
       }}
     >
       <NavTable />
-      <div class="styledFinanceContainer">
+      <div className="styledFinanceContainer">
         <p className="styledLabelFinanceInput">Ваш баланс</p>
-        <div class="cell">
+        <div className="cell">
           <input type="text" className="styledFinanceForm" />
         </div>
         <p className="styledLabelFinanceInput">Внести деньги</p>
-        <div class="cell">
+        <div clasName="cell">
           <input type="text" className="styledFinanceForm" />
         </div>
         <p className="styledLabelFinanceInput">Вывести деньги</p>
-        <div class="cell">
+        <div className="cell">
           <input type="text" className="styledFinanceForm" />
         </div>
         <p className="styledLabelFinanceInput">Выписка</p>
-        <div class="cell">
+        <div className="cell">
           <input type="text" placeholder="" className="styledFinanceForm" />
         </div>
       </div>
