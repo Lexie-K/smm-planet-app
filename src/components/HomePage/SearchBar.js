@@ -28,18 +28,19 @@ const SearchBar = () => {
   const dispatch = useDispatch();
   const inputValue = useSelector(state => state.search.inputValue);
   const currentPage = useSelector(state => state.search.currentPage);
+  const chosenCategory = useSelector (state => state.search.chosenCategory)
 
   const changeHandler = e => {
     e.preventDefault();
     dispatch(setInput(e.target.value));
-    dispatch(setClearPage());
+    
   };
 
   const handleKeyDown = e => {
     if (e.key === 'Enter') {
       e.preventDefault();
       startTransition(() => {
-        dispatch(fetchBloggers({ inputValue, currentPage }));
+        dispatch(fetchBloggers({ inputValue, currentPage, chosenCategory }));
       });
     }
   };
@@ -47,7 +48,7 @@ const SearchBar = () => {
   const clickHandler = e => {
     e.preventDefault();
 
-    dispatch(fetchBloggers({ inputValue, currentPage }));
+    dispatch(fetchBloggers({ inputValue, currentPage, chosenCategory }));
   };
 
   return (

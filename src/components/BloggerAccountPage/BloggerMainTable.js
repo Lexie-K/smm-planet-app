@@ -45,16 +45,6 @@ const BloggerMainTable = () => {
     dispatch(setAccountInfo({ email, first_name, last_name }));
     dispatch(getUserData({ username, email, first_name, last_name }));
   };
-
-  // useEffect(()=> {
-
-  // },[])
-
-  // const handleClose = () => {
-  //   dispatch(closeModal());
-
-  // };
-
   const handleOpen = () => {
     dispatch(openModal());
   };

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-// import moment from 'moment/moment';
+import moment from 'moment/moment';
 import { Grid, CardMedia, Card, CardContent } from '@mui/material';
 import './styledHomePage.scss';
 import { useDispatch, useSelector } from 'react-redux';
@@ -14,16 +14,16 @@ import CustomAxios from '../utils/axios';
 const ShowResult = () => {
   const [fetch, setFetch] = useState(false);
   const pic = require('./rectangle.png');
-  // const isShowResult = useSelector(state => state.search.isResultShow);
+ 
   const result = useSelector(state => state.search.showResultBloggers);
   const dispatch = useDispatch();
   // const status = useSelector(state => state.search.success);
   const currentPage = useSelector(state => state.search.currentPage);
   const totalCount = useSelector(state => state.search.totalCount);
   const inputValue = useSelector(state => state.search.inputValue);
-
+  const chosenCategory = useSelector(state => state.search.chosenCategory)
   useEffect(() => {
-    if (fetch) {
+    if (fetch && !chosenCategory) {
       CustomAxios.get(
         `${process.env.REACT_APP_SERVER_ENDPOINT}/api/bloggers/?page=${currentPage}&page_size=8&search=${inputValue}`
       )
@@ -33,6 +33,19 @@ const ShowResult = () => {
         })
         .finally(() => setFetch(false));
     }
+    
+    if (fetch && chosenCategory) {
+      CustomAxios.get(
+        `${process.env.REACT_APP_SERVER_ENDPOINT}/api/bloggers/${chosenCategory}/?page=${currentPage}&page_size=8&search=${inputValue}`
+      )
+        .then(response => {
+          dispatch(setMoreBloggers(response.data.results));
+          setFetch(false);
+        })
+        .finally(() => setFetch(false));
+    }
+
+
   }, [fetch, currentPage]);
 
   const handleScroll = () => {
@@ -109,7 +122,7 @@ const ShowResult = () => {
                     <p>Кол-во постов </p>
                     {/* {item.posts} */}
                     <p>Дата создания:</p>
-                    {/* {moment(item.updated).format('DD.MM.YY')} */}
+                    {moment(item.created).format('DD.MM.YY')} 
                   </CardContent>
                 </Card>
               </Grid>

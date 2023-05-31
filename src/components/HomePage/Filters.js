@@ -8,13 +8,12 @@ import {
   setAge,
   setGender,
   setRegion,
+  setClearPage,
 } from '../../store/slices/searchSlice';
 import './StyledLayout.scss';
 
 const Filters = () => {
   //Example of different categories
-  const categories = ['A', 'B', 'C'];
-
   const brands = ['A', 'B', 'C'];
 
   const ages = ['1', '2', '3'];
@@ -22,6 +21,17 @@ const Filters = () => {
   const genders = ['M', 'W'];
 
   const regions = ['E', 'U'];
+
+  const categories = [
+    {label: 'Яндекс.Дзен', value: 'dzen'},
+    {label: 'Instagram', value: 'instagram'},
+    {label: 'Likee', value: 'likee'},
+    {label: 'Telegram', value: 'telegram'},
+    {label: 'TikTok', value: 'tiktok'},
+    {label: 'Twitter', value: 'twitter'},
+    {label: 'VK', value: 'vk'},
+    {label: 'YouTube', value: 'youtube'}
+  ];
   //Example of different categories
   const dispatch = useDispatch();
   const categoryChosen = useSelector(state => state.search.chosenCategory);
@@ -29,9 +39,10 @@ const Filters = () => {
   const ageChosen = useSelector(state => state.search.chosenAge);
   const genderChosen = useSelector(state => state.search.chosenGender);
   const regionChosen = useSelector(state => state.search.chosenRegion);
-
   const changeFilterCategoryHandler = e => {
+    dispatch(setClearPage());
     dispatch(setCategory(e.target.value));
+    
   };
 
   const changeFilterBrandHandler = e => {
@@ -52,6 +63,7 @@ const Filters = () => {
 
   return (
     <div>
+      <>
       <Box
         sx={{
           display: 'flex',
@@ -93,11 +105,12 @@ const Filters = () => {
             >
               <MenuItem value="">Категории</MenuItem>
               {categories.map((category, index) => (
-                <MenuItem value={category} key={index}>
-                  {category}
+                <MenuItem value={category.value} key={index}>
+                  {category.label}
                 </MenuItem>
               ))}
             </Select>
+            
           </Grid>
           <Grid item xs={5} md={3.4}>
             <Select
@@ -217,6 +230,7 @@ const Filters = () => {
           </Grid>
         </Grid>
       </Box>
+      </>
     </div>
   );
 };

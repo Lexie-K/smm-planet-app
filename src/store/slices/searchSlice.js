@@ -2,20 +2,11 @@ import { createSlice } from '@reduxjs/toolkit';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import CustomAxios from '../../components/utils/axios';
 
-const categories = [
-  'Все',
-  'Яндекс.Дзен',
-  'Instagram',
-  'Likee',
-  'Telegram',
-  'TikTok',
-  'Twitter',
-  'VK',
-  'YouTube',
-];
+
+
+
 const initialState = {
-  varietyOfCategories: categories,
-  categoryValue: 'all',
+  
   inputValue: '',
   chosenCategory: '',
   chosenBrand: '',
@@ -33,12 +24,25 @@ const initialState = {
 
 export const fetchBloggers = createAsyncThunk(
   'search/showsearch',
-  async ({ inputValue, currentPage }, { rejectWithValue }) => {
+  async ({ inputValue, currentPage, chosenCategory }, { rejectWithValue }) => {
+ 
     try {
+     
+       if(!chosenCategory) {
       const response = await CustomAxios.get(
         `bloggers/?page=${currentPage}&page_size=8&search=${inputValue}`
-      );
-      return response.data;
+        );
+        return response.data;
+      }  
+      if(chosenCategory){
+        
+        const response = await CustomAxios.get(
+          `bloggers/${chosenCategory}/?page=${currentPage}&page_size=8&search=${inputValue}`
+          );
+          return response.data;
+      }
+     
+
     } catch (error) {
       if (error.response && error.response.data) {
         return rejectWithValue(error.response.data);
@@ -58,6 +62,7 @@ const searchSlice = createSlice({
     },
     setCategory: (state, action) => {
       state.chosenCategory = action.payload;
+    
     },
     setBrand: (state, action) => {
       state.chosenBrand = action.payload;
@@ -87,6 +92,7 @@ const searchSlice = createSlice({
     setClearPage: state => {
       state.currentPage = 1;
       state.showResultBloggers = [];
+      state.inputValue = '';
     },
     setMoreBloggers: (state, action) => {
       state.showResultBloggers = [
