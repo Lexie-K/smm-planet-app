@@ -40,13 +40,13 @@ export const registerUser = createAsyncThunk(
         }),
         config
       );
-      console.log(response.data);
-      console.log(response.accessToken);
-      console.log(JSON.stringify(response));
+     
     } catch (error) {
-      if (error.response && error.response.data.message) {
-        return rejectWithValue(error.response.data.message);
+      if (error.response) {
+       
+        return rejectWithValue(error.response.data.role);
       } else {
+        
         rejectWithValue(error.message);
       }
     }
@@ -79,9 +79,9 @@ const formSignupSlice = createSlice({
         state.loading = false;
         state.success = true;
       })
-      .addCase(registerUser.rejected, (state, { payload }) => {
-        state.loading = false;
-        state.error = payload;
+      .addCase(registerUser.rejected, (state, action) => {
+        // state.loading = false;
+        state.error = action.payload;
       });
   },
 });

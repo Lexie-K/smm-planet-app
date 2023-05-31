@@ -13,15 +13,16 @@ import {
 import { useNavigate } from 'react-router-dom';
 
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
-const EMAIL_REGEX = /^[a-z0-9]+@[a-z]+\.[a-z]{2,3}$/;
+const EMAIL_REGEX = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,})$/;
 const USER_REGEX = /^[\w.@+-]{4,150}$/;
+const NAME_REGEX = /^[а-яё]{2,}$/;
+const SURNAME_REGEX = /^[а-яё]+(?:[ -]{1}[а-яё]*)?$/i;
 const SignUpForm = ({ handleSignUp }) => {
   // const errorRef = useRef();
   const userRef = useRef();
   const emailRef = useRef();
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { loading, error, success } = useSelector(state => state.auth);
 
   const [email, setEmail] = useState('');
   const [validEmail, setValidEmail] = useState(false);
@@ -46,14 +47,22 @@ const SignUpForm = ({ handleSignUp }) => {
   const [password2, setPassword2] = useState('');
   const [validMatch, setValidMatch] = useState(false);
   const [matchFocus, setMatchFocus] = useState(false);
-  const [role, setRole] = useState('blogger');
-  //  const [error, setErrorMsg] = useState('');
-  // const [success, setSuccess] = useState(false);
+
+  const [role, setRole] = useState('');
+
+  const error = useSelector(state => state.auth.error);
+  const success = useSelector(state => state.auth.success);
+
+  const options = [
+    { label: 'Выберите свою роль', value: '' },
+    { label: 'Блогер', value: 'blogger' },
+    { label: 'Рекламодатель', value: 'advertiser' },
+  ];
 
   const handleSubmit = async e => {
     e.preventDefault();
     dispatch(setUser({ username }));
-    dispatch(clearForm());
+    // dispatch(clearForm());
     dispatch(
       registerUser({
         username,
@@ -62,15 +71,16 @@ const SignUpForm = ({ handleSignUp }) => {
         email,
         first_name,
         last_name,
-        role
+        role,
       })
     );
-
-  
-      navigate('/loginpage');
-   
-    
   };
+
+  useEffect(() => {
+    if (success && !error) {
+      navigate('/loginpage');
+    }
+  }, [success, error, navigate]);
 
   useEffect(() => {
     userRef.current.focus();
@@ -97,61 +107,128 @@ const SignUpForm = ({ handleSignUp }) => {
     setValidMatch(match);
   }, [password, password2]);
 
+  useEffect(() => {
+    const resultuser = USER_REGEX.test(username);
+    setValidName(resultuser);
+  }, [username]);
+
+  useEffect(() => {
+    const resultfirst_name = NAME_REGEX.test(first_name);
+    setValidFirstName(resultfirst_name);
+  }, [first_name]);
+
+  useEffect(() => {
+    const resultlast_name = SURNAME_REGEX.test(last_name);
+    setValidLastName(resultlast_name);
+  }, [last_name]);
+
+  const handleRole = e => {
+    e.preventDefault();
+    setRole(e.target.value);
+  };
+
   // useEffect(() => {
   //   setErrorMsg('');
-  // }, [username, password, assword]);
+  // }, [username, password, password2]);
 
   return (
     <>
       <Box className="styledSignupForm">
-        {/* {err && <p className="errorMsg">{err}</p>} */}
         <h1 className="styledSignupTitle">Регистрация</h1>
+        <p>{error}</p>
         <form className="styledSignupFormSize" onSubmit={handleSubmit}>
-          <input
-            type="text"
-            id="email"
-            placeholder="Email"
-            name="email"
-            value={email}
-            className="styledSignupinput"
-            ref={emailRef}
-            autoComplete="off"
-            autoFocus
-            required
-            onChange={e => setEmail(e.target.value)}
-          />
-          {/* <p
-            ref={errorRef}
-            className={errorMessage ? 'errmsg' : 'offscreen'}
-            aria-live="assertive"
+          <label>
+            <span className={validEmail ? 'valid' : 'hide'}>
+              <CheckIcon sx={{ fontSize: { md: 20, lg: 20, xs: 10 } }} />
+            </span>
+            <span className={validEmail || !email ? 'hide' : 'invalid'}>
+              <ClearIcon sx={{ fontSize: { md: 20, lg: 20, xs: 10 } }} />
+            </span>
+            <input
+              type="text"
+              id="email"
+              placeholder="Email"
+              name="email"
+              value={email}
+              className="styledSignupinput"
+              ref={emailRef}
+              autoComplete="off"
+              required
+              onChange={e => setEmail(e.target.value)}
+              onFocus={() => setEmailFocus(true)}
+              onBlur={() => setEmailFocus(false)}
+              aria-invalid={validEmail ? 'false' : 'true'}
+              aria-describedby="emailnote"
+            />
+          </label>
+          <p
+            id="emailnote"
+            className={
+              emailFocus && email && !validEmail ? 'instructions' : 'offscreen'
+            }
           >
-           
-          </p>  */}
+            Обязательное поле. Проверьте правильность указанного адреса
+            электронной почты
+          </p>
 
-          <input
-            type="text"
-            id="role"
-            name="role"
-            value={role}
-            className="styledSignupinput"
-            readOnly
-          />
+          <label>
+            <select
+              value={role}
+              id="role"
+              name="selectedRole"
+              className="styledSignupinput"
+              onChange={handleRole}
+            >
+              {options.map(option => (
+                <option key={option.value} value={option.value}>
+                  {option.label}
+                </option>
+              ))}
+            </select>
+          </label>
 
-          <input
-            type="text"
-            id="first_name"
-            placeholder="имя"
-            // ref={userRef}
-            autoComplete="off"
-            value={first_name}
-            className="styledSignupinput"
-            onChange={e => setFirst_name(e.target.value)}
-            onFocus={() => setFirstNameFocus(true)}
-            onBlur={() => setFirstNameFocus(false)}
-            required
-            // aria-invalid={validName ? 'false' : 'true'}
-            // aria-describedby="uidnote"
-          />
+          <label>
+            <span className={validFirstName ? 'valid' : 'hide'}>
+              <CheckIcon sx={{ fontSize: { md: 20, lg: 20, xs: 10 } }} />
+            </span>
+            <span
+              className={validFirstName || !first_name ? 'hide' : 'invalid'}
+            >
+              <ClearIcon sx={{ fontSize: { md: 20, lg: 20, xs: 10 } }} />
+            </span>
+
+            <input
+              type="text"
+              id="first_name"
+              placeholder="имя"
+              // ref={userRef}
+              autoComplete="off"
+              value={first_name}
+              className="styledSignupinput"
+              onChange={e => setFirst_name(e.target.value)}
+              onFocus={() => setFirstNameFocus(true)}
+              onBlur={() => setFirstNameFocus(false)}
+              required
+              // aria-invalid={validName ? 'false' : 'true'}
+              // aria-describedby="uidnote"
+            />
+          </label>
+          <p
+            id="confirm_firstname"
+            className={first_name.length === 1 ? 'instructions' : 'offscreen'}
+          >
+            Обязательное поле. Ошибка ввода
+          </p>
+
+          <label>
+            <span className={validLastName ? 'valid' : 'hide'}>
+              <CheckIcon sx={{ fontSize: { md: 20, lg: 20, xs: 10 } }} />
+            </span>
+            <span
+              className={validLastName || !last_name ? 'hide' : 'invalid'}
+            >
+              <ClearIcon sx={{ fontSize: { md: 20, lg: 20, xs: 10 } }} />
+            </span>
 
           <input
             type="text"
@@ -168,6 +245,13 @@ const SignUpForm = ({ handleSignUp }) => {
             // aria-invalid={validName ? 'false' : 'true'}
             // aria-describedby="uidnote"
           />
+          </label>
+          <p
+            id="confirm_lastname"
+            className={last_name.length === 1 ? 'instructions' : 'offscreen'}
+          >
+            Обязательное поле. Ошибка ввода
+          </p>
 
           <label>
             <span className={validName ? 'valid' : 'hide'}>
@@ -266,7 +350,14 @@ const SignUpForm = ({ handleSignUp }) => {
             className="styledSignupBtn"
             type="submit"
             disabled={
-              !validName || !validPassword || !validMatch ? true : false
+              !validFirstName ||
+              !validLastName ||
+              !validEmail ||
+              !validName ||
+              !validPassword ||
+              !validMatch
+                ? true
+                : false
             }
           >
             Зарегистрироватья

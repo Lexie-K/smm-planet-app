@@ -36,10 +36,9 @@ export const loginUser = createAsyncThunk(
         { username, password },
         config
       );
-      console.log(loginresponse);
     } catch (error) {
-      if (error.response && error.response.data.message) {
-        return rejectWithValue(error.response.data.message);
+      if (error.response) {
+        return rejectWithValue(error.response.data.detail);
       } else {
         rejectWithValue(error.message);
       }
@@ -57,11 +56,11 @@ const formSignupSlice = createSlice({
       state.token = access;
       state.id = id;
     },
-    clearLoginForm(state) {
-      state.username = null;
-      state.token = null;
-      state.id = null;
-    },
+    // clearLoginForm(state) {
+    //   state.username = null;
+    //   state.token = null;
+    //   state.id = null;
+    // },
   },
   extraReducers: builder => {
     builder
@@ -73,9 +72,9 @@ const formSignupSlice = createSlice({
         state.loading = false;
         state.success = true;
       })
-      .addCase(loginUser.rejected, (state, { payload }) => {
-        state.loading = false;
-        state.error = payload;
+      .addCase(loginUser.rejected, (state, action) => {
+        // state.loading = false;
+        state.error = action.payload;
       });
   },
 });

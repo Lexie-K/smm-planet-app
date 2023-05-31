@@ -5,36 +5,35 @@ import { Link, useNavigate } from 'react-router-dom';
 import './styledLoginForm.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import {
-  clearLoginForm,
   loginUser,
   setData,
 } from '../../store/slices/formLoginSlice';
 const LoginForm = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const error = useSelector(state => state.log.error)
+  const success = useSelector(state => state.log.success)
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const handleLog = async e => {
     e.preventDefault();
     dispatch(setData({ username }));
-    // dispatch(clearLoginForm());
-    dispatch(loginUser({ username, password }));
-    navigate('/account_blogger');   
+    dispatch(loginUser({username, password} ));
+     
   };
 
-  // useEffect(()=> {
-  //   if (success) {
-  //     navigate('/account_blogger');
-  //   } else {
-  //     navigate('/loginpage');
-  //   }
-  // },[success, navigate])
+  useEffect(()=> {
+    if (success && !error) {
+      navigate('/account_blogger');
+    } 
+  },[success, error, navigate])
 
   return (
     <div>
       <Box className="styledForm">
-        <p className="styledLoginTitle">Вход</p>
+        <h1 className="styledLoginTitle">Вход</h1>
+        <p>{error}</p>
         <form className="styledLoginFormSize" onSubmit={handleLog}>
           <input
             id="username"

@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setInput, setResult } from '../../store/slices/searchSlice';
+import {
+  setClearPage,
+  setInput,
+  setResult,
+} from '../../store/slices/searchSlice';
 import { useTransition } from 'react';
 import { Box, InputBase, Button } from '@mui/material';
-
+import { fetchBloggers } from '../../store/slices/searchSlice';
 const style = {
   paddingLeft: '10px',
   display: 'flex',
@@ -13,7 +17,7 @@ const style = {
   borderRadius: '20px',
   boxShadow: '2px 2px 10px 2px rgba(255, 54, 0, 0.25)',
   margin: { xs: '0px', md: '3.5rem 5rem' },
-  marginTop: {xs: '24px'},
+  marginTop: { xs: '24px' },
   '@media(max-width:768px)': {
     minWidth: '100%',
   },
@@ -23,27 +27,27 @@ const SearchBar = () => {
   const [isPending, startTransition] = useTransition();
   const dispatch = useDispatch();
   const inputValue = useSelector(state => state.search.inputValue);
+  const currentPage = useSelector(state => state.search.currentPage);
 
   const changeHandler = e => {
     e.preventDefault();
     dispatch(setInput(e.target.value));
+    dispatch(setClearPage());
   };
 
   const handleKeyDown = e => {
     if (e.key === 'Enter') {
       e.preventDefault();
-
       startTransition(() => {
-        dispatch(setResult());
+        dispatch(fetchBloggers({ inputValue, currentPage }));
       });
     }
   };
 
   const clickHandler = e => {
     e.preventDefault();
-    startTransition(() => {
-      dispatch(setResult());
-    });
+
+    dispatch(fetchBloggers({ inputValue, currentPage }));
   };
 
   return (

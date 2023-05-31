@@ -61,6 +61,11 @@
   height: 40px;
   width: 243px;
 }
+.styledSignupBtn[disabled] {
+  filter: blur(0.06rem);
+}
+
+
 .styledSigninput:focus {
   outline-color: rgba(255, 54, 0, 0.7);
 }

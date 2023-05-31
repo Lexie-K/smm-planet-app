@@ -1,141 +1,127 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 // import moment from 'moment/moment';
 import { Grid, CardMedia, Card, CardContent } from '@mui/material';
 import './styledHomePage.scss';
-import { useSelector } from 'react-redux';
-
-const filterResult = [
-  {
-    pic: '',
-    account: 'A',
-    followers: '1',
-    likes: '200',
-    posts: '300',
-    created: '2020-06-16T12:24:16+03:00',
-  },
-  {
-    pic: '',
-    account: 'B',
-    followers: '1',
-    likes: '200',
-    posts: '300',
-    created: '2020-06-16T12:24:16+03:00',
-  },
-  {
-    pic: '',
-    account: 'C',
-    followers: '100',
-    likes: '200',
-    posts: '300',
-    created: '2020-06-16T12:24:16+03:00',
-  },
-  {
-    pic: '',
-    account: 'D',
-    followers: '1',
-    likes: '200',
-    posts: '300',
-    created: '2020-06-16T12:24:16+03:00',
-  },
-  {
-    pic: '',
-    account: 'E',
-    followers: '1',
-    likes: '200',
-    posts: '300',
-    created: '2020-06-16T12:24:16+03:00',
-  },
-  {
-    pic: '',
-    account: 'F',
-    followers: '1',
-    likes: '200',
-    posts: '300',
-    created: '2020-06-16T12:24:16+03:00',
-  },
-  {
-    pic: '',
-    account: 'G',
-    followers: '1',
-    likes: '200',
-    posts: '300',
-    created: '2020-06-16T12:24:16+03:00',
-  },
-  {
-    pic: '',
-    account: 'H',
-    followers: '1',
-    likes: '200',
-    posts: '300',
-    created: '2020-06-16T12:24:16+03:00',
-  },
-];
+import { useDispatch, useSelector } from 'react-redux';
+import {
+  fetchBloggers,
+  setLoadmore,
+  setMoreBloggers,
+  setResetCurrentPage,
+} from '../../store/slices/searchSlice';
+import CustomAxios from '../utils/axios';
 
 const ShowResult = () => {
+  const [fetch, setFetch] = useState(false);
   const pic = require('./rectangle.png');
-  const isShowResult = useSelector(state => state.search.isResultShow);
+  // const isShowResult = useSelector(state => state.search.isResultShow);
+  const result = useSelector(state => state.search.showResultBloggers);
+  const dispatch = useDispatch();
+  // const status = useSelector(state => state.search.success);
+  const currentPage = useSelector(state => state.search.currentPage);
+  const totalCount = useSelector(state => state.search.totalCount);
+  const inputValue = useSelector(state => state.search.inputValue);
+
+  useEffect(() => {
+    if (fetch) {
+      CustomAxios.get(
+        `${process.env.REACT_APP_SERVER_ENDPOINT}/api/bloggers/?page=${currentPage}&page_size=8&search=${inputValue}`
+      )
+        .then(response => {
+          dispatch(setMoreBloggers(response.data.results));
+          setFetch(false);
+        })
+        .finally(() => setFetch(false));
+    }
+  }, [fetch, currentPage]);
+
+  const handleScroll = () => {
+    const scrollHeight = document.documentElement.scrollHeight;
+
+    const scrollTop = document.documentElement.scrollTop;
+
+    const clientScroll = document.documentElement.clientHeight;
+    if (
+      scrollTop + clientScroll >= scrollHeight &&
+      result.length < totalCount
+    ) {
+      dispatch(setLoadmore());
+      setFetch(true);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('scroll', handleScroll);
+    return () => {
+      document.removeEventListener('scroll', handleScroll);
+    };
+  }, [currentPage]);
 
   return (
-    <div className="styledShowAccountsContainer">
-      {isShowResult ? (
-        
-        <Grid container  justify = "center" rowSpacing={4} columnSpacing={{ xs: 6 }} sx={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}>
-          {filterResult.map(item => (
-            <Grid
-              item
-              xs={6}
-              sm={4}
-              md={4}
-              lg={3}
-              key={item.id}
-              
-            >
-              <Card
-                sx={{
-                  minWidth: '100%',
-                  height: '100%',
-                  borderRadius: '0%',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                }}
-                style={{ border: 'none', boxShadow: 'none' }}
-              >
-                <CardMedia
-                  component="img"
-                  src={pic}
-                  // alt={item.account}
+    <>
+      <div className="styledShowAccountsContainer">
+        <Grid
+          container
+          justify="center"
+          rowSpacing={4}
+          columnSpacing={{ xs: 6 }}
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          {result?.map(item => {
+            return (
+              <Grid item xs={6} sm={4} md={4} lg={3} key={item.id}>
+                <Card
                   sx={{
-                    width: { md: '200px', lg: '200px', xs: '140px' },
-                    height: { md: '200px', lg: '200px', xs: '140px' },
-                    objectFit: 'contain',
+                    minWidth: '100%',
+                    height: '100%',
+                    borderRadius: '0%',
+                    justifyContent: 'center',
+                    alignItems: 'center',
                   }}
-                />
-                <CardContent
-                  sx={{ paddingLeft: '0px' }}
-                  className="styledCardText"
+                  style={{ border: 'none', boxShadow: 'none' }}
                 >
-                  <p>Аккаунт </p>
-                  {/* {item.account} */}
-                  <p>Кол-во подписчиков: </p>
-                  {/* {item.followers} */}
-                  <p>Кол-во лайков: </p>
-                  {/* {item.likes} */}
-                  <p>Кол-во постов </p>
-                  {/* {item.posts} */}
-                  <p>Дата создания:</p>
-                  {/* {moment(item.updated).format('DD.MM.YY')} */}
-                </CardContent>
-              </Card>
-            </Grid>
-          ))}
+                  <CardMedia
+                    component="img"
+                    src={pic}
+                    // alt={item.account}
+                    sx={{
+                      width: { md: '200px', lg: '200px', xs: '140px' },
+                      height: { md: '200px', lg: '200px', xs: '140px' },
+                      objectFit: 'contain',
+                    }}
+                  />
+                  <CardContent
+                    sx={{ paddingLeft: '0px' }}
+                    className="styledCardText"
+                  >
+                    <p>Аккаунт </p>
+                    {item.nickname}
+                    <p>Соцсеть: </p>
+                    {item.social}
+                    <p>Кол-во подписчиков: </p>
+                    {item.subscribers}
+                    <p>Кол-во лайков: </p>
+                    {/* {item.likes} */}
+                    <p>Кол-во постов </p>
+                    {/* {item.posts} */}
+                    <p>Дата создания:</p>
+                    {/* {moment(item.updated).format('DD.MM.YY')} */}
+                  </CardContent>
+                </Card>
+              </Grid>
+            );
+          })}
         </Grid>
-      ) : null}
-    </div>
+      </div>
+    </>
   );
 };
+// </div>
+//   );
+// };
 
 export default ShowResult;

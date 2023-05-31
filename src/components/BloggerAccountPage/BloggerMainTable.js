@@ -1,36 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { Box, Button, Modal } from '@mui/material';
+import { Box } from '@mui/material';
 import './StyledBloggerTable.scss';
 import NavTable from '../NavTableSection/NavTable';
 import { getUserData } from '../../store/slices/getUserInfoSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { setAccountInfo } from '../../store/slices/getUserInfoSlice';
 import axios from 'axios';
-import { openModal, closeModal } from '../../store/slices/modalSlice';
-import CloseIcon from '@mui/icons-material/Close';
-import ModalWindow from '../Modal/ModalChangePass';
+import { openModal } from '../../store/slices/modalSlice';
+
 import ModalChangePass from '../Modal/ModalChangePass';
 
 const BloggerMainTable = () => {
-  const style = {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    maxWidth: '100%',
-    maxHeight: '100%',
-    bgcolor: 'rgba(229, 229, 229, 1)',
-    boxShadow: 100,
-    border: 'none',
-    borderRadius: 'none',
-    fontFamily: '--montserrat-font',
-    overflow: 'auto',
-    '@media(max-width:320px)': {
-      minWidth: '320px',
-      minHeight: '30px',
-    },
-  };
-
   const [disabled, setDisabled] = useState(true);
   const [email, setEmail] = useState('');
   const [username, setUsername] = useState('');
@@ -38,7 +18,6 @@ const BloggerMainTable = () => {
   const [last_name, setLastName] = useState('');
   const [instaname, setInstaname] = useState('');
   const [tiktokname, setTiktokname] = useState('');
- 
 
   const user = useSelector(state => state.log.username);
   const { isOpen } = useSelector(state => state.modal);
@@ -61,7 +40,7 @@ const BloggerMainTable = () => {
   const handleDisabled = () => {
     setDisabled(!disabled);
   };
-  const handleSendAccountInfo = async (e) => {
+  const handleSendAccountInfo = async e => {
     e.preventDefault();
     dispatch(setAccountInfo({ email, first_name, last_name }));
     dispatch(getUserData({ username, email, first_name, last_name }));
@@ -97,7 +76,9 @@ const BloggerMainTable = () => {
         }}
       >
         <NavTable handleDisabled={handleDisabled} />
-        <button className='styledBtn' onClick={handleSendAccountInfo}>Сохранить Изменения</button>
+        <button className="styledBtn" onClick={handleSendAccountInfo}>
+          Сохранить Изменения
+        </button>
         <div class="styledBloggerContainer">
           <p className="styledLabelInput">Email</p>
           <div class="cell">
@@ -181,8 +162,10 @@ const BloggerMainTable = () => {
           </div>
         </div>
         <div>
-          <button className="styledBtn" onClick={handleOpen}>Сменить пароль</button>
-          {isOpen && <div className='overlay'/>}
+          <button className="styledBtn" onClick={handleOpen}>
+            Сменить пароль
+          </button>
+          {isOpen && <div className="overlay" />}
           {isOpen && <ModalChangePass />}
         </div>
       </Box>
