@@ -1,8 +1,6 @@
 import axios from 'axios';
 
 const baseURL = `${process.env.REACT_APP_SERVER_ENDPOINT}/api/`;
-// const navigate = useNavigate();
-let accessToken = localStorage.getItem('access');
 
 const CustomAxios = axios.create({
   baseURL,
@@ -37,7 +35,6 @@ CustomAxios.interceptors.response.use(
         .then(response => {
           localStorage.setItem('access', response.data.access);
           // localStorage.setItem('refresh', response.data.refresh);
-      
 
           return CustomAxios(originalReq);
         })

@@ -29,7 +29,7 @@ const SignUpPage = () => {
 
         <section>
           <SignUpForm handleSignUp={handleSignUp} />
-          <footer className="formFooter">
+          <footer className="signupformFooter">
             <LowSection />
           </footer>
         </section>

@@ -4,7 +4,37 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
-   
+}
+
+.containerFirstPage {
+  display: flex;
+  min-height: 60vh;
+  min-width: 1040px;
+  height: 100%;
+  width: 100%;
+  padding-left: 80px;
+}
+
+.containerSecond {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 2;
+  width: 50%;
+  align-items: start;
+  justify-content: center;
+}
+.backgroundPic {
+  flex-grow: 1;
+  display: flex;
+
+  max-width: 100%;
+}
+
+.backgroundPic img {
+  object-fit: cover;
+  max-width: 100%;
+  min-height: 100%;
+  // width: 90%;
 }
 
 .styledMiddleTitle {
@@ -39,24 +69,6 @@
   font-weight: $main-text-weight;
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-  background-image: url(../../assets/mainpic.png);
-  background-repeat: no-repeat;
-  background-position: right;
-  background-size: contain;
-  margin-top: -30px;
-  padding-top: 225px;
-  align-items: stretch;
-  height: 100%;
-  min-width: 1040px;
-  padding-bottom: 30px;
-  position: relative;
-  padding-left: 80px;
-}
 .footerHome {
   margin-top: 86px;
 }
@@ -79,35 +91,35 @@
     margin: 0px;
     margin-top: 52px;
   }
+  .containerSecond {
+    flex-grow: 0;
+    width: 110px;
+    padding-top: 50px;
+  }
+  .containerFirstPage {
+    padding-left: 0px;
+    min-width: 320px;
+    max-height: 100%;
+  }
 }
 
 @media (max-width: $bp-tablet) {
   .styledCardText {
     font-size: 12px;
   }
-  .container {
-    padding-left: 0px;
-    background-image: url(../../assets/mainpicmobile.png);
-    min-width: 320px;
-    margin-right: 0px;
-    margin-top: -100px;
-  }
+
   .styledFormSize {
     min-width: 768px;
   }
- 
 }
 
 @media (max-width: $bp-phone) {
   .styledFormSize {
     min-width: 320px;
   }
-  .container {
-    margin-right: -200px;
-    padding-top: 122px;
-    padding-right: 100px;
-    min-width: 320px;
-    padding-left: 0px;
+  .backgroundPic img {
+    max-width: 100%;
+    object-fit: fill;
   }
   .styledfooterContainerPoints {
     column-gap: 20px;
@@ -128,17 +140,6 @@
     width: 200px;
     line-height: 1;
   }
-  .container {
-    margin-top: -45px;
-    padding-top: 114px;
-    align-items: stretch;
-    height: 100vh;
-    flex-direction: column;
-    background-size: contain;
-    max-width: 100%;
-    background-image: url(../../assets/mainpicmobile.png);
-    margin-right: 0px;
-  }
 
   .styledSubMiddleTitle {
     padding-bottom: 22px;
@@ -148,6 +149,13 @@
     height: 14.36px;
   }
   .footerHome {
-    margin-top: 86px;
+    margin-top: 50px;
+  }
+}
+
+@media (min-width: $bp-desktop) {
+  .containerFirstPage {
+    justify-content: center;
+    min-width: 1040px;
   }
 }

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useState } from 'react';
 import { Box, Typography } from '@mui/material';
 import { Link, useNavigate } from 'react-router-dom';
@@ -9,7 +9,7 @@ const LoginForm = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const error = useSelector(state => state.log.error);
-  const success = useSelector(state => state.log.success);
+  
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
