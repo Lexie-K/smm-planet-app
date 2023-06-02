@@ -332,8 +332,7 @@ const SignUpForm = ({ handleSignUp }) => {
             className="styledSignupBtn"
             type="submit"
             disabled={
-              !validFirstName ||
-              !validLastName ||
+              
               !validEmail ||
               !validName ||
               !validPassword ||
