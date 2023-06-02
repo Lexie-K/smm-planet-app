@@ -2,11 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import CustomAxios from '../../components/utils/axios';
 
-
-
-
 const initialState = {
-  
   inputValue: '',
   chosenCategory: '',
   chosenBrand: '',
@@ -17,7 +13,8 @@ const initialState = {
   success: false,
   error: null,
   showResultBloggers: [],
-  currentPage: 0,
+  allResults: [],
+  currentPage: 1,
   totalCount: 0,
   status: 'idle',
 };
@@ -25,24 +22,19 @@ const initialState = {
 export const fetchBloggers = createAsyncThunk(
   'search/showsearch',
   async ({ inputValue, currentPage, chosenCategory }, { rejectWithValue }) => {
- 
     try {
-     
-       if(!chosenCategory) {
-      const response = await CustomAxios.get(
-        `bloggers/?page=${currentPage}&page_size=8&search=${inputValue}`
+      if (!chosenCategory) {
+        const response = await CustomAxios.get(
+          `bloggers/?page=${currentPage}&page_size=8&search=${inputValue}`
         );
         return response.data;
-      }  
-      if(chosenCategory){
-        
+      }
+      if (chosenCategory) {
         const response = await CustomAxios.get(
           `bloggers/${chosenCategory}/?page=${currentPage}&page_size=8&search=${inputValue}`
-          );
-          return response.data;
+        );
+        return response.data;
       }
-     
-
     } catch (error) {
       if (error.response && error.response.data) {
         return rejectWithValue(error.response.data);
@@ -62,7 +54,6 @@ const searchSlice = createSlice({
     },
     setCategory: (state, action) => {
       state.chosenCategory = action.payload;
-    
     },
     setBrand: (state, action) => {
       state.chosenBrand = action.payload;
@@ -92,13 +83,15 @@ const searchSlice = createSlice({
     setClearPage: state => {
       state.currentPage = 1;
       state.showResultBloggers = [];
-      state.inputValue = '';
+      state.allResults= [];
+      state.totalCount= 0;
+
+      // state.inputValue = '';
     },
     setMoreBloggers: (state, action) => {
-      state.showResultBloggers = [
-        ...state.showResultBloggers,
-        ...action.payload,
-      ];
+      // state.allResults = [...state.allResults, .action.payload];
+      state.showResultBloggers = [...state.showResultBloggers, ...action.payload];
+     
     },
   },
   extraReducers(builder) {
@@ -112,6 +105,7 @@ const searchSlice = createSlice({
         state.status = 'succeeded';
         state.totalCount = action.payload.count;
         state.showResultBloggers = action.payload.results;
+        state.allResults = [...state.allResults, ...action.payload.results];
       })
       .addCase(fetchBloggers.rejected, (state, action) => {
         // state.status = 'failed';

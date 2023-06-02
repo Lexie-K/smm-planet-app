@@ -17,7 +17,6 @@ const LoginForm = () => {
   const handleLog = async e => {
     e.preventDefault();
     dispatch(setData({ username }));
-    debugger
     dispatch(loginUser({ username, password }));
     navigate('/account_blogger');
   };

@@ -14,14 +14,15 @@ import CustomAxios from '../utils/axios';
 const ShowResult = () => {
   const [fetch, setFetch] = useState(false);
   const pic = require('./rectangle.png');
- 
+
   const result = useSelector(state => state.search.showResultBloggers);
   const dispatch = useDispatch();
   // const status = useSelector(state => state.search.success);
   const currentPage = useSelector(state => state.search.currentPage);
   const totalCount = useSelector(state => state.search.totalCount);
   const inputValue = useSelector(state => state.search.inputValue);
-  const chosenCategory = useSelector(state => state.search.chosenCategory)
+  const chosenCategory = useSelector(state => state.search.chosenCategory);
+  const allResults = useSelector(state => state.search.allResults);
   useEffect(() => {
     if (fetch && !chosenCategory) {
       CustomAxios.get(
@@ -29,26 +30,26 @@ const ShowResult = () => {
       )
         .then(response => {
           dispatch(setMoreBloggers(response.data.results));
+
           setFetch(false);
         })
         .finally(() => setFetch(false));
     }
-    
+
     if (fetch && chosenCategory) {
       CustomAxios.get(
         `${process.env.REACT_APP_SERVER_ENDPOINT}/api/bloggers/${chosenCategory}/?page=${currentPage}&page_size=8&search=${inputValue}`
       )
         .then(response => {
           dispatch(setMoreBloggers(response.data.results));
+
           setFetch(false);
         })
         .finally(() => setFetch(false));
     }
-
-
   }, [fetch, currentPage]);
 
-  const handleScroll = () => {
+  const handleScroll = async () => {
     const scrollHeight = document.documentElement.scrollHeight;
 
     const scrollTop = document.documentElement.scrollTop;
@@ -68,7 +69,7 @@ const ShowResult = () => {
     return () => {
       document.removeEventListener('scroll', handleScroll);
     };
-  }, [currentPage]);
+  }, [totalCount]);
 
   return (
     <>
@@ -86,7 +87,7 @@ const ShowResult = () => {
         >
           {result?.map(item => {
             return (
-              <Grid item xs={6} sm={4} md={4} lg={3} key={item.id}>
+              <Grid item xs={6} sm={4} md={4} lg={3} key={item?.id}>
                 <Card
                   sx={{
                     minWidth: '100%',
@@ -112,17 +113,17 @@ const ShowResult = () => {
                     className="styledCardText"
                   >
                     <p>Аккаунт </p>
-                    {item.nickname}
+                    {item?.nickname}
                     <p>Соцсеть: </p>
-                    {item.social}
+                    {item?.social}
                     <p>Кол-во подписчиков: </p>
-                    {item.subscribers}
+                    {item?.subscribers}
                     <p>Кол-во лайков: </p>
                     {/* {item.likes} */}
                     <p>Кол-во постов </p>
                     {/* {item.posts} */}
                     <p>Дата создания:</p>
-                    {moment(item.created).format('DD.MM.YY')} 
+                    {moment(item?.created).format('DD.MM.YY')}
                   </CardContent>
                 </Card>
               </Grid>

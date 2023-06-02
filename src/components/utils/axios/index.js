@@ -41,7 +41,7 @@ CustomAxios.interceptors.response.use(
         .catch(err => {
           localStorage.removeItem('access');
           localStorage.removeItem('refresh');
-          window.location.replace('/#/loginpage');
+          // window.location.replace('/');
         });
     }
 
