@@ -188,15 +188,6 @@ const SignUpForm = ({ handleSignUp }) => {
           </label>
 
           <label>
-            <span className={validFirstName ? 'valid' : 'hide'}>
-              <CheckIcon sx={{ fontSize: { md: 20, lg: 20, xs: 10 } }} />
-            </span>
-            <span
-              className={validFirstName || !first_name ? 'hide' : 'invalid'}
-            >
-              <ClearIcon sx={{ fontSize: { md: 20, lg: 20, xs: 10 } }} />
-            </span>
-
             <input
               type="text"
               id="first_name"
@@ -221,30 +212,21 @@ const SignUpForm = ({ handleSignUp }) => {
           </p>
 
           <label>
-            <span className={validLastName ? 'valid' : 'hide'}>
-              <CheckIcon sx={{ fontSize: { md: 20, lg: 20, xs: 10 } }} />
-            </span>
-            <span
-              className={validLastName || !last_name ? 'hide' : 'invalid'}
-            >
-              <ClearIcon sx={{ fontSize: { md: 20, lg: 20, xs: 10 } }} />
-            </span>
-
-          <input
-            type="text"
-            id="last_name"
-            // ref={userRef}
-            autoComplete="off"
-            value={last_name}
-            placeholder="фамилия"
-            className="styledSignupinput"
-            onChange={e => setLast_name(e.target.value)}
-            onFocus={() => setLastNameFocus(true)}
-            onBlur={() => setLastNameFocus(false)}
-            required
-            // aria-invalid={validName ? 'false' : 'true'}
-            // aria-describedby="uidnote"
-          />
+            <input
+              type="text"
+              id="last_name"
+              // ref={userRef}
+              autoComplete="off"
+              value={last_name}
+              placeholder="фамилия"
+              className="styledSignupinput"
+              onChange={e => setLast_name(e.target.value)}
+              onFocus={() => setLastNameFocus(true)}
+              onBlur={() => setLastNameFocus(false)}
+              required
+              // aria-invalid={validName ? 'false' : 'true'}
+              // aria-describedby="uidnote"
+            />
           </label>
           <p
             id="confirm_lastname"
