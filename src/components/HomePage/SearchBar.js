@@ -5,7 +5,7 @@ import {
   setInput,
   
 } from '../../store/slices/searchSlice';
-import { useTransition } from 'react';
+
 import { Box, InputBase, Button } from '@mui/material';
 import { fetchBloggers } from '../../store/slices/searchSlice';
 const style = {
@@ -36,8 +36,10 @@ const SearchBar = () => {
   };
 
   useEffect(() => {
-    dispatch(fetchBloggers({ inputValue, currentPage, chosenCategory }));
-  }, [deferredQuery]);
+    if(inputValue) {
+    dispatch(fetchBloggers({currentPage, inputValue}));
+    }
+  }, [inputValue]);
 
   const handleKeyDown = e => {
     if (e.key === 'Enter') {

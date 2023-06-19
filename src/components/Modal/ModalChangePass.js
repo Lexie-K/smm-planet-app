@@ -58,6 +58,7 @@ const ModalChangePass = () => {
   const handleSendNewPass = async e => {
     e.preventDefault();
     dispatch(changePass({ old_password, new_password, new_password_confirm }));
+    dispatch(closeModal());
   };
 
   return (

@@ -23,7 +23,7 @@ function App() {
 
     <HashRouter basename="/">
       <Routes>
-        {/* <Route element={<PrivateRoutes/>}>  */}
+        <Route element={<PrivateRoutes/>}> 
           <Route path="/account_blogger" element={<BloggerAccountPage />} />
           <Route path="/finance_blogger" element={<FinanceBloggerAccountPage />} />
           <Route path="/orders_blogger" element={<OrdersBloggerAccountPage />} />
@@ -36,7 +36,7 @@ function App() {
           <Route path="/acceptancepage" element={<AcceptancePage />} />
           <Route path="/chatpage" element={<ChatPage />} />
           <Route path="/search" element={<Search />} />
-        {/* </Route> */}
+        </Route>
         <Route path="/" element={<HomePage />} /> 
         <Route path="/loginpage" element={<LoginPage />} />
         <Route path="/signuppage" element={<SignUpPage />} />

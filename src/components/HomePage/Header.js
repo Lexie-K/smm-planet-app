@@ -18,7 +18,7 @@ const Header = () => {
   };
   return (
     <>
-      {/* {!isAuth ? ( */}
+      {!isAuth ? (
         <header>
           <nav className="styledHeaderContainer">
             <p className="styledName">
@@ -54,16 +54,15 @@ const Header = () => {
             </Box>
           </nav>
         </header>
-      {/* ) : ( */}
-        {/* <div className="styledExitBtnContainer"> */}
-{/*          
+      ) : (
+        <div className="styledExitBtnContainer">
+         
             <button className="styledExitBtn" onClick={handleLogout}>
               Выйти
-            </button> */}
+            </button>
           
-        {/* </div> */}
-      {/* ) */}
-      {/* } */}
+        </div>
+      )}
     </>
   );
 };

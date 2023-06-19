@@ -13,54 +13,38 @@ import CustomAxios from '../utils/axios';
 
 const ShowResult = () => {
   const [fetch, setFetch] = useState(false);
+
   const pic = require('./rectangle.png');
 
   const result = useSelector(state => state.search.showResultBloggers);
   const dispatch = useDispatch();
-  // const status = useSelector(state => state.search.success);
   const currentPage = useSelector(state => state.search.currentPage);
   const totalCount = useSelector(state => state.search.totalCount);
   const inputValue = useSelector(state => state.search.inputValue);
-  const chosenCategory = useSelector(state => state.search.chosenCategory);
-  const allResults = useSelector(state => state.search.allResults);
+
+  const isLimit = totalCount !== null && result.length >= totalCount;
+ 
+  const loadCards = async () => {
+    if (isLimit) {
+      return;
+    }
+    dispatch(fetchBloggers({ inputValue, currentPage }));
+  };
+
   useEffect(() => {
-    if (fetch && !chosenCategory) {
-      CustomAxios.get(
-        `${process.env.REACT_APP_SERVER_ENDPOINT}/api/bloggers/?page=${currentPage}&page_size=8&search=${inputValue}`
-      )
-        .then(response => {
-          dispatch(setMoreBloggers(response.data.results));
+    loadCards();
+  }, [currentPage]);
 
-          setFetch(false);
-        })
-        .finally(() => setFetch(false));
-    }
-
-    if (fetch && chosenCategory) {
-      CustomAxios.get(
-        `${process.env.REACT_APP_SERVER_ENDPOINT}/api/bloggers/${chosenCategory}/?page=${currentPage}&page_size=8&search=${inputValue}`
-      )
-        .then(response => {
-          dispatch(setMoreBloggers(response.data.results));
-
-          setFetch(false);
-        })
-        .finally(() => setFetch(false));
-    }
-  }, [fetch, currentPage]);
-
-  const handleScroll = async () => {
+  const handleScroll = () => {
     const scrollHeight = document.documentElement.scrollHeight;
 
     const scrollTop = document.documentElement.scrollTop;
 
     const clientScroll = document.documentElement.clientHeight;
-    if (
-      scrollTop + clientScroll >= scrollHeight &&
-      result.length < totalCount
-    ) {
+
+   
+    if (scrollTop + clientScroll >= scrollHeight && !isLimit) {
       dispatch(setLoadmore());
-      setFetch(true);
     }
   };
 
@@ -69,7 +53,7 @@ const ShowResult = () => {
     return () => {
       document.removeEventListener('scroll', handleScroll);
     };
-  }, [totalCount]);
+  }, [isLimit]);
 
   return (
     <>

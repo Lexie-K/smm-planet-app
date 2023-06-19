@@ -13,15 +13,18 @@ const initialState = {
   success: false,
   error: null,
   showResultBloggers: [],
-  allResults: [],
-  currentPage: 1,
-  totalCount: 0,
+  currentPage: 0,
+  totalCount: null,
   status: 'idle',
 };
 
 export const fetchBloggers = createAsyncThunk(
   'search/showsearch',
   async ({ inputValue, currentPage, chosenCategory }, { rejectWithValue }) => {
+    // const url = params.chosenCategory
+    //   ? `bloggers/${chosenCategory}/?page=${currentPage}&page_size=8&search=${inputValue}`
+    //   : `bloggers/?page=${currentPage}&page_size=8&search=${inputValue}`;
+
     try {
       if (!chosenCategory) {
         const response = await CustomAxios.get(
@@ -29,6 +32,7 @@ export const fetchBloggers = createAsyncThunk(
         );
         return response.data;
       }
+
       if (chosenCategory) {
         const response = await CustomAxios.get(
           `bloggers/${chosenCategory}/?page=${currentPage}&page_size=8&search=${inputValue}`
@@ -83,16 +87,14 @@ const searchSlice = createSlice({
     setClearPage: state => {
       state.currentPage = 1;
       state.showResultBloggers = [];
-      state.allResults= [];
-      state.totalCount= 0;
-
+      state.allResults = [];
+      state.totalCount = 0;
+      state.allResults = [];
       // state.inputValue = '';
     },
-    setMoreBloggers: (state, action) => {
-      // state.allResults = [...state.allResults, .action.payload];
-      state.showResultBloggers = [...state.showResultBloggers, ...action.payload];
-     
-    },
+    // setMoreBloggers: (state, action) => {
+    //   state.showResultBloggers = [...state.showResultBloggers, ...action.payload];
+    // },
   },
   extraReducers(builder) {
     builder
@@ -104,8 +106,11 @@ const searchSlice = createSlice({
         state.success = true;
         state.status = 'succeeded';
         state.totalCount = action.payload.count;
-        state.showResultBloggers = action.payload.results;
-        state.allResults = [...state.allResults, ...action.payload.results];
+
+        state.showResultBloggers = [
+          ...state.showResultBloggers,
+          ...action.payload.results,
+        ];
       })
       .addCase(fetchBloggers.rejected, (state, action) => {
         // state.status = 'failed';
